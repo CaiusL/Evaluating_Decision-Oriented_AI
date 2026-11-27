@@ -1,4 +1,4 @@
-# Submission & Version-Identity Guide — Evaluating Decision-Oriented AI (Self-JEV)
+# Version-Identity Guide — Evaluating Decision-Oriented AI
 
 ## 1. Report Revision
 - **Document:** `thesis/evaluating_decision_oriented_ai_report.pdf` (17 pages) and `thesis/evaluating_decision_oriented_ai_report.tex` with `thesis/figures/completion_by_time_curves.png`.
