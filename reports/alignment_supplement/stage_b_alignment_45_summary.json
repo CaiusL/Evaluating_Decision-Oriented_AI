@@ -1,0 +1,887 @@
+{
+  "protocol": "Bounded_Option_D_Post_Hoc_Stage_B_Alignment_45",
+  "label": "Post-hoc evaluation of frozen models on the previously inspected 45-case confirmation subset (3501..3505)",
+  "generated_at_utc": "2026-11-26T12:51:39.955231+00:00",
+  "schema_version": "racing_engineer_v1",
+  "action_spec_hash": "a65f275a8fff3740",
+  "driver_weights": "jev_rl_v7.mapdata.npz",
+  "pits_enabled": false,
+  "seeds": [
+    3501,
+    3502,
+    3503,
+    3504,
+    3505
+  ],
+  "n_scenarios": 45,
+  "all_model_common_finishers_n": 30,
+  "total_wall_s": 281.0,
+  "models": {
+    "driver_only": {
+      "summary": {
+        "n": 45,
+        "finishes": 41,
+        "completion_rate_pct": 91.11,
+        "mean_time_finishers_s": 617.06,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 45
+        },
+        "mode_counts": {
+          "balanced": 172
+        },
+        "failure_status_counts": {
+          "5": 4
+        }
+      },
+      "meta": {
+        "source": "reused_frozen_racing_engineer_v1_3501_3505"
+      },
+      "mean_time_all_model_common_s": 627.74,
+      "vs_driver_only": null,
+      "vs_track_rule": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 40,
+          "rescue": 1,
+          "regression": 0,
+          "both_fail": 4
+        },
+        "completion_diff_pp": 2.22,
+        "comp_ci95_2sided_pp": [
+          0.0,
+          6.67
+        ],
+        "common_finishers_n": 40,
+        "mean_paired_delta_s": 8.573,
+        "median_paired_delta_s": 7.415,
+        "time_ci95_2sided_s": [
+          7.507,
+          9.636
+        ],
+        "wtl_0_5s": {
+          "wins": 1,
+          "ties_finished": 11,
+          "ties_both_failed": 4,
+          "losses": 29
+        }
+      }
+    },
+    "track_rule": {
+      "summary": {
+        "n": 45,
+        "finishes": 40,
+        "completion_rate_pct": 88.89,
+        "mean_time_finishers_s": 607.33,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 45
+        },
+        "mode_counts": {
+          "push_max": 118,
+          "balanced": 52
+        },
+        "failure_status_counts": {
+          "5": 5
+        }
+      },
+      "meta": {
+        "source": "reused_frozen_racing_engineer_v1_3501_3505"
+      },
+      "mean_time_all_model_common_s": 619.28,
+      "vs_driver_only": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 40,
+          "rescue": 0,
+          "regression": 1,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -2.22,
+        "comp_ci95_2sided_pp": [
+          -6.67,
+          0.0
+        ],
+        "common_finishers_n": 40,
+        "mean_paired_delta_s": -8.573,
+        "median_paired_delta_s": -7.415,
+        "time_ci95_2sided_s": [
+          -9.636,
+          -7.507
+        ],
+        "wtl_0_5s": {
+          "wins": 29,
+          "ties_finished": 11,
+          "ties_both_failed": 4,
+          "losses": 1
+        }
+      },
+      "vs_track_rule": null
+    },
+    "lookup_9cell": {
+      "summary": {
+        "n": 45,
+        "finishes": 40,
+        "completion_rate_pct": 88.89,
+        "mean_time_finishers_s": 607.34,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 40,
+          "wet_high_downforce": 5
+        },
+        "mode_counts": {
+          "push_max": 118,
+          "balanced": 52
+        },
+        "failure_status_counts": {
+          "5": 5
+        }
+      },
+      "meta": {
+        "source": "reused_frozen_racing_engineer_v1_3501_3505"
+      },
+      "mean_time_all_model_common_s": 619.3,
+      "vs_driver_only": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 40,
+          "rescue": 0,
+          "regression": 1,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -2.22,
+        "comp_ci95_2sided_pp": [
+          -6.67,
+          0.0
+        ],
+        "common_finishers_n": 40,
+        "mean_paired_delta_s": -8.562,
+        "median_paired_delta_s": -7.298,
+        "time_ci95_2sided_s": [
+          -9.619,
+          -7.497
+        ],
+        "wtl_0_5s": {
+          "wins": 29,
+          "ties_finished": 11,
+          "ties_both_failed": 4,
+          "losses": 1
+        }
+      },
+      "vs_track_rule": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 40,
+          "rescue": 0,
+          "regression": 0,
+          "both_fail": 5
+        },
+        "completion_diff_pp": 0.0,
+        "comp_ci95_2sided_pp": [
+          0.0,
+          0.0
+        ],
+        "common_finishers_n": 40,
+        "mean_paired_delta_s": 0.011,
+        "median_paired_delta_s": 0.0,
+        "time_ci95_2sided_s": [
+          -0.008,
+          0.032
+        ],
+        "wtl_0_5s": {
+          "wins": 0,
+          "ties_finished": 40,
+          "ties_both_failed": 5,
+          "losses": 0
+        }
+      }
+    },
+    "nn3_racing_v1": {
+      "summary": {
+        "n": 45,
+        "finishes": 38,
+        "completion_rate_pct": 84.44,
+        "mean_time_finishers_s": 612.07,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 45
+        },
+        "mode_counts": {
+          "push_max": 142,
+          "balanced": 17,
+          "conserve_tyres": 9
+        },
+        "failure_status_counts": {
+          "5": 7
+        }
+      },
+      "meta": {
+        "source": "reused_frozen_racing_engineer_v1_3501_3505"
+      },
+      "mean_time_all_model_common_s": 619.31,
+      "vs_driver_only": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 38,
+          "rescue": 0,
+          "regression": 3,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -6.67,
+        "comp_ci95_2sided_pp": [
+          -13.33,
+          0.0
+        ],
+        "common_finishers_n": 38,
+        "mean_paired_delta_s": -8.957,
+        "median_paired_delta_s": -8.198,
+        "time_ci95_2sided_s": [
+          -10.364,
+          -7.643
+        ],
+        "wtl_0_5s": {
+          "wins": 30,
+          "ties_finished": 2,
+          "ties_both_failed": 4,
+          "losses": 9
+        }
+      },
+      "vs_track_rule": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 38,
+          "rescue": 0,
+          "regression": 2,
+          "both_fail": 5
+        },
+        "completion_diff_pp": -4.44,
+        "comp_ci95_2sided_pp": [
+          -8.89,
+          0.0
+        ],
+        "common_finishers_n": 38,
+        "mean_paired_delta_s": 0.068,
+        "median_paired_delta_s": 0.0,
+        "time_ci95_2sided_s": [
+          -0.483,
+          0.453
+        ],
+        "wtl_0_5s": {
+          "wins": 1,
+          "ties_finished": 31,
+          "ties_both_failed": 5,
+          "losses": 8
+        }
+      }
+    },
+    "qwen_lora_racing_v1": {
+      "summary": {
+        "n": 45,
+        "finishes": 35,
+        "completion_rate_pct": 77.78,
+        "mean_time_finishers_s": 621.18,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 45
+        },
+        "mode_counts": {
+          "push_max": 154
+        },
+        "failure_status_counts": {
+          "5": 10
+        }
+      },
+      "meta": {
+        "source": "reused_frozen_racing_engineer_v1_3501_3505"
+      },
+      "mean_time_all_model_common_s": 619.09,
+      "vs_driver_only": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 35,
+          "rescue": 0,
+          "regression": 6,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -13.33,
+        "comp_ci95_2sided_pp": [
+          -20.0,
+          -6.67
+        ],
+        "common_finishers_n": 35,
+        "mean_paired_delta_s": -9.952,
+        "median_paired_delta_s": -9.064,
+        "time_ci95_2sided_s": [
+          -11.341,
+          -8.603
+        ],
+        "wtl_0_5s": {
+          "wins": 31,
+          "ties_finished": 1,
+          "ties_both_failed": 4,
+          "losses": 9
+        }
+      },
+      "vs_track_rule": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 35,
+          "rescue": 0,
+          "regression": 5,
+          "both_fail": 5
+        },
+        "completion_diff_pp": -11.11,
+        "comp_ci95_2sided_pp": [
+          -17.78,
+          -6.67
+        ],
+        "common_finishers_n": 35,
+        "mean_paired_delta_s": -0.154,
+        "median_paired_delta_s": 0.0,
+        "time_ci95_2sided_s": [
+          -0.68,
+          0.262
+        ],
+        "wtl_0_5s": {
+          "wins": 2,
+          "ties_finished": 30,
+          "ties_both_failed": 5,
+          "losses": 8
+        }
+      }
+    },
+    "kev_0_8b": {
+      "summary": {
+        "n": 45,
+        "finishes": 37,
+        "completion_rate_pct": 82.22,
+        "mean_time_finishers_s": 624.99,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_low_drag": 15,
+          "dry_balanced": 30
+        },
+        "mode_counts": {
+          "balanced": 16,
+          "wet_caution": 158
+        },
+        "failure_status_counts": {
+          "3": 5,
+          "5": 3
+        }
+      },
+      "meta": {
+        "wall_s": 1236.9,
+        "decision_calls_measured": 219,
+        "latency_p50_ms": 5847.1,
+        "latency_p95_ms": 6306.73,
+        "truncated_calls": 0
+      },
+      "mean_time_all_model_common_s": 645.11,
+      "vs_driver_only": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 36,
+          "rescue": 1,
+          "regression": 5,
+          "both_fail": 3
+        },
+        "completion_diff_pp": -8.89,
+        "comp_ci95_2sided_pp": [
+          -11.11,
+          -4.44
+        ],
+        "common_finishers_n": 36,
+        "mean_paired_delta_s": 16.018,
+        "median_paired_delta_s": 15.28,
+        "time_ci95_2sided_s": [
+          15.263,
+          16.713
+        ],
+        "wtl_0_5s": {
+          "wins": 1,
+          "ties_finished": 0,
+          "ties_both_failed": 3,
+          "losses": 41
+        }
+      },
+      "vs_track_rule": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 35,
+          "rescue": 2,
+          "regression": 5,
+          "both_fail": 3
+        },
+        "completion_diff_pp": -6.67,
+        "comp_ci95_2sided_pp": [
+          -11.11,
+          0.0
+        ],
+        "common_finishers_n": 35,
+        "mean_paired_delta_s": 23.314,
+        "median_paired_delta_s": 22.661,
+        "time_ci95_2sided_s": [
+          21.712,
+          24.898
+        ],
+        "wtl_0_5s": {
+          "wins": 2,
+          "ties_finished": 0,
+          "ties_both_failed": 3,
+          "losses": 40
+        }
+      }
+    },
+    "minilm_offshelf": {
+      "summary": {
+        "n": 45,
+        "finishes": 37,
+        "completion_rate_pct": 82.22,
+        "mean_time_finishers_s": 629.77,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 14,
+          "damp_mid_downforce": 31
+        },
+        "mode_counts": {
+          "balanced": 164
+        },
+        "failure_status_counts": {
+          "5": 8
+        }
+      },
+      "meta": {
+        "wall_s": 109.8,
+        "decision_calls_measured": 209,
+        "latency_p50_ms": 45.03,
+        "latency_p95_ms": 46.52,
+        "truncated_calls": 0
+      },
+      "mean_time_all_model_common_s": 633.31,
+      "vs_driver_only": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 37,
+          "rescue": 0,
+          "regression": 4,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -8.89,
+        "comp_ci95_2sided_pp": [
+          -17.78,
+          -2.22
+        ],
+        "common_finishers_n": 37,
+        "mean_paired_delta_s": 5.126,
+        "median_paired_delta_s": 3.932,
+        "time_ci95_2sided_s": [
+          4.375,
+          5.824
+        ],
+        "wtl_0_5s": {
+          "wins": 0,
+          "ties_finished": 14,
+          "ties_both_failed": 4,
+          "losses": 27
+        }
+      },
+      "vs_track_rule": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 37,
+          "rescue": 0,
+          "regression": 3,
+          "both_fail": 5
+        },
+        "completion_diff_pp": -6.67,
+        "comp_ci95_2sided_pp": [
+          -13.33,
+          0.0
+        ],
+        "common_finishers_n": 37,
+        "mean_paired_delta_s": 14.394,
+        "median_paired_delta_s": 15.263,
+        "time_ci95_2sided_s": [
+          13.203,
+          15.608
+        ],
+        "wtl_0_5s": {
+          "wins": 0,
+          "ties_finished": 0,
+          "ties_both_failed": 5,
+          "losses": 40
+        }
+      }
+    },
+    "raw_qwen_base": {
+      "summary": {
+        "n": 45,
+        "finishes": 37,
+        "completion_rate_pct": 82.22,
+        "mean_time_finishers_s": 630.07,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_low_drag": 45
+        },
+        "mode_counts": {
+          "conserve_tyres": 150,
+          "wet_caution": 21,
+          "push_max": 1
+        },
+        "failure_status_counts": {
+          "3": 3,
+          "5": 5
+        }
+      },
+      "meta": {
+        "wall_s": 531.1,
+        "decision_calls_measured": 217,
+        "latency_p50_ms": 2017.6,
+        "latency_p95_ms": 3463.4,
+        "truncated_calls": 172
+      },
+      "mean_time_all_model_common_s": 640.52,
+      "vs_driver_only": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 37,
+          "rescue": 0,
+          "regression": 4,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -8.89,
+        "comp_ci95_2sided_pp": [
+          -15.56,
+          -2.22
+        ],
+        "common_finishers_n": 37,
+        "mean_paired_delta_s": 12.665,
+        "median_paired_delta_s": 11.93,
+        "time_ci95_2sided_s": [
+          12.218,
+          13.148
+        ],
+        "wtl_0_5s": {
+          "wins": 0,
+          "ties_finished": 0,
+          "ties_both_failed": 4,
+          "losses": 41
+        }
+      },
+      "vs_track_rule": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 36,
+          "rescue": 1,
+          "regression": 4,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -6.67,
+        "comp_ci95_2sided_pp": [
+          -13.33,
+          0.0
+        ],
+        "common_finishers_n": 36,
+        "mean_paired_delta_s": 20.576,
+        "median_paired_delta_s": 21.778,
+        "time_ci95_2sided_s": [
+          19.613,
+          21.526
+        ],
+        "wtl_0_5s": {
+          "wins": 1,
+          "ties_finished": 0,
+          "ties_both_failed": 4,
+          "losses": 40
+        }
+      }
+    },
+    "m2_qwen_ops_lora": {
+      "summary": {
+        "n": 45,
+        "finishes": 38,
+        "completion_rate_pct": 84.44,
+        "mean_time_finishers_s": 626.06,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_low_drag": 45
+        },
+        "mode_counts": {
+          "conserve_tyres": 155,
+          "wet_caution": 11,
+          "balanced": 6
+        },
+        "failure_status_counts": {
+          "3": 3,
+          "5": 4
+        }
+      },
+      "meta": {
+        "wall_s": 873.0,
+        "decision_calls_measured": 217,
+        "latency_p50_ms": 3563.23,
+        "latency_p95_ms": 3834.65,
+        "truncated_calls": 172
+      },
+      "mean_time_all_model_common_s": 639.94,
+      "vs_driver_only": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 38,
+          "rescue": 0,
+          "regression": 3,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -6.67,
+        "comp_ci95_2sided_pp": [
+          -11.11,
+          -2.22
+        ],
+        "common_finishers_n": 38,
+        "mean_paired_delta_s": 12.072,
+        "median_paired_delta_s": 11.797,
+        "time_ci95_2sided_s": [
+          11.74,
+          12.41
+        ],
+        "wtl_0_5s": {
+          "wins": 0,
+          "ties_finished": 0,
+          "ties_both_failed": 4,
+          "losses": 41
+        }
+      },
+      "vs_track_rule": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 37,
+          "rescue": 1,
+          "regression": 3,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -4.44,
+        "comp_ci95_2sided_pp": [
+          -8.89,
+          2.22
+        ],
+        "common_finishers_n": 37,
+        "mean_paired_delta_s": 19.753,
+        "median_paired_delta_s": 20.495,
+        "time_ci95_2sided_s": [
+          18.591,
+          20.863
+        ],
+        "wtl_0_5s": {
+          "wins": 1,
+          "ties_finished": 0,
+          "ties_both_failed": 4,
+          "losses": 40
+        }
+      }
+    },
+    "frontier_llm_dated": {
+      "summary": {
+        "n": 45,
+        "finishes": 39,
+        "completion_rate_pct": 86.67,
+        "mean_time_finishers_s": 621.72,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 7,
+          "wet_high_downforce": 30,
+          "dry_low_drag": 8
+        },
+        "mode_counts": {
+          "balanced": 141,
+          "wet_caution": 7,
+          "conserve_tyres": 19
+        },
+        "failure_status_counts": {
+          "5": 6
+        }
+      },
+      "meta": {
+        "wall_s": 278.8,
+        "decision_calls_measured": 212,
+        "latency_p50_ms": 639.71,
+        "latency_p95_ms": 945.69,
+        "truncated_calls": 0,
+        "provider_endpoint": "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+        "requested_model": "deepseek-v4.1-flash-1017",
+        "returned_models": {
+          "deepseek-v4.1-flash-1017": 213
+        },
+        "run_date_utc": "2026-11-26",
+        "prompt_tokens_total": 115089,
+        "completion_tokens_total": 3408,
+        "retries_total": 0,
+        "invalid_calls_total": 0,
+        "decoding": {
+          "temperature": 0.0,
+          "max_tokens": 128,
+          "response_format": "json_object",
+          "enable_thinking": false
+        }
+      },
+      "mean_time_all_model_common_s": 630.25,
+      "vs_driver_only": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 39,
+          "rescue": 0,
+          "regression": 2,
+          "both_fail": 4
+        },
+        "completion_diff_pp": -4.44,
+        "comp_ci95_2sided_pp": [
+          -11.11,
+          0.0
+        ],
+        "common_finishers_n": 39,
+        "mean_paired_delta_s": 2.522,
+        "median_paired_delta_s": 0.866,
+        "time_ci95_2sided_s": [
+          1.833,
+          3.168
+        ],
+        "wtl_0_5s": {
+          "wins": 0,
+          "ties_finished": 14,
+          "ties_both_failed": 4,
+          "losses": 27
+        }
+      },
+      "vs_track_rule": {
+        "n": 45,
+        "paired_outcomes": {
+          "both_finish": 39,
+          "rescue": 0,
+          "regression": 1,
+          "both_fail": 5
+        },
+        "completion_diff_pp": -2.22,
+        "comp_ci95_2sided_pp": [
+          -6.67,
+          0.0
+        ],
+        "common_finishers_n": 39,
+        "mean_paired_delta_s": 11.314,
+        "median_paired_delta_s": 12.664,
+        "time_ci95_2sided_s": [
+          10.127,
+          12.498
+        ],
+        "wtl_0_5s": {
+          "wins": 0,
+          "ties_finished": 1,
+          "ties_both_failed": 5,
+          "losses": 39
+        }
+      }
+    }
+  },
+  "qwen_adaptation_contrasts": {
+    "racing_qwen_vs_raw_qwen_base": {
+      "n": 45,
+      "paired_outcomes": {
+        "both_finish": 32,
+        "rescue": 3,
+        "regression": 5,
+        "both_fail": 5
+      },
+      "completion_diff_pp": -4.44,
+      "comp_ci95_2sided_pp": [
+        -11.11,
+        2.22
+      ],
+      "common_finishers_n": 32,
+      "mean_paired_delta_s": -21.862,
+      "median_paired_delta_s": -22.611,
+      "time_ci95_2sided_s": [
+        -23.074,
+        -20.586
+      ],
+      "wtl_0_5s": {
+        "wins": 35,
+        "ties_finished": 0,
+        "ties_both_failed": 5,
+        "losses": 5
+      }
+    },
+    "m2_ops_qwen_vs_raw_qwen_base": {
+      "n": 45,
+      "paired_outcomes": {
+        "both_finish": 37,
+        "rescue": 1,
+        "regression": 0,
+        "both_fail": 7
+      },
+      "completion_diff_pp": 2.22,
+      "comp_ci95_2sided_pp": [
+        0.0,
+        6.67
+      ],
+      "common_finishers_n": 37,
+      "mean_paired_delta_s": -0.496,
+      "median_paired_delta_s": 0.0,
+      "time_ci95_2sided_s": [
+        -0.848,
+        -0.191
+      ],
+      "wtl_0_5s": {
+        "wins": 7,
+        "ties_finished": 31,
+        "ties_both_failed": 7,
+        "losses": 0
+      }
+    },
+    "racing_qwen_vs_m2_ops_qwen": {
+      "n": 45,
+      "paired_outcomes": {
+        "both_finish": 32,
+        "rescue": 3,
+        "regression": 6,
+        "both_fail": 4
+      },
+      "completion_diff_pp": -6.67,
+      "comp_ci95_2sided_pp": [
+        -15.56,
+        0.0
+      ],
+      "common_finishers_n": 32,
+      "mean_paired_delta_s": -21.324,
+      "median_paired_delta_s": -21.895,
+      "time_ci95_2sided_s": [
+        -22.609,
+        -19.953
+      ],
+      "wtl_0_5s": {
+        "wins": 35,
+        "ties_finished": 0,
+        "ties_both_failed": 4,
+        "losses": 6
+      }
+    }
+  }
+}

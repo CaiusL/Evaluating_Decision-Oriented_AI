@@ -1,0 +1,4178 @@
+{
+  "milestone": "racing_engineer_v1_milestone1_2_diagnostics",
+  "action_spec_hash": "a65f275a8fff3740",
+  "wall_s": 353.8,
+  "runner_contract_check": {
+    "model_loaded": "m2_qwen3.5_0.8b_lora_s42",
+    "letter_ids_verified": [
+      357,
+      417,
+      351,
+      414,
+      458
+    ],
+    "temperature": 2.02,
+    "four_opt_probs_len": 4,
+    "four_opt_sum": 1.000001,
+    "four_opt_latency_ms": 2975.37,
+    "three_opt_probs_len": 3,
+    "three_opt_sum": 1.0,
+    "three_opt_latency_ms": 2817.63,
+    "passed": true
+  },
+  "snapshot_replay_invariance": {
+    "scenario_id": "parkland_dry_s3101",
+    "orig_status": 2,
+    "replay_status": 2,
+    "orig_finish_t": 483.203583,
+    "replay_finish_t": 483.203583,
+    "abs_diff_s": 0.0,
+    "tick_diff": 0,
+    "passed": true
+  },
+  "prompt_bridge_27": {
+    "seeds": [
+      3101,
+      3102,
+      3103
+    ],
+    "arms": {
+      "driver_only": {
+        "n": 27,
+        "finishes": 25,
+        "avg_finish_time_s": 613.11,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 27
+        },
+        "mode_counts": {
+          "balanced": 104
+        }
+      },
+      "track_rule": {
+        "n": 27,
+        "finishes": 24,
+        "avg_finish_time_s": 602.93,
+        "pits_total": 0,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 27
+        },
+        "mode_counts": {
+          "balanced": 32,
+          "push_max": 71
+        }
+      },
+      "m2_current_prompt": {
+        "n": 27,
+        "finishes": 17,
+        "avg_finish_time_s": 632.18,
+        "pits_total": 12,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 8,
+          "damp_mid_downforce": 10,
+          "wet_high_downforce": 9
+        },
+        "mode_counts": {
+          "balanced": 53,
+          "push_max": 1,
+          "wet_caution": 35,
+          "conserve_tyres": 13
+        }
+      },
+      "m2_verified_runbook": {
+        "n": 27,
+        "finishes": 15,
+        "avg_finish_time_s": 634.35,
+        "pits_total": 45,
+        "delegated_calls": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_low_drag": 27
+        },
+        "mode_counts": {
+          "conserve_tyres": 83,
+          "wet_caution": 20,
+          "balanced": 3
+        }
+      }
+    },
+    "paired_vs_driver_only": {
+      "track_rule": {
+        "n": 27,
+        "base_finishes": 25,
+        "cand_finishes": 24,
+        "rescued": 0,
+        "regressed": 1,
+        "common_finishers_n": 24,
+        "mean_paired_delta_s": -8.066,
+        "median_paired_delta_s": -7.798,
+        "wtl": {
+          "wins": 17,
+          "ties_finished": 7,
+          "ties_both_failed": 2,
+          "losses": 1
+        }
+      },
+      "m2_current_prompt": {
+        "n": 27,
+        "base_finishes": 25,
+        "cand_finishes": 17,
+        "rescued": 0,
+        "regressed": 8,
+        "common_finishers_n": 17,
+        "mean_paired_delta_s": 17.206,
+        "median_paired_delta_s": 13.43,
+        "wtl": {
+          "wins": 0,
+          "ties_finished": 6,
+          "ties_both_failed": 2,
+          "losses": 19
+        }
+      },
+      "m2_verified_runbook": {
+        "n": 27,
+        "base_finishes": 25,
+        "cand_finishes": 15,
+        "rescued": 1,
+        "regressed": 11,
+        "common_finishers_n": 14,
+        "mean_paired_delta_s": 68.671,
+        "median_paired_delta_s": 71.166,
+        "wtl": {
+          "wins": 1,
+          "ties_finished": 0,
+          "ties_both_failed": 1,
+          "losses": 25
+        }
+      }
+    },
+    "paired_verified_vs_current_prompt": {
+      "n": 27,
+      "base_finishes": 17,
+      "cand_finishes": 15,
+      "rescued": 3,
+      "regressed": 5,
+      "common_finishers_n": 12,
+      "mean_paired_delta_s": 53.148,
+      "median_paired_delta_s": 51.537,
+      "wtl": {
+        "wins": 3,
+        "ties_finished": 0,
+        "ties_both_failed": 7,
+        "losses": 17
+      }
+    }
+  },
+  "counterfactual_action_audit": {
+    "build_audit_seeds": [
+      3201,
+      3202,
+      3203,
+      3204,
+      3205
+    ],
+    "lookup_9cell_build": {
+      "parkland_dry": "dry_balanced",
+      "parkland_wetting": "dry_balanced",
+      "parkland_saturated": "dry_balanced",
+      "highland_dry": "dry_balanced",
+      "highland_wetting": "dry_balanced",
+      "highland_saturated": "dry_balanced",
+      "crossover_dry": "dry_balanced",
+      "crossover_wetting": "dry_balanced",
+      "crossover_saturated": "dry_balanced"
+    },
+    "build_by_cell": {
+      "parkland_dry": {
+        "best_build": "dry_balanced",
+        "candidates": [
+          {
+            "build": "dry_balanced",
+            "finishes": 2,
+            "n": 5,
+            "mean_time_s": 487.64
+          },
+          {
+            "build": "wet_high_downforce",
+            "finishes": 2,
+            "n": 5,
+            "mean_time_s": 488.34
+          },
+          {
+            "build": "dry_low_drag",
+            "finishes": 0,
+            "n": 5,
+            "mean_time_s": null
+          },
+          {
+            "build": "damp_mid_downforce",
+            "finishes": 0,
+            "n": 5,
+            "mean_time_s": null
+          }
+        ]
+      },
+      "parkland_wetting": {
+        "best_build": "dry_balanced",
+        "candidates": [
+          {
+            "build": "dry_balanced",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 515.08
+          },
+          {
+            "build": "wet_high_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 515.46
+          },
+          {
+            "build": "dry_low_drag",
+            "finishes": 1,
+            "n": 5,
+            "mean_time_s": 514.03
+          },
+          {
+            "build": "damp_mid_downforce",
+            "finishes": 1,
+            "n": 5,
+            "mean_time_s": 515.4
+          }
+        ]
+      },
+      "parkland_saturated": {
+        "best_build": "dry_balanced",
+        "candidates": [
+          {
+            "build": "dry_balanced",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 536.92
+          },
+          {
+            "build": "wet_high_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 537.36
+          },
+          {
+            "build": "dry_low_drag",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 547.56
+          },
+          {
+            "build": "damp_mid_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 548.33
+          }
+        ]
+      },
+      "highland_dry": {
+        "best_build": "dry_balanced",
+        "candidates": [
+          {
+            "build": "dry_balanced",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 650.35
+          },
+          {
+            "build": "wet_high_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 651.11
+          },
+          {
+            "build": "damp_mid_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 659.24
+          },
+          {
+            "build": "dry_low_drag",
+            "finishes": 4,
+            "n": 5,
+            "mean_time_s": 654.55
+          }
+        ]
+      },
+      "highland_wetting": {
+        "best_build": "dry_balanced",
+        "candidates": [
+          {
+            "build": "dry_balanced",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 694.85
+          },
+          {
+            "build": "wet_high_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 695.57
+          },
+          {
+            "build": "dry_low_drag",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 703.12
+          },
+          {
+            "build": "damp_mid_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 703.87
+          }
+        ]
+      },
+      "highland_saturated": {
+        "best_build": "dry_balanced",
+        "candidates": [
+          {
+            "build": "dry_balanced",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 733.2
+          },
+          {
+            "build": "wet_high_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 733.76
+          },
+          {
+            "build": "dry_low_drag",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 735.95
+          },
+          {
+            "build": "damp_mid_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 736.72
+          }
+        ]
+      },
+      "crossover_dry": {
+        "best_build": "dry_balanced",
+        "candidates": [
+          {
+            "build": "dry_balanced",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 567.59
+          },
+          {
+            "build": "wet_high_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 568.12
+          },
+          {
+            "build": "dry_low_drag",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 573.24
+          },
+          {
+            "build": "damp_mid_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 573.68
+          }
+        ]
+      },
+      "crossover_wetting": {
+        "best_build": "dry_balanced",
+        "candidates": [
+          {
+            "build": "dry_balanced",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 604.73
+          },
+          {
+            "build": "wet_high_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 605.16
+          },
+          {
+            "build": "dry_low_drag",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 608.98
+          },
+          {
+            "build": "damp_mid_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 609.24
+          }
+        ]
+      },
+      "crossover_saturated": {
+        "best_build": "dry_balanced",
+        "candidates": [
+          {
+            "build": "dry_balanced",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 648.04
+          },
+          {
+            "build": "wet_high_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 648.46
+          },
+          {
+            "build": "dry_low_drag",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 650.49
+          },
+          {
+            "build": "damp_mid_downforce",
+            "finishes": 5,
+            "n": 5,
+            "mean_time_s": 650.87
+          }
+        ]
+      }
+    },
+    "pace_snapshots_n": 53,
+    "pace_gold_counts": {
+      "balanced": 8,
+      "push_max": 42,
+      "conserve_tyres": 3
+    },
+    "pace_mean_gain_vs_balanced_s": 2.59,
+    "pace_rescued_vs_balanced_n": 0,
+    "pit_snapshots_n": 35,
+    "pit_helped_n": 0,
+    "enable_pits_in_stage_b": false,
+    "pace_rows": [
+      {
+        "scenario_id": "parkland_dry_s3201",
+        "lap": 0,
+        "continuation_mode": "balanced",
+        "gold_option": "balanced",
+        "acceptable": [
+          "balanced"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 0.0,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 487.6692,
+            "completed_laps": 4,
+            "dist_m": 23184.0
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 487.0027,
+            "completed_laps": 4,
+            "dist_m": 23184.3
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 488.9022,
+            "completed_laps": 4,
+            "dist_m": 23184.0
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 490.8017,
+            "completed_laps": 4,
+            "dist_m": 23185.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_dry_s3202",
+        "lap": 0,
+        "continuation_mode": "balanced",
+        "gold_option": "balanced",
+        "acceptable": [
+          "balanced",
+          "conserve_tyres",
+          "wet_caution"
+        ],
+        "status": "all_failed",
+        "gain_vs_balanced_s": null,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 0,
+            "dist_m": 1146.0
+          },
+          {
+            "option": "balanced",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 1,
+            "dist_m": 6941.8
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 1,
+            "dist_m": 6941.8
+          },
+          {
+            "option": "wet_caution",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 1,
+            "dist_m": 6941.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3201",
+        "lap": 0,
+        "continuation_mode": "balanced",
+        "gold_option": "balanced",
+        "acceptable": [
+          "balanced"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 0.0,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 505.7314,
+            "completed_laps": 4,
+            "dist_m": 23184.3
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 504.565,
+            "completed_laps": 4,
+            "dist_m": 23184.3
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 506.7978,
+            "completed_laps": 4,
+            "dist_m": 23184.2
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 508.6307,
+            "completed_laps": 4,
+            "dist_m": 23184.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3202",
+        "lap": 0,
+        "continuation_mode": "balanced",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 0.766,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 505.9314,
+            "completed_laps": 4,
+            "dist_m": 23183.5
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 506.6978,
+            "completed_laps": 4,
+            "dist_m": 23185.0
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 508.864,
+            "completed_laps": 4,
+            "dist_m": 23183.8
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 510.4969,
+            "completed_laps": 4,
+            "dist_m": 23183.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3201",
+        "lap": 0,
+        "continuation_mode": "balanced",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max",
+          "balanced"
+        ],
+        "status": "tie_acceptable_set",
+        "gain_vs_balanced_s": 0.467,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 529.1257,
+            "completed_laps": 4,
+            "dist_m": 23185.1
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 529.5923,
+            "completed_laps": 4,
+            "dist_m": 23185.0
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 531.5251,
+            "completed_laps": 4,
+            "dist_m": 23185.5
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 533.458,
+            "completed_laps": 4,
+            "dist_m": 23183.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3202",
+        "lap": 0,
+        "continuation_mode": "balanced",
+        "gold_option": "balanced",
+        "acceptable": [
+          "balanced"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 0.0,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 534.2245,
+            "completed_laps": 4,
+            "dist_m": 23185.5
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 532.9248,
+            "completed_laps": 4,
+            "dist_m": 23185.5
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 534.5577,
+            "completed_laps": 4,
+            "dist_m": 23183.6
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 536.5239,
+            "completed_laps": 4,
+            "dist_m": 23183.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_dry_s3201",
+        "lap": 1,
+        "continuation_mode": "balanced",
+        "gold_option": "balanced",
+        "acceptable": [
+          "balanced",
+          "conserve_tyres"
+        ],
+        "status": "tie_acceptable_set",
+        "gain_vs_balanced_s": 0.0,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 1,
+            "dist_m": 6941.8
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 487.2026,
+            "completed_laps": 4,
+            "dist_m": 23185.5
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 487.2693,
+            "completed_laps": 4,
+            "dist_m": 23185.7
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 488.8355,
+            "completed_laps": 4,
+            "dist_m": 23183.4
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3201",
+        "lap": 1,
+        "continuation_mode": "balanced",
+        "gold_option": "conserve_tyres",
+        "acceptable": [
+          "balanced",
+          "conserve_tyres"
+        ],
+        "status": "tie_acceptable_set",
+        "gain_vs_balanced_s": 0.133,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 1,
+            "dist_m": 6941.8
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 504.9649,
+            "completed_laps": 4,
+            "dist_m": 23184.1
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 504.8316,
+            "completed_laps": 4,
+            "dist_m": 23184.7
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 506.5312,
+            "completed_laps": 4,
+            "dist_m": 23184.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3202",
+        "lap": 1,
+        "continuation_mode": "balanced",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 1.333,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 505.3982,
+            "completed_laps": 4,
+            "dist_m": 23183.5
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 506.7312,
+            "completed_laps": 4,
+            "dist_m": 23183.6
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 506.4979,
+            "completed_laps": 4,
+            "dist_m": 23183.5
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 507.7643,
+            "completed_laps": 4,
+            "dist_m": 23184.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_dry_s3202",
+        "lap": 1,
+        "continuation_mode": "balanced",
+        "gold_option": "conserve_tyres",
+        "acceptable": [
+          "conserve_tyres",
+          "wet_caution"
+        ],
+        "status": "all_failed",
+        "gain_vs_balanced_s": null,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 1,
+            "dist_m": 6940.9
+          },
+          {
+            "option": "balanced",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 1,
+            "dist_m": 6941.8
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 2,
+            "dist_m": 12737.7
+          },
+          {
+            "option": "wet_caution",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 2,
+            "dist_m": 12737.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3201",
+        "lap": 1,
+        "continuation_mode": "balanced",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 0.6,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 529.1591,
+            "completed_laps": 4,
+            "dist_m": 23185.6
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 529.7589,
+            "completed_laps": 4,
+            "dist_m": 23183.6
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 531.7251,
+            "completed_laps": 4,
+            "dist_m": 23185.1
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 533.4247,
+            "completed_laps": 4,
+            "dist_m": 23184.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3202",
+        "lap": 1,
+        "continuation_mode": "balanced",
+        "gold_option": "balanced",
+        "acceptable": [
+          "balanced"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 0.0,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 533.658,
+            "completed_laps": 4,
+            "dist_m": 23185.3
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 533.0581,
+            "completed_laps": 4,
+            "dist_m": 23185.3
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 534.7244,
+            "completed_laps": 4,
+            "dist_m": 23185.5
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 536.1907,
+            "completed_laps": 4,
+            "dist_m": 23183.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_dry_s3201",
+        "lap": 2,
+        "continuation_mode": "balanced",
+        "gold_option": "balanced",
+        "acceptable": [
+          "balanced",
+          "conserve_tyres"
+        ],
+        "status": "tie_acceptable_set",
+        "gain_vs_balanced_s": 0.0,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 2,
+            "dist_m": 12737.7
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 487.136,
+            "completed_laps": 4,
+            "dist_m": 23185.5
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 487.1693,
+            "completed_laps": 4,
+            "dist_m": 23185.1
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 488.5689,
+            "completed_laps": 4,
+            "dist_m": 23185.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3202",
+        "lap": 2,
+        "continuation_mode": "balanced",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max",
+          "balanced"
+        ],
+        "status": "tie_acceptable_set",
+        "gain_vs_balanced_s": 0.167,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 506.4646,
+            "completed_laps": 4,
+            "dist_m": 23184.0
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 506.6312,
+            "completed_laps": 4,
+            "dist_m": 23184.7
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 508.3641,
+            "completed_laps": 4,
+            "dist_m": 23183.5
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 510.197,
+            "completed_laps": 4,
+            "dist_m": 23183.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3201",
+        "lap": 2,
+        "continuation_mode": "balanced",
+        "gold_option": "conserve_tyres",
+        "acceptable": [
+          "push_max",
+          "balanced",
+          "conserve_tyres"
+        ],
+        "status": "tie_acceptable_set",
+        "gain_vs_balanced_s": 0.367,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 504.2984,
+            "completed_laps": 4,
+            "dist_m": 23184.0
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 504.6317,
+            "completed_laps": 4,
+            "dist_m": 23183.8
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 504.2651,
+            "completed_laps": 4,
+            "dist_m": 23183.4
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 507.431,
+            "completed_laps": 4,
+            "dist_m": 23184.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3201",
+        "lap": 2,
+        "continuation_mode": "balanced",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 0.8,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 529.0258,
+            "completed_laps": 4,
+            "dist_m": 23185.1
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 529.8256,
+            "completed_laps": 4,
+            "dist_m": 23185.4
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 531.5251,
+            "completed_laps": 4,
+            "dist_m": 23185.1
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 533.358,
+            "completed_laps": 4,
+            "dist_m": 23185.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3202",
+        "lap": 2,
+        "continuation_mode": "balanced",
+        "gold_option": "balanced",
+        "acceptable": [
+          "balanced"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 0.0,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 533.7579,
+            "completed_laps": 4,
+            "dist_m": 23183.6
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 533.0248,
+            "completed_laps": 4,
+            "dist_m": 23185.4
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 534.7244,
+            "completed_laps": 4,
+            "dist_m": 23185.5
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 537.3571,
+            "completed_laps": 4,
+            "dist_m": 23185.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3201",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 2.933,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.8989,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 641.8315,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 643.6644,
+            "completed_laps": 4,
+            "dist_m": 27998.8
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 646.2971,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3202",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 2.933,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 644.4309,
+            "completed_laps": 4,
+            "dist_m": 27998.2
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 647.3635,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 649.5297,
+            "completed_laps": 4,
+            "dist_m": 27998.8
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 651.3625,
+            "completed_laps": 4,
+            "dist_m": 27998.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3201",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 3.633,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 672.524,
+            "completed_laps": 4,
+            "dist_m": 27998.7
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 676.1565,
+            "completed_laps": 4,
+            "dist_m": 27998.8
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 678.1893,
+            "completed_laps": 4,
+            "dist_m": 27999.3
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 681.3885,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3202",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 1.833,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 684.2212,
+            "completed_laps": 4,
+            "dist_m": 27999.2
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 686.0541,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 687.3204,
+            "completed_laps": 4,
+            "dist_m": 27999.3
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 690.2864,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3201",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 5.132,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 710.2482,
+            "completed_laps": 4,
+            "dist_m": 27997.7
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 715.3802,
+            "completed_laps": 4,
+            "dist_m": 27999.0
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 717.9463,
+            "completed_laps": 4,
+            "dist_m": 27997.5
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 720.7456,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3202",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 5.199,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 722.9784,
+            "completed_laps": 4,
+            "dist_m": 27999.1
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 728.1771,
+            "completed_laps": 4,
+            "dist_m": 27998.2
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 731.0431,
+            "completed_laps": 4,
+            "dist_m": 27998.2
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 733.7424,
+            "completed_laps": 4,
+            "dist_m": 27998.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3201",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 1.633,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 639.0656,
+            "completed_laps": 4,
+            "dist_m": 27999.6
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 640.6985,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 642.0315,
+            "completed_laps": 4,
+            "dist_m": 27997.8
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 646.0638,
+            "completed_laps": 4,
+            "dist_m": 27997.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3202",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 1.1,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 644.8975,
+            "completed_laps": 4,
+            "dist_m": 27998.3
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 645.9972,
+            "completed_laps": 4,
+            "dist_m": 27998.8
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 647.3635,
+            "completed_laps": 4,
+            "dist_m": 27999.0
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 650.696,
+            "completed_laps": 4,
+            "dist_m": 27998.3
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3201",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 3.466,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 672.7573,
+            "completed_laps": 4,
+            "dist_m": 27998.9
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 676.2231,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 679.1558,
+            "completed_laps": 4,
+            "dist_m": 27999.3
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 682.7549,
+            "completed_laps": 4,
+            "dist_m": 27999.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3202",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 1.566,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 684.2212,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 685.7875,
+            "completed_laps": 4,
+            "dist_m": 27999.2
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 687.7537,
+            "completed_laps": 4,
+            "dist_m": 27998.1
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 691.2861,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3201",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 5.299,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 709.9816,
+            "completed_laps": 4,
+            "dist_m": 27997.5
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 715.2803,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 718.3795,
+            "completed_laps": 4,
+            "dist_m": 27997.5
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 721.6454,
+            "completed_laps": 4,
+            "dist_m": 27999.4
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3202",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 5.232,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 722.9784,
+            "completed_laps": 4,
+            "dist_m": 27998.2
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 728.2104,
+            "completed_laps": 4,
+            "dist_m": 27998.2
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 731.4097,
+            "completed_laps": 4,
+            "dist_m": 27998.2
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 734.5089,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3201",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 1.666,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.5323,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 640.1986,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 642.4647,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 645.364,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3202",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 1.166,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 644.5642,
+            "completed_laps": 4,
+            "dist_m": 27998.7
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 645.7306,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 646.8303,
+            "completed_laps": 4,
+            "dist_m": 27999.1
+          },
+          {
+            "option": "wet_caution",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "completed_laps": 3,
+            "dist_m": 21243.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3201",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 3.966,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 672.7573,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 676.723,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 678.9225,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 682.9882,
+            "completed_laps": 4,
+            "dist_m": 27999.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3202",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 1.766,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 684.0212,
+            "completed_laps": 4,
+            "dist_m": 27999.3
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 685.7875,
+            "completed_laps": 4,
+            "dist_m": 27998.1
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 688.1536,
+            "completed_laps": 4,
+            "dist_m": 27999.3
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 691.5194,
+            "completed_laps": 4,
+            "dist_m": 27999.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3201",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 4.999,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 710.1149,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 715.1136,
+            "completed_laps": 4,
+            "dist_m": 27999.6
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 718.4795,
+            "completed_laps": 4,
+            "dist_m": 27999.0
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 721.8787,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3202",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 5.165,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 723.0117,
+            "completed_laps": 4,
+            "dist_m": 27998.1
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 728.1771,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 731.2764,
+            "completed_laps": 4,
+            "dist_m": 27998.6
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 735.0754,
+            "completed_laps": 4,
+            "dist_m": 27999.4
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3201",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 3.566,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 553.1865,
+            "completed_laps": 4,
+            "dist_m": 23214.6
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 556.7523,
+            "completed_laps": 4,
+            "dist_m": 23213.6
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 559.6183,
+            "completed_laps": 4,
+            "dist_m": 23212.7
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 562.2177,
+            "completed_laps": 4,
+            "dist_m": 23214.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3202",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 3.832,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 548.621,
+            "completed_laps": 4,
+            "dist_m": 23214.7
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 552.4534,
+            "completed_laps": 4,
+            "dist_m": 23214.3
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 555.0861,
+            "completed_laps": 4,
+            "dist_m": 23215.4
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 557.6188,
+            "completed_laps": 4,
+            "dist_m": 23214.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3201",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 4.066,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 582.8126,
+            "completed_laps": 4,
+            "dist_m": 23213.7
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 586.8783,
+            "completed_laps": 4,
+            "dist_m": 23213.3
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 589.5776,
+            "completed_laps": 4,
+            "dist_m": 23213.7
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 592.377,
+            "completed_laps": 4,
+            "dist_m": 23213.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3202",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 1.733,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 597.809,
+            "completed_laps": 4,
+            "dist_m": 23213.0
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 599.5419,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 601.9746,
+            "completed_laps": 4,
+            "dist_m": 23214.9
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 603.9741,
+            "completed_laps": 4,
+            "dist_m": 23212.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3201",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 4.599,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 631.634,
+            "completed_laps": 4,
+            "dist_m": 23214.5
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 636.2329,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.7656,
+            "completed_laps": 4,
+            "dist_m": 23214.2
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 641.7316,
+            "completed_laps": 4,
+            "dist_m": 23214.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3202",
+        "lap": 0,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 5.365,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 633.3003,
+            "completed_laps": 4,
+            "dist_m": 23215.0
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.6656,
+            "completed_laps": 4,
+            "dist_m": 23213.0
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 641.6982,
+            "completed_laps": 4,
+            "dist_m": 23215.0
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 644.6309,
+            "completed_laps": 4,
+            "dist_m": 23213.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3202",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 3.766,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 548.5876,
+            "completed_laps": 4,
+            "dist_m": 23213.7
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 552.3534,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 554.8528,
+            "completed_laps": 4,
+            "dist_m": 23214.7
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 557.4855,
+            "completed_laps": 4,
+            "dist_m": 23215.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3201",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 2.833,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 553.5198,
+            "completed_laps": 4,
+            "dist_m": 23213.8
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 556.3524,
+            "completed_laps": 4,
+            "dist_m": 23213.7
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 558.8185,
+            "completed_laps": 4,
+            "dist_m": 23215.0
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 561.3179,
+            "completed_laps": 4,
+            "dist_m": 23213.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3201",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 4.299,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 582.746,
+            "completed_laps": 4,
+            "dist_m": 23213.1
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 587.0449,
+            "completed_laps": 4,
+            "dist_m": 23212.7
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 590.0775,
+            "completed_laps": 4,
+            "dist_m": 23214.6
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 592.8102,
+            "completed_laps": 4,
+            "dist_m": 23214.4
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3202",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 2.266,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 597.9423,
+            "completed_laps": 4,
+            "dist_m": 23214.6
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 600.2084,
+            "completed_laps": 4,
+            "dist_m": 23213.1
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 601.8413,
+            "completed_laps": 4,
+            "dist_m": 23213.8
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 604.8073,
+            "completed_laps": 4,
+            "dist_m": 23214.1
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3202",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 5.132,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 633.3336,
+            "completed_laps": 4,
+            "dist_m": 23215.2
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.4657,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 641.7649,
+            "completed_laps": 4,
+            "dist_m": 23215.1
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 644.6975,
+            "completed_laps": 4,
+            "dist_m": 23214.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3201",
+        "lap": 1,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 4.432,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 631.6674,
+            "completed_laps": 4,
+            "dist_m": 23215.0
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 636.0996,
+            "completed_laps": 4,
+            "dist_m": 23215.3
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.9989,
+            "completed_laps": 4,
+            "dist_m": 23214.0
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 641.8982,
+            "completed_laps": 4,
+            "dist_m": 23215.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3202",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 3.766,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 548.6543,
+            "completed_laps": 4,
+            "dist_m": 23214.5
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 552.42,
+            "completed_laps": 4,
+            "dist_m": 23214.7
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 554.7528,
+            "completed_laps": 4,
+            "dist_m": 23214.8
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 557.4188,
+            "completed_laps": 4,
+            "dist_m": 23214.3
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3201",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 2.833,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 553.5198,
+            "completed_laps": 4,
+            "dist_m": 23213.8
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 556.3524,
+            "completed_laps": 4,
+            "dist_m": 23215.0
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 558.7852,
+            "completed_laps": 4,
+            "dist_m": 23213.7
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 561.1846,
+            "completed_laps": 4,
+            "dist_m": 23215.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3201",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 4.566,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 582.6793,
+            "completed_laps": 4,
+            "dist_m": 23213.8
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 587.2449,
+            "completed_laps": 4,
+            "dist_m": 23215.3
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 590.1442,
+            "completed_laps": 4,
+            "dist_m": 23212.8
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 593.2101,
+            "completed_laps": 4,
+            "dist_m": 23213.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3202",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 2.299,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 597.9423,
+            "completed_laps": 4,
+            "dist_m": 23213.5
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 600.2417,
+            "completed_laps": 4,
+            "dist_m": 23213.0
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 602.5411,
+            "completed_laps": 4,
+            "dist_m": 23214.5
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 605.5404,
+            "completed_laps": 4,
+            "dist_m": 23213.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3202",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 5.099,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 633.4003,
+            "completed_laps": 4,
+            "dist_m": 23215.2
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.499,
+            "completed_laps": 4,
+            "dist_m": 23214.5
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 641.7649,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 644.9641,
+            "completed_laps": 4,
+            "dist_m": 23213.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3201",
+        "lap": 2,
+        "continuation_mode": "push_max",
+        "gold_option": "push_max",
+        "acceptable": [
+          "push_max"
+        ],
+        "status": "resolved",
+        "gain_vs_balanced_s": 4.299,
+        "rescued_vs_balanced": false,
+        "outcomes": [
+          {
+            "option": "push_max",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 631.7007,
+            "completed_laps": 4,
+            "dist_m": 23214.5
+          },
+          {
+            "option": "balanced",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 635.9996,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          },
+          {
+            "option": "conserve_tyres",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.8323,
+            "completed_laps": 4,
+            "dist_m": 23214.8
+          },
+          {
+            "option": "wet_caution",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 641.7982,
+            "completed_laps": 4,
+            "dist_m": 23213.4
+          }
+        ]
+      }
+    ],
+    "pit_rows": [
+      {
+        "scenario_id": "parkland_dry_s3201",
+        "lap": 1,
+        "tyre_wear": 0.045,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 487.1693,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23185.7
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 519.3281,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23186.0
+          },
+          {
+            "option": "pit_medium",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 17792.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3201",
+        "lap": 1,
+        "tyre_wear": 0.045,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 504.9983,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23184.1
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 539.5898,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.6
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 545.4551,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3202",
+        "lap": 1,
+        "tyre_wear": 0.045,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 506.7645,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23185.7
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 544.0221,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.9
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 545.2551,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.1
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_dry_s3202",
+        "lap": 1,
+        "tyre_wear": 0.046,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "pit_stops": 0,
+            "completed_laps": 1,
+            "dist_m": 6941.8
+          },
+          {
+            "option": "pit_soft",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "pit_stops": 0,
+            "completed_laps": 1,
+            "dist_m": 6941.8
+          },
+          {
+            "option": "pit_medium",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "pit_stops": 0,
+            "completed_laps": 1,
+            "dist_m": 6941.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3201",
+        "lap": 1,
+        "tyre_wear": 0.048,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 529.6923,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23185.6
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 566.6499,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23186.1
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 568.2495,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.1
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3202",
+        "lap": 1,
+        "tyre_wear": 0.048,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 533.2914,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23185.4
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 569.9158,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.3
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 576.4808,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_dry_s3201",
+        "lap": 2,
+        "tyre_wear": 0.09,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 487.136,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23184.2
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 519.4281,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.2
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 519.8947,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3202",
+        "lap": 2,
+        "tyre_wear": 0.091,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 506.7978,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23183.6
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 543.5222,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.2
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 544.322,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23184.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_wetting_s3201",
+        "lap": 2,
+        "tyre_wear": 0.091,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 504.9316,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23183.8
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 541.3228,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23184.8
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 543.9221,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23183.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3201",
+        "lap": 2,
+        "tyre_wear": 0.095,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 529.7922,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23185.1
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 566.7499,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.7
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 567.6163,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23185.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "parkland_saturated_s3202",
+        "lap": 2,
+        "tyre_wear": 0.095,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 532.9915,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23185.5
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 570.0157,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23186.0
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 573.115,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23183.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3201",
+        "lap": 1,
+        "tyre_wear": 0.061,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.8323,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 667.4253,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.1
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 671.6576,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.1
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3202",
+        "lap": 1,
+        "tyre_wear": 0.061,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 644.6975,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27997.8
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 673.7904,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27999.1
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 676.923,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27997.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3201",
+        "lap": 1,
+        "tyre_wear": 0.062,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 672.3907,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27998.3
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 701.8169,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27999.4
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 708.7819,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.8
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3202",
+        "lap": 1,
+        "tyre_wear": 0.063,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 684.2545,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27998.1
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 712.481,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 716.9799,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3201",
+        "lap": 1,
+        "tyre_wear": 0.064,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 710.0482,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27999.6
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 741.2073,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.7
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 742.8402,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.3
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3202",
+        "lap": 1,
+        "tyre_wear": 0.065,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 722.8784,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27997.7
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 754.1041,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.5
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 758.5364,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27997.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3201",
+        "lap": 2,
+        "tyre_wear": 0.121,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 639.0656,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27997.8
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 668.625,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.8
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 670.4912,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27997.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_dry_s3202",
+        "lap": 2,
+        "tyre_wear": 0.122,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 644.4976,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 673.8904,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27997.7
+          },
+          {
+            "option": "pit_medium",
+            "finished": false,
+            "status": 5,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 27461.3
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3201",
+        "lap": 2,
+        "tyre_wear": 0.124,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 672.1908,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 701.9835,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27999.0
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 705.1494,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_wetting_s3202",
+        "lap": 2,
+        "tyre_wear": 0.126,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 684.0879,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27998.1
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 712.8475,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27999.2
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 714.9803,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27998.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3201",
+        "lap": 2,
+        "tyre_wear": 0.128,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 709.9482,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27997.7
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 741.1406,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27997.5
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 742.0404,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "highland_saturated_s3202",
+        "lap": 2,
+        "tyre_wear": 0.129,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 722.9117,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 27999.5
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 754.0042,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27997.6
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 756.0037,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 27997.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3202",
+        "lap": 1,
+        "tyre_wear": 0.052,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 548.5543,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23214.2
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 589.0444,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.5
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 592.1104,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3201",
+        "lap": 1,
+        "tyre_wear": 0.052,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 553.4531,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23213.5
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 593.1434,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23212.7
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 597.0092,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3201",
+        "lap": 1,
+        "tyre_wear": 0.053,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 582.8126,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23213.5
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 624.3691,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.7
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 625.7021,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.1
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3202",
+        "lap": 1,
+        "tyre_wear": 0.054,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 597.3757,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 638.2657,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.0
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 642.5647,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3202",
+        "lap": 1,
+        "tyre_wear": 0.057,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 633.4336,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23215.2
+          },
+          {
+            "option": "pit_soft",
+            "finished": false,
+            "status": 3,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 22855.7
+          },
+          {
+            "option": "pit_medium",
+            "finished": false,
+            "status": 3,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 22809.7
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3201",
+        "lap": 1,
+        "tyre_wear": 0.056,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 631.6007,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23212.8
+          },
+          {
+            "option": "pit_soft",
+            "finished": false,
+            "status": 3,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 22932.4
+          },
+          {
+            "option": "pit_medium",
+            "finished": false,
+            "status": 3,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 22774.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3202",
+        "lap": 2,
+        "tyre_wear": 0.102,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 548.621,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23214.3
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 589.1777,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 590.6107,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.3
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_dry_s3201",
+        "lap": 2,
+        "tyre_wear": 0.102,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 553.4198,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23213.8
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 593.2434,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.7
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 595.3096,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.5
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3201",
+        "lap": 2,
+        "tyre_wear": 0.105,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 582.7793,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23213.6
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 624.2692,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.3
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 624.9357,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.6
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_wetting_s3202",
+        "lap": 2,
+        "tyre_wear": 0.106,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 597.5757,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23212.9
+          },
+          {
+            "option": "pit_soft",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 637.7992,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.5
+          },
+          {
+            "option": "pit_medium",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 639.9653,
+            "pit_stops": 1,
+            "completed_laps": 4,
+            "dist_m": 23213.2
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3202",
+        "lap": 2,
+        "tyre_wear": 0.112,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 633.4336,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23215.2
+          },
+          {
+            "option": "pit_soft",
+            "finished": false,
+            "status": 3,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 22855.3
+          },
+          {
+            "option": "pit_medium",
+            "finished": false,
+            "status": 3,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 22830.0
+          }
+        ]
+      },
+      {
+        "scenario_id": "crossover_saturated_s3201",
+        "lap": 2,
+        "tyre_wear": 0.111,
+        "gold_option": "stay_out",
+        "pit_helped": false,
+        "outcomes": [
+          {
+            "option": "stay_out",
+            "finished": true,
+            "status": 2,
+            "finish_time_s": 631.7007,
+            "pit_stops": 0,
+            "completed_laps": 4,
+            "dist_m": 23214.2
+          },
+          {
+            "option": "pit_soft",
+            "finished": false,
+            "status": 3,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 22930.0
+          },
+          {
+            "option": "pit_medium",
+            "finished": false,
+            "status": 3,
+            "finish_time_s": null,
+            "pit_stops": 1,
+            "completed_laps": 3,
+            "dist_m": 22862.1
+          }
+        ]
+      }
+    ]
+  }
+}

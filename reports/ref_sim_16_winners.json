@@ -1,0 +1,116 @@
+{
+  "rows": [
+    {
+      "key": "crossover:dry:4",
+      "winner_s": 419.996,
+      "sim_s": 422.883,
+      "diff_s": 2.887,
+      "max_lat_err_m": 2.31
+    },
+    {
+      "key": "crossover:drying:4",
+      "winner_s": 453.638,
+      "sim_s": 458.133,
+      "diff_s": 4.495,
+      "max_lat_err_m": 2.6
+    },
+    {
+      "key": "crossover:saturated:4",
+      "winner_s": 493.329,
+      "sim_s": 496.3,
+      "diff_s": 2.971,
+      "max_lat_err_m": 17.47
+    },
+    {
+      "key": "crossover:variable:4",
+      "winner_s": 435.626,
+      "sim_s": 437.5,
+      "diff_s": 1.874,
+      "max_lat_err_m": 3.32
+    },
+    {
+      "key": "crossover:wetting:4",
+      "winner_s": 426.76,
+      "sim_s": 428.1,
+      "diff_s": 1.34,
+      "max_lat_err_m": 2.65
+    },
+    {
+      "key": "highland:dry:4",
+      "winner_s": 448.921,
+      "sim_s": 451.183,
+      "diff_s": 2.262,
+      "max_lat_err_m": 3.02
+    },
+    {
+      "key": "highland:drying:4",
+      "winner_s": 519.492,
+      "sim_s": 520.867,
+      "diff_s": 1.375,
+      "max_lat_err_m": 1.25
+    },
+    {
+      "key": "highland:saturated:4",
+      "winner_s": 595.316,
+      "sim_s": 598.833,
+      "diff_s": 3.517,
+      "max_lat_err_m": 2.82
+    },
+    {
+      "key": "highland:variable:4",
+      "winner_s": 457.309,
+      "sim_s": 458.567,
+      "diff_s": 1.257,
+      "max_lat_err_m": 1.66
+    },
+    {
+      "key": "highland:wetting:4",
+      "winner_s": 455.406,
+      "sim_s": 456.217,
+      "diff_s": 0.811,
+      "max_lat_err_m": 4.16
+    },
+    {
+      "key": "parkland:damp:4",
+      "winner_s": 427.042,
+      "sim_s": 429.5,
+      "diff_s": 2.458,
+      "max_lat_err_m": 2.73
+    },
+    {
+      "key": "parkland:dry:4",
+      "winner_s": 374.18,
+      "sim_s": 375.417,
+      "diff_s": 1.236,
+      "max_lat_err_m": 1.79
+    },
+    {
+      "key": "parkland:drying:4",
+      "winner_s": 338.898,
+      "sim_s": 340.867,
+      "diff_s": 1.968,
+      "max_lat_err_m": 2.42
+    },
+    {
+      "key": "parkland:saturated:4",
+      "winner_s": 375.097,
+      "sim_s": 375.733,
+      "diff_s": 0.637,
+      "max_lat_err_m": 2.74
+    },
+    {
+      "key": "parkland:variable:4",
+      "winner_s": 354.354,
+      "sim_s": 355.5,
+      "diff_s": 1.146,
+      "max_lat_err_m": 2.66
+    },
+    {
+      "key": "parkland:wetting:4",
+      "winner_s": 368.234,
+      "sim_s": 370.617,
+      "diff_s": 2.382,
+      "max_lat_err_m": 3.11
+    }
+  ]
+}

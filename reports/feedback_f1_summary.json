@@ -1,0 +1,188 @@
+{
+  "generated_at_utc": "2026-11-25T08:43:51.066990+00:00",
+  "protocol": "F1_own_run_factual_telemetry_vs_matched_no_outcome_control",
+  "driver_weights": "jev_rl_v7.mapdata.npz",
+  "weights_updated": false,
+  "external_agx_gap_included_in_feedback": false,
+  "n_units": 45,
+  "n_cells": 9,
+  "seed_pairs": [
+    [
+      1001,
+      2001
+    ],
+    [
+      1002,
+      2002
+    ],
+    [
+      1003,
+      2003
+    ],
+    [
+      1004,
+      2004
+    ],
+    [
+      1005,
+      2005
+    ]
+  ],
+  "wtl_tolerance_s": 0.5,
+  "wall_s": 1500.32,
+  "models": {
+    "frontier-llm": {
+      "n_units": 45,
+      "r1_support_finishes": 33,
+      "control_finishes": 31,
+      "feedback_finishes": 33,
+      "rescued_failures": 2,
+      "newly_introduced_failures": 0,
+      "net_completion_delta": 0.0444,
+      "wtl_feedback_vs_control": {
+        "wins": 4,
+        "ties_both_finished": 29,
+        "ties_both_failed": 12,
+        "losses": 0
+      },
+      "common_finishers_n": 31,
+      "paired_mean_delta_s": -0.12,
+      "paired_median_delta_s": 0.0,
+      "control_avg_time_finishers_s": 639.0,
+      "feedback_avg_time_finishers_s": 631.67,
+      "control_pits_total": 0,
+      "feedback_pits_total": 0,
+      "control_invalid_outputs": 0,
+      "feedback_invalid_outputs": 0,
+      "behavior_changes": {
+        "build_changed_units": 3,
+        "mode_changed_units": 5,
+        "pit_changed_units": 3
+      },
+      "r1_conditional": {
+        "r1_failed_units": 12,
+        "r1_failed_repaired_in_r2_fb": 3,
+        "r1_passed_units": 33,
+        "r1_passed_preserved_in_r2_fb": 30
+      },
+      "control_mode_counts": {
+        "balanced": 79,
+        "wet_caution": 80,
+        "push_max": 1
+      },
+      "feedback_mode_counts": {
+        "balanced": 77,
+        "wet_caution": 84,
+        "push_max": 3
+      },
+      "label": "frontier-llm (deepseek-v4.1-flash-1017)",
+      "role": "Frozen decision model; in-context F1 factual feedback vs matched no-outcome control",
+      "is_non_adaptive_reference": false,
+      "wall_s": 908.69,
+      "max_prompt_tokens_seen": null,
+      "api_usage": {
+        "calls": 874,
+        "prompt_tokens": 347358,
+        "completion_tokens": 6992,
+        "latency_p50_ms": 638.5
+      }
+    },
+    "self-jev-minilm": {
+      "n_units": 45,
+      "r1_support_finishes": 39,
+      "control_finishes": 25,
+      "feedback_finishes": 37,
+      "rescued_failures": 14,
+      "newly_introduced_failures": 2,
+      "net_completion_delta": 0.2667,
+      "wtl_feedback_vs_control": {
+        "wins": 32,
+        "ties_both_finished": 1,
+        "ties_both_failed": 6,
+        "losses": 6
+      },
+      "common_finishers_n": 23,
+      "paired_mean_delta_s": -43.81,
+      "paired_median_delta_s": -49.75,
+      "control_avg_time_finishers_s": 633.87,
+      "feedback_avg_time_finishers_s": 637.93,
+      "control_pits_total": 84,
+      "feedback_pits_total": 23,
+      "control_invalid_outputs": 0,
+      "feedback_invalid_outputs": 0,
+      "behavior_changes": {
+        "build_changed_units": 10,
+        "mode_changed_units": 10,
+        "pit_changed_units": 41
+      },
+      "r1_conditional": {
+        "r1_failed_units": 6,
+        "r1_failed_repaired_in_r2_fb": 0,
+        "r1_passed_units": 39,
+        "r1_passed_preserved_in_r2_fb": 37
+      },
+      "control_mode_counts": {
+        "wet_caution": 180
+      },
+      "feedback_mode_counts": {
+        "wet_caution": 163,
+        "balanced": 13
+      },
+      "label": "self-jev-minilm",
+      "role": "Frozen decision model; in-context F1 factual feedback vs matched no-outcome control",
+      "is_non_adaptive_reference": false,
+      "wall_s": 395.22,
+      "max_prompt_tokens_seen": 279
+    },
+    "nn-combo": {
+      "label": "nn-combo",
+      "role": "N1: Frozen build-only specialist; no previous-race feedback input; no weight updates",
+      "is_non_adaptive_reference": true,
+      "n_units": 45,
+      "query_finishes": 35,
+      "query_avg_time_finishers_s": 639.96,
+      "pits_total": 0,
+      "mode_counts": {
+        "balanced": 155
+      },
+      "build_counts": {
+        "damp_mid_downforce": 40,
+        "wet_high_downforce": 5
+      },
+      "wall_s": 78.57
+    },
+    "driver_only": {
+      "label": "driver_only",
+      "role": "Frozen baseline (dry_balanced + balanced + stay_out)",
+      "is_non_adaptive_reference": true,
+      "n_units": 45,
+      "query_finishes": 38,
+      "query_avg_time_finishers_s": 624.31,
+      "pits_total": 0,
+      "mode_counts": {
+        "balanced": 166
+      },
+      "build_counts": {
+        "dry_balanced": 45
+      },
+      "wall_s": 59.13
+    },
+    "track_rule": {
+      "label": "track_rule",
+      "role": "Frozen strong reference (Parkland->balanced; Highland/Crossover->push_max)",
+      "is_non_adaptive_reference": true,
+      "n_units": 45,
+      "query_finishes": 37,
+      "query_avg_time_finishers_s": 612.44,
+      "pits_total": 0,
+      "mode_counts": {
+        "balanced": 46,
+        "push_max": 118
+      },
+      "build_counts": {
+        "dry_balanced": 45
+      },
+      "wall_s": 58.67
+    }
+  }
+}

@@ -1,0 +1,2672 @@
+{
+  "evaluator_version": "pace-eval-v2+driver-loop",
+  "reference_version": "agx-winner-times-v1",
+  "required_laps": 4,
+  "driver_weights": "jev_rl_v7.mapdata.npz",
+  "scenarios_n": 9,
+  "wall_s": 668.62,
+  "models": {
+    "driver_only": {
+      "scenarios_n": 9,
+      "decision_calls_total": 63,
+      "pit_stops_total": 0,
+      "mode_counts": {
+        "balanced": 36
+      },
+      "external_agx_reference": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 9,
+        "classified_rate_among_known": 1.0,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 0,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 9,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 146.02,
+        "min_gap_s_among_comparable_finishes": 95.74,
+        "median_gap_pct_among_comparable_finishes": 34.63,
+        "min_gap_pct_among_comparable_finishes": 20.53,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {}
+      },
+      "same_scenario_best_model": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 9,
+        "classified_rate_among_known": 1.0,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 0,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 9,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 7,
+          "le_1pct": 8,
+          "le_5pct": 9,
+          "le_10pct": 9,
+          "le_20pct": 9
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.7778,
+          "le_1pct": 0.8889,
+          "le_5pct": 1.0,
+          "le_10pct": 1.0,
+          "le_20pct": 1.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.7778,
+            0.7778
+          ],
+          "le_1pct": [
+            0.8889,
+            0.8889
+          ],
+          "le_5pct": [
+            1.0,
+            1.0
+          ],
+          "le_10pct": [
+            1.0,
+            1.0
+          ],
+          "le_20pct": [
+            1.0,
+            1.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 0.0,
+        "min_gap_s_among_comparable_finishes": 0.0,
+        "median_gap_pct_among_comparable_finishes": 0.0,
+        "min_gap_pct_among_comparable_finishes": 0.0,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {}
+      },
+      "runs": [
+        {
+          "scenario_id": "parkland_dry",
+          "track": "parkland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 485.77,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_wetting",
+          "track": "parkland",
+          "weather_regime": "Wetting",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 508.297,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_saturated",
+          "track": "parkland",
+          "weather_regime": "Saturated",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 535.224,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_dry",
+          "track": "highland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 645.064,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_wetting",
+          "track": "highland",
+          "weather_regime": "Wetting",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 698.418,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_saturated",
+          "track": "highland",
+          "weather_regime": "Saturated",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 741.341,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_dry",
+          "track": "crossover",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 562.084,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_wetting",
+          "track": "crossover",
+          "weather_regime": "Wetting",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 606.84,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_saturated",
+          "track": "crossover",
+          "weather_regime": "Saturated",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 651.463,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        }
+      ],
+      "avg_finish_time_s": 603.83,
+      "mean_delta_vs_driver_only_s": 0.0,
+      "median_delta_vs_driver_only_s": 0.0,
+      "wtl_vs_driver_only": {
+        "wins": 0,
+        "ties": 9,
+        "losses": 0,
+        "tolerance_s": 0.5
+      }
+    },
+    "if_else_baseline": {
+      "scenarios_n": 9,
+      "decision_calls_total": 60,
+      "pit_stops_total": 0,
+      "mode_counts": {
+        "push_max": 13,
+        "balanced": 4,
+        "wet_caution": 17
+      },
+      "external_agx_reference": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 7,
+        "classified_rate_among_known": 0.7778,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 2,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 7,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 1
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.1111
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.1111,
+            0.1111
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 175.15,
+        "min_gap_s_among_comparable_finishes": 85.15,
+        "median_gap_pct_among_comparable_finishes": 42.81,
+        "min_gap_pct_among_comparable_finishes": 18.26,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 2
+        }
+      },
+      "same_scenario_best_model": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 7,
+        "classified_rate_among_known": 0.7778,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 2,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 7,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 2,
+          "le_1pct": 3,
+          "le_5pct": 7,
+          "le_10pct": 7,
+          "le_20pct": 7
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.2222,
+          "le_1pct": 0.3333,
+          "le_5pct": 0.7778,
+          "le_10pct": 0.7778,
+          "le_20pct": 0.7778
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.2222,
+            0.2222
+          ],
+          "le_1pct": [
+            0.3333,
+            0.3333
+          ],
+          "le_5pct": [
+            0.7778,
+            0.7778
+          ],
+          "le_10pct": [
+            0.7778,
+            0.7778
+          ],
+          "le_20pct": [
+            0.7778,
+            0.7778
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 8.77,
+        "min_gap_s_among_comparable_finishes": 0.0,
+        "median_gap_pct_among_comparable_finishes": 1.37,
+        "min_gap_pct_among_comparable_finishes": 0.0,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 2
+        }
+      },
+      "runs": [
+        {
+          "scenario_id": "parkland_dry",
+          "track": "parkland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 5,
+          "finished": false,
+          "completed_laps": 1,
+          "finish_time_s": null,
+          "pit_stops": 0,
+          "mode_history": [
+            "push_max",
+            "push_max"
+          ],
+          "pit_calls": [
+            "stay_out"
+          ],
+          "decision_calls": 4
+        },
+        {
+          "scenario_id": "parkland_wetting",
+          "track": "parkland",
+          "weather_regime": "Wetting",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 512.43,
+          "pit_stops": 0,
+          "mode_history": [
+            "push_max",
+            "balanced",
+            "balanced",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_saturated",
+          "track": "parkland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 550.254,
+          "pit_stops": 0,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_dry",
+          "track": "highland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 641.498,
+          "pit_stops": 0,
+          "mode_history": [
+            "push_max",
+            "push_max",
+            "push_max",
+            "push_max"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_wetting",
+          "track": "highland",
+          "weather_regime": "Wetting",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 707.982,
+          "pit_stops": 0,
+          "mode_history": [
+            "push_max",
+            "balanced",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_saturated",
+          "track": "highland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 765.201,
+          "pit_stops": 0,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_dry",
+          "track": "crossover",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 551.487,
+          "pit_stops": 0,
+          "mode_history": [
+            "push_max",
+            "push_max",
+            "push_max",
+            "push_max"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_wetting",
+          "track": "crossover",
+          "weather_regime": "Wetting",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 615.605,
+          "pit_stops": 0,
+          "mode_history": [
+            "push_max",
+            "balanced",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_saturated",
+          "track": "crossover",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 0,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        }
+      ],
+      "avg_finish_time_s": 620.64,
+      "mean_delta_vs_driver_only_s": 6.74,
+      "median_delta_vs_driver_only_s": 8.77,
+      "wtl_vs_driver_only": {
+        "wins": 2,
+        "ties": 0,
+        "losses": 7,
+        "tolerance_s": 0.5
+      }
+    },
+    "self-jev-minilm": {
+      "scenarios_n": 9,
+      "decision_calls_total": 63,
+      "pit_stops_total": 18,
+      "mode_counts": {
+        "wet_caution": 36
+      },
+      "external_agx_reference": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 4,
+        "classified_rate_among_known": 0.4444,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 5,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 4,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 243.83,
+        "min_gap_s_among_comparable_finishes": 184.44,
+        "median_gap_pct_among_comparable_finishes": 60.72,
+        "min_gap_pct_among_comparable_finishes": 47.87,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 5
+        }
+      },
+      "same_scenario_best_model": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 4,
+        "classified_rate_among_known": 0.4444,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 5,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 4,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 4
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.4444
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.4444,
+            0.4444
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 89.84,
+        "min_gap_s_among_comparable_finishes": 83.98,
+        "median_gap_pct_among_comparable_finishes": 17.97,
+        "min_gap_pct_among_comparable_finishes": 13.23,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 5
+        }
+      },
+      "runs": [
+        {
+          "scenario_id": "parkland_dry",
+          "track": "parkland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 569.749,
+          "pit_stops": 2,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_wetting",
+          "track": "parkland",
+          "weather_regime": "Wetting",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 603.141,
+          "pit_stops": 2,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_saturated",
+          "track": "parkland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 637.166,
+          "pit_stops": 2,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_dry",
+          "track": "highland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 726.344,
+          "pit_stops": 2,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_wetting",
+          "track": "highland",
+          "weather_regime": "Wetting",
+          "chosen_build": "wet_high_downforce",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 2,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_saturated",
+          "track": "highland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 2,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_dry",
+          "track": "crossover",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 2,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_wetting",
+          "track": "crossover",
+          "weather_regime": "Wetting",
+          "chosen_build": "wet_high_downforce",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 2,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_saturated",
+          "track": "crossover",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 2,
+          "mode_history": [
+            "wet_caution",
+            "wet_caution",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        }
+      ],
+      "avg_finish_time_s": 634.1,
+      "mean_delta_vs_driver_only_s": 90.51,
+      "median_delta_vs_driver_only_s": 94.84,
+      "wtl_vs_driver_only": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 9,
+        "tolerance_s": 0.5
+      }
+    },
+    "kev-0.8b": {
+      "scenarios_n": 9,
+      "decision_calls_total": 63,
+      "pit_stops_total": 0,
+      "mode_counts": {
+        "balanced": 36
+      },
+      "external_agx_reference": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 9,
+        "classified_rate_among_known": 1.0,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 0,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 9,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 146.72,
+        "min_gap_s_among_comparable_finishes": 95.74,
+        "median_gap_pct_among_comparable_finishes": 37.36,
+        "min_gap_pct_among_comparable_finishes": 20.53,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {}
+      },
+      "same_scenario_best_model": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 9,
+        "classified_rate_among_known": 1.0,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 0,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 9,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 1,
+          "le_1pct": 7,
+          "le_5pct": 9,
+          "le_10pct": 9,
+          "le_20pct": 9
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.1111,
+          "le_1pct": 0.7778,
+          "le_5pct": 1.0,
+          "le_10pct": 1.0,
+          "le_20pct": 1.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.1111,
+            0.1111
+          ],
+          "le_1pct": [
+            0.7778,
+            0.7778
+          ],
+          "le_5pct": [
+            1.0,
+            1.0
+          ],
+          "le_10pct": [
+            1.0,
+            1.0
+          ],
+          "le_20pct": [
+            1.0,
+            1.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 3.03,
+        "min_gap_s_among_comparable_finishes": 0.0,
+        "median_gap_pct_among_comparable_finishes": 0.5,
+        "min_gap_pct_among_comparable_finishes": 0.0,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {}
+      },
+      "runs": [
+        {
+          "scenario_id": "parkland_dry",
+          "track": "parkland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 485.77,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_wetting",
+          "track": "parkland",
+          "weather_regime": "Wetting",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 518.595,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_saturated",
+          "track": "parkland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 535.924,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_dry",
+          "track": "highland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 645.064,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_wetting",
+          "track": "highland",
+          "weather_regime": "Wetting",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 703.483,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_saturated",
+          "track": "highland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 742.04,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_dry",
+          "track": "crossover",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 562.084,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_wetting",
+          "track": "crossover",
+          "weather_regime": "Wetting",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 609.873,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_saturated",
+          "track": "crossover",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 651.862,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        }
+      ],
+      "avg_finish_time_s": 606.08,
+      "mean_delta_vs_driver_only_s": 2.24,
+      "median_delta_vs_driver_only_s": 0.7,
+      "wtl_vs_driver_only": {
+        "wins": 0,
+        "ties": 4,
+        "losses": 5,
+        "tolerance_s": 0.5
+      }
+    },
+    "qwen-0.8b-ll": {
+      "scenarios_n": 9,
+      "decision_calls_total": 63,
+      "pit_stops_total": 0,
+      "mode_counts": {
+        "conserve_tyres": 36
+      },
+      "external_agx_reference": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 8,
+        "classified_rate_among_known": 0.8889,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 1,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 8,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 163.37,
+        "min_gap_s_among_comparable_finishes": 102.16,
+        "median_gap_pct_among_comparable_finishes": 40.18,
+        "min_gap_pct_among_comparable_finishes": 22.93,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 1
+        }
+      },
+      "same_scenario_best_model": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 8,
+        "classified_rate_among_known": 0.8889,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 1,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 8,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 2,
+          "le_5pct": 8,
+          "le_10pct": 8,
+          "le_20pct": 8
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.2222,
+          "le_5pct": 0.8889,
+          "le_10pct": 0.8889,
+          "le_20pct": 0.8889
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.2222,
+            0.2222
+          ],
+          "le_5pct": [
+            0.8889,
+            0.8889
+          ],
+          "le_10pct": [
+            0.8889,
+            0.8889
+          ],
+          "le_20pct": [
+            0.8889,
+            0.8889
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 12.36,
+        "min_gap_s_among_comparable_finishes": 1.7,
+        "median_gap_pct_among_comparable_finishes": 1.72,
+        "min_gap_pct_among_comparable_finishes": 0.35,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 1
+        }
+      },
+      "runs": [
+        {
+          "scenario_id": "parkland_dry",
+          "track": "parkland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 487.469,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_wetting",
+          "track": "parkland",
+          "weather_regime": "Wetting",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 511.863,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_saturated",
+          "track": "parkland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 543.122,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_dry",
+          "track": "highland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 654.662,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_wetting",
+          "track": "highland",
+          "weather_regime": "Wetting",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 710.448,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_saturated",
+          "track": "highland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 754.037,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_dry",
+          "track": "crossover",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 573.248,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_wetting",
+          "track": "crossover",
+          "weather_regime": "Wetting",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 620.937,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_saturated",
+          "track": "crossover",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        }
+      ],
+      "avg_finish_time_s": 606.97,
+      "mean_delta_vs_driver_only_s": 9.09,
+      "median_delta_vs_driver_only_s": 11.16,
+      "wtl_vs_driver_only": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 9,
+        "tolerance_s": 0.5
+      }
+    },
+    "qwen-0.8b-json": {
+      "scenarios_n": 9,
+      "decision_calls_total": 63,
+      "pit_stops_total": 18,
+      "mode_counts": {
+        "balanced": 36
+      },
+      "external_agx_reference": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 6,
+        "classified_rate_among_known": 0.6667,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 3,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 6,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 230.63,
+        "min_gap_s_among_comparable_finishes": 179.17,
+        "median_gap_pct_among_comparable_finishes": 57.03,
+        "min_gap_pct_among_comparable_finishes": 39.49,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 3
+        }
+      },
+      "same_scenario_best_model": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 6,
+        "classified_rate_among_known": 0.6667,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 3,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 6,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 1,
+          "le_20pct": 6
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.1111,
+          "le_20pct": 0.6667
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.1111,
+            0.1111
+          ],
+          "le_20pct": [
+            0.6667,
+            0.6667
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 81.08,
+        "min_gap_s_among_comparable_finishes": 61.25,
+        "median_gap_pct_among_comparable_finishes": 16.22,
+        "min_gap_pct_among_comparable_finishes": 8.77,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 3
+        }
+      },
+      "runs": [
+        {
+          "scenario_id": "parkland_dry",
+          "track": "parkland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 564.484,
+          "pit_stops": 2,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_wetting",
+          "track": "parkland",
+          "weather_regime": "Wetting",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 591.744,
+          "pit_stops": 2,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_saturated",
+          "track": "parkland",
+          "weather_regime": "Saturated",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 622.17,
+          "pit_stops": 2,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_dry",
+          "track": "highland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 706.716,
+          "pit_stops": 2,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_wetting",
+          "track": "highland",
+          "weather_regime": "Wetting",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 759.669,
+          "pit_stops": 2,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_saturated",
+          "track": "highland",
+          "weather_regime": "Saturated",
+          "chosen_build": "dry_balanced",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 2,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_dry",
+          "track": "crossover",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 650.496,
+          "pit_stops": 2,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_wetting",
+          "track": "crossover",
+          "weather_regime": "Wetting",
+          "chosen_build": "dry_balanced",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 2,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_saturated",
+          "track": "crossover",
+          "weather_regime": "Saturated",
+          "chosen_build": "dry_balanced",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 2,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_soft",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        }
+      ],
+      "avg_finish_time_s": 649.21,
+      "mean_delta_vs_driver_only_s": 76.74,
+      "median_delta_vs_driver_only_s": 83.45,
+      "wtl_vs_driver_only": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 9,
+        "tolerance_s": 0.5
+      }
+    },
+    "best_observed_fixed_mode": {
+      "label": "Best observed fixed mode (fixed build, no pits)",
+      "is_reference_row": true,
+      "scenarios_n": 9,
+      "avg_finish_time_s": 596.14,
+      "mean_delta_vs_driver_only_s": -7.63,
+      "wtl_vs_driver_only": {
+        "wins": 6,
+        "ties": 3,
+        "losses": 0,
+        "tolerance_s": 0.5
+      },
+      "pit_stops_total": 0,
+      "mode_counts": {
+        "balanced (Parkland)": 12,
+        "push_max (Highland/Crossover)": 24
+      },
+      "external_agx_reference": {
+        "valid_full_distance_gap_n": 9,
+        "median_gap_s_among_comparable_finishes": 134.257,
+        "median_gap_pct_among_comparable_finishes": 34.42
+      }
+    },
+    "nn-combo": {
+      "label": "nn-combo (car-build-nn + jev_rl)",
+      "scenarios_n": 9,
+      "decision_calls_total": 9,
+      "pit_stops_total": 0,
+      "mode_counts": {
+        "balanced": 34
+      },
+      "avg_finish_time_s": 623.29,
+      "mean_delta_vs_driver_only_s": 4.7,
+      "median_delta_vs_driver_only_s": 4.67,
+      "wtl_vs_driver_only": {
+        "wins": 0,
+        "ties": 1,
+        "losses": 8,
+        "tolerance_s": 0.5
+      },
+      "external_agx_reference": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 8,
+        "classified_rate_among_known": 0.8889,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 1,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 8,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 155.75,
+        "min_gap_s_among_comparable_finishes": 98.84,
+        "median_gap_pct_among_comparable_finishes": 40.07,
+        "min_gap_pct_among_comparable_finishes": 21.2,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 1
+        }
+      },
+      "runs": [
+        {
+          "scenario_id": "parkland_dry",
+          "track": "parkland",
+          "weather_regime": "Dry",
+          "chosen_build": "damp_mid_downforce",
+          "status": 5,
+          "finished": false,
+          "completed_laps": 1,
+          "finish_time_s": null,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out"
+          ],
+          "decision_calls": 4
+        },
+        {
+          "scenario_id": "parkland_wetting",
+          "track": "parkland",
+          "weather_regime": "Wetting",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 518.228,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "parkland_saturated",
+          "track": "parkland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 535.924,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_dry",
+          "track": "highland",
+          "weather_regime": "Dry",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 655.495,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_wetting",
+          "track": "highland",
+          "weather_regime": "Wetting",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 703.75,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_saturated",
+          "track": "highland",
+          "weather_regime": "Saturated",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 746.006,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_dry",
+          "track": "crossover",
+          "weather_regime": "Dry",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 565.184,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_wetting",
+          "track": "crossover",
+          "weather_regime": "Wetting",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 610.039,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_saturated",
+          "track": "crossover",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 651.729,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        }
+      ]
+    },
+    "m2-qwen3.5-0.8b-lora-s42": {
+      "label": "m2-qwen3.5-0.8b-lora-s42",
+      "scenarios_n": 9,
+      "decision_calls_total": 59,
+      "pit_stops_total": 3,
+      "mode_counts": {
+        "balanced": 20,
+        "conserve_tyres": 7,
+        "wet_caution": 6
+      },
+      "avg_finish_time_s": 618.17,
+      "mean_delta_vs_driver_only_s": 7.97,
+      "median_delta_vs_driver_only_s": 9.73,
+      "wtl_vs_driver_only": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 9,
+        "tolerance_s": 0.5
+      },
+      "external_agx_reference": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 4,
+        "classified_rate_among_known": 0.4444,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 5,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 4,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 184.0,
+        "min_gap_s_among_comparable_finishes": 98.18,
+        "median_gap_pct_among_comparable_finishes": 44.53,
+        "min_gap_pct_among_comparable_finishes": 21.05,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 5
+        }
+      },
+      "same_scenario_best_model": {
+        "total_attempts": 9,
+        "classification_known_n": 9,
+        "classified_n": 4,
+        "classified_rate_among_known": 0.4444,
+        "classification_by_source": {
+          "official": 9
+        },
+        "weather_provenance_counts": {
+          "official": 9
+        },
+        "reference_applicable_n": 9,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 5,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 4,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 1,
+          "le_5pct": 4,
+          "le_10pct": 4,
+          "le_20pct": 4
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.1111,
+          "le_5pct": 0.4444,
+          "le_10pct": 0.4444,
+          "le_20pct": 0.4444
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.1111,
+            0.1111
+          ],
+          "le_5pct": [
+            0.4444,
+            0.4444
+          ],
+          "le_10pct": [
+            0.4444,
+            0.4444
+          ],
+          "le_20pct": [
+            0.4444,
+            0.4444
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 13.16,
+        "min_gap_s_among_comparable_finishes": 2.3,
+        "median_gap_pct_among_comparable_finishes": 2.22,
+        "min_gap_pct_among_comparable_finishes": 0.43,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 5
+        }
+      },
+      "runs": [
+        {
+          "scenario_id": "parkland_dry",
+          "track": "parkland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 5,
+          "finished": false,
+          "completed_laps": 2,
+          "finish_time_s": null,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 6
+        },
+        {
+          "scenario_id": "parkland_wetting",
+          "track": "parkland",
+          "weather_regime": "Wetting",
+          "chosen_build": "damp_mid_downforce",
+          "status": 5,
+          "finished": false,
+          "completed_laps": 1,
+          "finish_time_s": null,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "pit_medium"
+          ],
+          "decision_calls": 4
+        },
+        {
+          "scenario_id": "parkland_saturated",
+          "track": "parkland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 537.524,
+          "pit_stops": 0,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_dry",
+          "track": "highland",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 654.795,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_wetting",
+          "track": "highland",
+          "weather_regime": "Wetting",
+          "chosen_build": "damp_mid_downforce",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 715.847,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "highland_saturated",
+          "track": "highland",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 1,
+          "mode_history": [
+            "wet_caution",
+            "conserve_tyres",
+            "wet_caution",
+            "conserve_tyres"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_dry",
+          "track": "crossover",
+          "weather_regime": "Dry",
+          "chosen_build": "dry_balanced",
+          "status": 2,
+          "finished": true,
+          "completed_laps": 4,
+          "finish_time_s": 564.517,
+          "pit_stops": 0,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_wetting",
+          "track": "crossover",
+          "weather_regime": "Wetting",
+          "chosen_build": "damp_mid_downforce",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 1,
+          "mode_history": [
+            "balanced",
+            "balanced",
+            "wet_caution",
+            "wet_caution"
+          ],
+          "pit_calls": [
+            "pit_medium",
+            "stay_out"
+          ],
+          "decision_calls": 7
+        },
+        {
+          "scenario_id": "crossover_saturated",
+          "track": "crossover",
+          "weather_regime": "Saturated",
+          "chosen_build": "wet_high_downforce",
+          "status": 3,
+          "finished": false,
+          "completed_laps": 3,
+          "finish_time_s": null,
+          "pit_stops": 1,
+          "mode_history": [
+            "conserve_tyres",
+            "conserve_tyres",
+            "conserve_tyres",
+            "balanced"
+          ],
+          "pit_calls": [
+            "stay_out",
+            "pit_soft"
+          ],
+          "decision_calls": 7
+        }
+      ]
+    }
+  }
+}

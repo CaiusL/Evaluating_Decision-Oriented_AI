@@ -1,0 +1,75 @@
+milestone_id: racing_engineer_v1
+schema_version: racing_engineer_v1
+objective_version: completion_then_time_v1
+
+frozen_environment:
+  driver_weights: models/jev_rl_v7.mapdata.npz
+  physics_config: self_jev/sim/calibrated_params.json
+  laps_total: 4
+  dt_s: 0.03333333333333333
+  pit_transit_and_service_s: 35.766
+  wtl_tolerance_s: 0.50
+
+action_space:
+  builds:
+    - dry_low_drag
+    - dry_balanced
+    - damp_mid_downforce
+    - wet_high_downforce
+  pace_modes:
+    - push_max
+    - balanced
+    - conserve_tyres
+    - wet_caution
+  pit_calls:
+    - stay_out
+    - pit_soft
+    - pit_medium
+  staged_rollout:
+    stage_a: builds_only_with_reference_pace_and_stay_out
+    stage_b: builds_plus_pace_with_stay_out
+    stage_c: enable_pits_only_if_counterfactual_audit_shows_net_benefit
+
+fallback_policy:
+  id: driver_only_v1
+  build: dry_balanced
+  pace: balanced
+  pit: stay_out
+
+seed_lineage:
+  excluded_prior_seeds:
+    track_rule_confirm_v2: [101, 202, 303, 404, 505]
+    f1_support_seed_a: [1001, 1002, 1003, 1004, 1005]
+  historical_regression_seeds: [2001, 2002, 2003, 2004, 2005]
+  prompt_bridge_dev_seeds: [3101, 3102, 3103]
+  train_seeds_start: 3201
+  train_seeds_count: 20
+  dev_seeds_start: 3301
+  dev_seeds_count: 10
+  cal_seeds_start: 3401
+  cal_seeds_count: 10
+  confirm_seeds_start: 3501
+  confirm_seeds_count: 20
+
+gates:
+  historical_45_pit_free:
+    min_finishes: 38
+    max_completion_regressions_vs_driver_only: 1
+    max_mean_paired_delta_vs_driver_only_s: -5.0
+    max_mean_paired_delta_vs_track_rule_s: 0.0
+    max_illegal_actions: 0
+    max_pit_stops: 0
+  fresh_confirmation_pit_free:
+    min_completion_diff_pp: 0.0
+    min_completion_ci95_lower_pp: -5.0
+    max_mean_delta_vs_driver_only_s: -5.0
+    max_ci95_upper_vs_driver_only_s: 0.0
+    max_mean_delta_vs_track_rule_s: 0.0
+    max_ci95_upper_vs_track_rule_s: 2.0
+
+protected_baselines:
+  - reports/feedback_f1_summary.json
+  - reports/feedback_f1_v2_summary.json
+  - reports/m2_v5/
+  - reports/race_engineer_v2_summary.json
+ui_display_label: self-jev-minilm

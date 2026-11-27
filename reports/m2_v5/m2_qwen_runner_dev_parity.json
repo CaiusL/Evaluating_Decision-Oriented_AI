@@ -1,0 +1,21 @@
+{
+  "model": "m2-qwen3.5-0.8b-lora-s42",
+  "backend": "torch-cpu",
+  "dtype": "base=float32+lora=float32",
+  "temperature": 2.02,
+  "letter_ids": [
+    357,
+    417,
+    351,
+    414,
+    458
+  ],
+  "load_s": 1.41,
+  "fixtures_n": 16,
+  "prompt_serialization_exact_match": true,
+  "orig_correct": "16/16",
+  "swapped_correct": "16/16",
+  "order_flips": "0/16",
+  "latency_p50_ms": 4029.9,
+  "fail_fast_missing_adapter_passed": true
+}

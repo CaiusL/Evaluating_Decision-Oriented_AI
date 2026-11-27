@@ -1,0 +1,142 @@
+{
+  "protocol": "Bounded_Option_D_MiniLM_Holdout_600_Supplement",
+  "generated_at_utc": "2026-11-26T12:02:03.829790+00:00",
+  "role": "Additional frozen off-the-shelf reference (not a teacher-trained student)",
+  "checkpoint": {
+    "hf_model_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "local_dir": "models/ms-marco-MiniLM-L6-v2",
+    "config_sha256_prefix": "380e02c93f431831",
+    "total_params": 22713601,
+    "device": "cpu",
+    "max_length": 512,
+    "cal_max_tokens_seen": 432,
+    "holdout_max_tokens_seen": 403
+  },
+  "splits": {
+    "calibrate_180_sha256_prefix": "8c8f19e4dcbcb59a",
+    "holdout_600_sha256_prefix": "3782d9f6ba4a4164"
+  },
+  "temperature_fitted_on_cal_180": 6.15,
+  "cal_180_calibrated": {
+    "n": 180,
+    "temperature": 6.15,
+    "acc_orig": 0.17222222222222222,
+    "acc_swapped": 0.17222222222222222,
+    "order_flip_rate": 0.0,
+    "order_flips": 0,
+    "nll": 1.6142953753449887,
+    "ece": 0.08083148698012034,
+    "aurc": 0.8064924046216673,
+    "error_auroc": 0.5938514830049795,
+    "abstain_acc": 0.2631578947368421,
+    "non_abstain_acc": 0.14788732394366197,
+    "by_bucket": {
+      "api_routing": 0.11363636363636363,
+      "engineering_tradeoff": 0.17391304347826086,
+      "incident_triage": 0.2222222222222222,
+      "release_gate": 0.17777777777777778
+    },
+    "by_band": {
+      "clean": 0.15671641791044777,
+      "wrapped": 0.21739130434782608
+    },
+    "latency_p50_ms": 33.93891709856689,
+    "latency_p95_ms": 49.685222841799245
+  },
+  "holdout_600_uncalibrated": {
+    "n": 600,
+    "temperature": 1.0,
+    "acc_orig": 0.17833333333333334,
+    "acc_swapped": 0.17833333333333334,
+    "order_flip_rate": 0.0,
+    "order_flips": 0,
+    "nll": 2.814942289324587,
+    "ece": 0.3780952209234238,
+    "aurc": 0.826061094820703,
+    "error_auroc": 0.515497336543383,
+    "abstain_acc": 0.1796875,
+    "non_abstain_acc": 0.17796610169491525,
+    "by_bucket": {
+      "api_routing": 0.18666666666666668,
+      "engineering_tradeoff": 0.14,
+      "incident_triage": 0.21333333333333335,
+      "release_gate": 0.17333333333333334
+    },
+    "by_band": {
+      "clean": 0.18080357142857142,
+      "wrapped": 0.17105263157894737
+    },
+    "latency_p50_ms": 32.14977099560201,
+    "latency_p95_ms": 43.17199229262769
+  },
+  "holdout_600_calibrated": {
+    "n": 600,
+    "temperature": 6.15,
+    "acc_orig": 0.17833333333333334,
+    "acc_swapped": 0.17833333333333334,
+    "order_flip_rate": 0.0,
+    "order_flips": 0,
+    "nll": 1.6588224340448787,
+    "ece": 0.10337384680906932,
+    "aurc": 0.8254337009731852,
+    "error_auroc": 0.516653712725825,
+    "abstain_acc": 0.1796875,
+    "non_abstain_acc": 0.17796610169491525,
+    "by_bucket": {
+      "api_routing": 0.18666666666666668,
+      "engineering_tradeoff": 0.14,
+      "incident_triage": 0.21333333333333335,
+      "release_gate": 0.17333333333333334
+    },
+    "by_band": {
+      "clean": 0.18080357142857142,
+      "wrapped": 0.17105263157894737
+    },
+    "latency_p50_ms": 32.14977099560201,
+    "latency_p95_ms": 43.17199229262769
+  },
+  "holdout_600_abstention_audit": {
+    "gold_abstain_n": 128,
+    "gold_non_abstain_n": 472,
+    "tp": 23,
+    "fp": 130,
+    "fn": 105,
+    "tn": 342,
+    "recall": 0.1797,
+    "precision": 0.1503,
+    "false_abstention_rate": 0.2754
+  },
+  "mcnemar_vs_m2_v5": {
+    "minilm_offshelf__vs__bge_zeroshot": {
+      "n": 600,
+      "a_only_correct": 16,
+      "b_only_correct": 27,
+      "exact_p_value": 0.126289
+    },
+    "minilm_offshelf__vs__bge_trained_deploy": {
+      "n": 600,
+      "a_only_correct": 78,
+      "b_only_correct": 104,
+      "exact_p_value": 0.063568
+    },
+    "minilm_offshelf__vs__qwen_zeroshot": {
+      "n": 600,
+      "a_only_correct": 54,
+      "b_only_correct": 117,
+      "exact_p_value": 2e-06
+    },
+    "minilm_offshelf__vs__qwen_trained_deploy": {
+      "n": 600,
+      "a_only_correct": 5,
+      "b_only_correct": 444,
+      "exact_p_value": 0.0
+    },
+    "minilm_offshelf__vs__kev_0.8b_frozen": {
+      "n": 600,
+      "a_only_correct": 41,
+      "b_only_correct": 309,
+      "exact_p_value": 0.0
+    }
+  },
+  "wall_s": 51.5
+}

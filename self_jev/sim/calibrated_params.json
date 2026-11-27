@@ -1,0 +1,22 @@
+{
+  "ice_power_w": 550000.0,
+  "ers_power_w": 350000.0,
+  "ers_harvest_w": 120000.0,
+  "override_power_w": 120000.0,
+  "brake_force_max_n": 54000.0,
+  "aero_drag_coeff": 0.85,
+  "aero_downforce_coeff": 4.0,
+  "aero_drs_drag_cut": 0.22,
+  "mu_dry_soft": 1.72,
+  "mu_dry_medium": 1.64,
+  "mu_dry_hard": 1.56,
+  "wet_grip_drop": 0.30,
+  "cornering_stiffness": 118000.0,
+  "max_steer_rad": 0.312,
+  "yaw_damping": 2.5,
+  "rolling_resist_c": 0.012,
+  "fuel_burn_kg_per_mj": 0.00072,
+  "wear_rate_per_s": 0.00055,
+  "temp_heat_coeff": 0.085,
+  "temp_cool_coeff": 0.045
+}

@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decision AI Tester — Multi-Suite Evaluation &amp; Charts</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --ink: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --green: #059669;
+      --green-bg: #ecfdf5;
+      --red: #dc2626;
+      --red-bg: #fef2f2;
+      --amber: #d97706;
+      --amber-bg: #fffbeb;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .brand h1 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+    .brand p { margin: 2px 0 0; font-size: 12px; color: var(--muted); }
+    .status-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px;
+      border-radius: 999px; font-size: 12px; font-weight: 600;
+      border: 1px solid var(--border); background: #f9fafb; color: var(--muted);
+    }
+    .pill.ok { background: var(--green-bg); color: var(--green); border-color: #a7f3d0; }
+    .pill.warn { background: var(--amber-bg); color: var(--amber); border-color: #fde68a; }
+    .pill.err { background: var(--red-bg); color: var(--red); border-color: #fecaca; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    main { max-width: 1320px; margin: 24px auto; padding: 0 20px 56px; }
+    .tabs {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;
+      border-bottom: 1px solid var(--border); padding-bottom: 10px;
+    }
+    .tab-btn {
+      padding: 9px 16px; border-radius: 8px; border: 1px solid transparent;
+      background: transparent; color: var(--muted); font-size: 14px; font-weight: 600; cursor: pointer;
+    }
+    .tab-btn.active {
+      background: var(--card); color: var(--primary); border-color: var(--border); box-shadow: var(--shadow);
+    }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px 20px; box-shadow: var(--shadow); margin-bottom: 16px;
+    }
+    .card h2 { margin: 0 0 12px; font-size: 15px; font-weight: 700; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(560px, 1fr)); gap: 16px; }
+    @media (max-width: 820px) { .grid-2, .chart-grid { grid-template-columns: 1fr; } }
+    label { display: block; font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 5px; }
+    input[type="text"], input[type="password"], input[type="number"], select, textarea {
+      width: 100%; padding: 9px 11px; border: 1px solid #d1d5db; border-radius: 8px;
+      font-size: 13px; font-family: inherit; background: #fff; color: var(--ink);
+    }
+    textarea { resize: vertical; min-height: 92px; }
+    input:focus, select:focus, textarea:focus {
+      outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 9px 15px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--card); color: var(--ink); font-size: 13px; font-weight: 600; cursor: pointer;
+    }
+    .btn:hover:not(:disabled) { background: #f3f4f6; }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    .btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .btn-primary:hover:not(:disabled) { background: var(--primary-hover); }
+    .btn-danger { background: var(--red-bg); color: var(--red); border-color: #fecaca; }
+    .btn-sm { padding: 6px 11px; font-size: 12px; }
+    .preset-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .result-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 16px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px;
+    }
+    .result-card.winner-ok { border-color: #6ee7b7; }
+    .result-card.winner-bad { border-color: #fca5a5; }
+    .model-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+    .model-name { font-size: 15px; font-weight: 700; }
+    .model-sub { font-size: 11px; color: var(--muted); }
+    .choice-box { padding: 10px 12px; border-radius: 8px; background: #f8fafc; border: 1px solid var(--border); }
+    .choice-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .choice-value { font-size: 16px; font-weight: 700; margin-top: 2px; }
+    .bar-row { margin-bottom: 7px; }
+    .bar-meta { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px; }
+    .bar-track { height: 8px; background: #eef2f7; border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--primary); border-radius: 999px; transition: width 0.25s ease; }
+    .bar-fill.top { background: var(--green); }
+    .meta-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;
+      font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px;
+    }
+    .meta-grid strong { color: var(--ink); }
+    details { font-size: 12px; color: var(--muted); }
+    pre {
+      background: #0f172a; color: #e2e8f0; padding: 10px; border-radius: 8px;
+      overflow-x: auto; font-size: 11px; margin: 6px 0 0;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    th, td { text-align: left; padding: 8px 9px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    th {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--muted); background: #f9fafb;
+    }
+    .progress-wrap { width: 100%; height: 10px; background: #e5e7eb; border-radius: 999px; overflow: hidden; margin: 10px 0 6px; }
+    .progress-bar { height: 100%; background: var(--primary); width: 0%; transition: width 0.2s ease; }
+    .muted { color: var(--muted); font-size: 12px; }
+    .checkbox-label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; margin: 0; cursor: pointer; }
+    .chart-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 14px; box-shadow: var(--shadow);
+    }
+    .chart-card img { width: 100%; height: auto; display: block; border-radius: 8px; margin-top: 8px; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>Decision AI Evaluation Studio</h1>
+      <p>4-Suite Comprehensive Benchmark · Calibration &amp; Cascades · Kev-0.8B · Qwen-0.8B · Frontier LLM · Tier 4 NN</p>
+    </div>
+    <div class="status-bar" id="statusBar">
+      <span class="pill">Checking server...</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="demo">1. Side-by-Side Demo</button>
+      <button class="tab-btn" data-tab="batch">2. Comprehensive Multi-Suite Benchmark</button>
+      <button class="tab-btn" data-tab="charts">3. Charts &amp; Visuals (6 SVGs)</button>
+      <button class="tab-btn" data-tab="frontier">4. Frontier LLM API Settings</button>
+    </div>
+
+    <!-- TAB 1: LIVE SIDE-BY-SIDE DEMO -->
+    <section class="panel active" id="tab-demo">
+      <div class="card">
+        <h2>Pick a Preset, Load Any Suite Row, or Type Your Own</h2>
+        <div class="preset-bar">
+          <button class="btn btn-sm" onclick="loadPreset('software_ops')">Preset: Software Incident Triage</button>
+          <button class="btn btn-sm" onclick="loadPreset('driver_abstain')">Preset: Driver-Lever Abstain</button>
+          <button class="btn btn-sm" onclick="loadPreset('normal')">Preset: Car-Build Dry</button>
+          <button class="btn btn-sm" onclick="loadPreset('abstain')">Preset: Sensor Conflict Trap</button>
+          <button class="btn btn-sm" onclick="loadPreset('unseen')">Preset: Unseen Steward Rule</button>
+          <select id="repoDatasetSelect" style="width:auto; min-width:250px;" onchange="loadRepoDatasetForDemo()">
+            <option value="">Load from multi-suite dataset...</option>
+          </select>
+          <select id="repoRowSelect" class="hidden" style="width:auto; min-width:220px;" onchange="applySelectedRepoRow()"></select>
+        </div>
+
+        <div style="margin-bottom:12px;">
+          <label for="demoState">Context / State (what all models read)</label>
+          <textarea id="demoState" rows="4"></textarea>
+        </div>
+
+        <div class="grid-2" style="margin-bottom:14px;">
+          <div>
+            <label for="demoQuestion">Decision Question</label>
+            <input type="text" id="demoQuestion" />
+            <div style="margin-top:10px;">
+              <label for="demoGold">Expected Answer (optional — for green/red badge)</label>
+              <input type="text" id="demoGold" placeholder="Leave blank if testing freely" />
+            </div>
+          </div>
+          <div>
+            <label for="demoOptions">Allowed Options (one per line)</label>
+            <textarea id="demoOptions" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <button class="btn btn-primary" id="runCompareBtn" onclick="runSingleCompare()">Compare All Models</button>
+          <label class="checkbox-label">
+            <input type="checkbox" id="demoIncludeFrontier" /> Include Frontier LLM (Tab 4)
+          </label>
+          <button class="btn btn-sm" id="downloadSingleBtn" onclick="downloadSingleResult()" disabled>Download This Result (JSON)</button>
+          <span class="muted" id="demoStatus"></span>
+        </div>
+      </div>
+
+      <div class="grid-3" id="demoResults"></div>
+    </section>
+
+    <!-- TAB 2: COMPREHENSIVE MULTI-SUITE BENCHMARK -->
+    <section class="panel" id="tab-batch">
+      <div class="card">
+        <h2>Run Comprehensive 4-Suite Benchmark &amp; Publication Metrics</h2>
+        <div class="grid-2" style="margin-bottom:14px;">
+          <div>
+            <label>Choose Benchmark Suite (data/benchmarks/*.jsonl)</label>
+            <div class="row" style="margin-bottom:8px;">
+              <select id="batchRepoSelect" style="flex:1;" onchange="loadBatchFromRepo()">
+                <option value="">Select a benchmark suite...</option>
+              </select>
+            </div>
+            <label for="batchFileInput">Or upload any .jsonl file from your Mac</label>
+            <input type="file" id="batchFileInput" accept=".jsonl,.json,.txt" onchange="loadBatchFromUpload(event)" />
+            <div class="muted" id="batchDatasetInfo" style="margin-top:6px;">Select "Full Multi-Suite Benchmark (all_test.jsonl)" for all 313 items across 4 suites.</div>
+          </div>
+
+          <div>
+            <label>Models &amp; Scientific Controls</label>
+            <div class="row" style="margin-bottom:8px;">
+              <label class="checkbox-label"><input type="checkbox" id="mKev" checked /> kev-0.8b</label>
+              <label class="checkbox-label"><input type="checkbox" id="mQwenLL" checked /> qwen-0.8b-ll</label>
+              <label class="checkbox-label"><input type="checkbox" id="mQwenJSON" checked /> qwen-0.8b-json</label>
+              <label class="checkbox-label"><input type="checkbox" id="mFrontier" /> frontier-llm (Tab 4)</label>
+              <label class="checkbox-label"><input type="checkbox" id="mNN" disabled /> car-build-nn (Tier 4)</label>
+            </div>
+            <div class="row" style="margin-bottom:8px;">
+              <label class="checkbox-label">
+                <input type="checkbox" id="batchSwapOrder" checked />
+                Run swapped option order (computes Order-Flip Rate)
+              </label>
+            </div>
+            <div class="row">
+              <label for="batchLimit" style="margin:0;">Max items (0 = all):</label>
+              <input type="number" id="batchLimit" value="0" min="0" style="width:90px;" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <button class="btn btn-primary" id="startBatchBtn" onclick="runBatchBenchmark()">Run Full Benchmark &amp; Generate Charts</button>
+          <button class="btn btn-danger hidden" id="stopBatchBtn" onclick="stopBatchBenchmark()">Stop</button>
+          <button class="btn hidden" id="retryAnalyzeBtn" onclick="retryAnalyze()">Retry Analysis</button>
+          <button class="btn" onclick="loadSavedReportFromDisk()">Load Latest Saved Report</button>
+          <button class="btn" id="downloadRawBtn" onclick="downloadBatchRaw()" disabled>Download Raw (.jsonl)</button>
+          <button class="btn" id="downloadJsonBtn" onclick="downloadBatchJSON()" disabled>Download Summary (.json)</button>
+          <button class="btn" id="downloadCsvBtn" onclick="downloadBatchCSV()" disabled>Download Summary (.csv)</button>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-bar" id="batchProgressBar"></div>
+        </div>
+        <div class="muted" id="batchProgressText">Ready. You can also load results produced by scripts/evaluate_models.py via "Load Latest Saved Report".</div>
+      </div>
+
+      <!-- Overall Metrics Table -->
+      <div class="card hidden" id="batchSummaryCard">
+        <h2>Overall Model Comparison (95% Bootstrap CI · Calibration · Safety · Robustness · Latency)</h2>
+        <div style="overflow-x:auto;">
+          <table id="batchSummaryTable">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>n</th>
+                <th>Accuracy (95% CI)</th>
+                <th>Macro-F1</th>
+                <th>Valid %</th>
+                <th>ECE</th>
+                <th>Brier</th>
+                <th>AUROC</th>
+                <th>AURC</th>
+                <th>False-Accept</th>
+                <th>5x Cost</th>
+                <th>Order-Flip</th>
+                <th>Para-Flip</th>
+                <th>p50 / p95 ms</th>
+                <th>Cost / 1k</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Suite Breakdown -->
+      <div class="card hidden" id="batchSuiteCard">
+        <h2>Accuracy by Benchmark Suite</h2>
+        <div style="overflow-x:auto;">
+          <table id="batchSuiteTable"><thead></thead><tbody></tbody></table>
+        </div>
+      </div>
+
+      <!-- Context-Length Breakdown -->
+      <div class="card hidden" id="batchContextCard">
+        <h2>Accuracy by Context Length Band (Short &lt;400 · Medium 400–1k · Long &gt;1k tokens)</h2>
+        <div style="overflow-x:auto;">
+          <table id="batchContextTable"><thead></thead><tbody></tbody></table>
+        </div>
+      </div>
+
+      <!-- Bucket Breakdown -->
+      <div class="card hidden" id="batchBucketCard">
+        <h2>Accuracy by Detailed Bucket</h2>
+        <div style="overflow-x:auto;">
+          <table id="batchBucketTable"><thead></thead><tbody></tbody></table>
+        </div>
+      </div>
+
+      <!-- McNemar Significance Tests -->
+      <div class="card hidden" id="batchMcNemarCard">
+        <h2>Pairwise Statistical Significance (McNemar's Test)</h2>
+        <div style="overflow-x:auto;">
+          <table id="batchMcNemarTable">
+            <thead>
+              <tr>
+                <th>Comparison</th>
+                <th>Shared n</th>
+                <th>Model A Only Correct</th>
+                <th>Model B Only Correct</th>
+                <th>p-value</th>
+                <th>Significant (p &lt; 0.05)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Cascade Pareto Table -->
+      <div class="card hidden" id="batchCascadeCard">
+        <h2>Confidence-Gated Cascade Pareto Sweep (Local 0.8B -&gt; Frontier LLM)</h2>
+        <div style="overflow-x:auto;">
+          <table id="batchCascadeTable">
+            <thead>
+              <tr>
+                <th>Cascade</th>
+                <th>Target Esc.</th>
+                <th>Actual Esc.</th>
+                <th>Threshold &tau;</th>
+                <th>Accuracy</th>
+                <th>Cost / 1k (USD)</th>
+                <th>p50 Latency</th>
+                <th>p95 Latency</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Top Contrast Cases -->
+      <div class="card hidden" id="batchContrastCard">
+        <h2>Top Contrast Cases (Kev-0.8B Correct vs. Qwen-0.8B-JSON Wrong — Ready for Slide Screenshots)</h2>
+        <div style="overflow-x:auto;">
+          <table id="batchContrastTable">
+            <thead>
+              <tr>
+                <th>Item ID</th>
+                <th>Suite / Bucket</th>
+                <th>Gold Answer</th>
+                <th>Kev-0.8B</th>
+                <th>Qwen-0.8B-JSON</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: CHARTS & VISUALS -->
+    <section class="panel" id="tab-charts">
+      <div class="card">
+        <div class="row" style="justify-content:space-between;">
+          <div>
+            <h2 style="margin-bottom:4px;">Publication-Ready Evaluation Charts (SVG)</h2>
+            <div class="muted" id="chartsStatusText">Run a benchmark in Tab 2 (or click Refresh after running scripts/evaluate_models.py) to view all 6 charts.</div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="loadSavedReportFromDisk(true)">Refresh Charts</button>
+        </div>
+      </div>
+      <div class="chart-grid" id="chartsGallery"></div>
+    </section>
+
+    <!-- TAB 4: FRONTIER LLM SETTINGS -->
+    <section class="panel" id="tab-frontier">
+      <div class="card">
+        <h2>Frontier LLM API Configuration (Fill In Whenever Ready)</h2>
+        <p class="muted" style="margin-top:0;">
+          Leave blank if you want to run local 0.8B models first. Supports any OpenAI-compatible Chat Completions endpoint
+          (OpenAI, OpenRouter, Gemini OpenAI-compat, DeepSeek, etc.). Keys stay strictly in your local browser and local Python server.
+        </p>
+        <div class="grid-2" style="margin-bottom:12px;">
+          <div>
+            <label for="frontierBaseUrl">API Base URL</label>
+            <input type="text" id="frontierBaseUrl" value="https://openrouter.ai/api/v1" placeholder="https://api.openai.com/v1" />
+          </div>
+          <div>
+            <label for="frontierModel">Model ID</label>
+            <input type="text" id="frontierModel" value="openai/gpt-4o-mini" placeholder="gpt-4o-mini or google/gemini-2.5-flash" />
+          </div>
+        </div>
+        <div class="grid-2" style="margin-bottom:12px;">
+          <div>
+            <label for="frontierApiKey">API Key</label>
+            <input type="password" id="frontierApiKey" placeholder="sk-..." />
+          </div>
+          <div class="grid-2">
+            <div>
+              <label for="frontierInPrice">Input $ / 1M tokens</label>
+              <input type="number" id="frontierInPrice" value="0.15" step="0.01" min="0" />
+            </div>
+            <div>
+              <label for="frontierOutPrice">Output $ / 1M tokens</label>
+              <input type="number" id="frontierOutPrice" value="0.60" step="0.01" min="0" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary" onclick="testFrontierConnection()">Test Frontier API</button>
+          <span class="muted" id="frontierTestStatus"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let healthInfo = null;
+    let availableDatasets = [];
+    let demoRepoRows = [];
+    let demoOptionDescriptions = null;
+    let batchRows = [];
+    let lastSingleResult = null;
+    let lastSummary = null;
+    let lastFlatRecords = [];
+    let lastAnalyzeMeta = null;
+    let stopRequested = false;
+
+    const CAR_BUILD_DESCS = [
+      "Low-drag dry setup: wings=15/16, brake_bias=60%, final_drive=5.15, start_compound=medium",
+      "Balanced dry setup: wings=20/22, brake_bias=59%, final_drive=5.40, start_compound=soft",
+      "Medium-downforce damp setup: wings=24/26, brake_bias=57%, final_drive=5.55, start_compound=medium",
+      "High-downforce wet setup: wings=29/31, brake_bias=55%, final_drive=5.75, start_compound=soft",
+      "Hold decision / escalate when forecast or telemetry is ambiguous, missing, conflicting, or unsafe."
+    ];
+
+    const PRESETS = {
+      software_ops: {
+        state: "Runbook Policy: SEV1 if 5xx >= 5.0% or multi-region outage; SEV2 if single-region and (1.0% <= 5xx < 5.0% or p99 >= 2000 ms for >= 10 min); SEV3 if 0.2% <= 5xx < 1.0%; SEV4 if 5xx < 0.2% and p99 < 400 ms; Abstain if telemetry is missing or contradictory.\nIncident Alert: service=checkout-api, regions=us-east-1 and eu-west-1, http_5xx_rate=11.4%, p99_latency_ms=4120, duration_min=9, sla_status=breaching, telemetry_freshness=fresh.",
+        question: "Which incident triage action should the automation take?",
+        options: ["SEV1_Page_Incident_Commander", "SEV2_Page_Service_Owner", "SEV3_Create_Next_Day_Ticket", "SEV4_Log_Only_No_Action", "Abstain / Escalate_Ambiguous"],
+        option_descriptions: [
+          "Critical customer-facing outage: 5xx >= 5.0% OR multi-region impact; page Incident Commander immediately.",
+          "Major single-region degradation: 5xx 1.0%-4.9% OR p99 >= 2000 ms for >= 10 min; page service owner.",
+          "Minor non-urgent issue: 5xx 0.2%-0.9% or async backlog; create next-day ticket.",
+          "Informational noise: 5xx < 0.2%, p99 < 400 ms, zero SLA impact; log only.",
+          "Telemetry missing, stale, or contradictory; abstain and escalate."
+        ],
+        gold: "SEV1_Page_Incident_Commander"
+      },
+      driver_abstain: {
+        state: "A fair lap-time pair is two still-racing finishes, same track and same wet band, one decision different, both lap times measured. A damage retirement is not a lap time. Version 6 sj7-gap has no still-racing damp Parkland finish; all 7 checked results are damage retirements. Damp Parkland speed comparison changed preview, yaw_gain, fuel, and ballast together.",
+        question: "What should the next published car do about the stopping rule?",
+        options: ["stay_eased", "restore_stop", "unresolved"],
+        option_descriptions: [
+          "Keep sj7-gap: ease the stop when the gap ahead is stable or growing.",
+          "Restore the emergency stop for every car ahead, as on finished a2585d41.",
+          "No still-racing pair isolates this rule, so do not change it."
+        ],
+        gold: "unresolved"
+      },
+      normal: {
+        state: "Build Selection Policy: Choose dry_low_drag for dry/fast conditions, damp_mid_downforce for damp/transitional, wet_high_downforce for heavy rain; Abstain if forecast_confidence < 0.45 or sensor_missing=1.\nTrack: Parkland (5795.8 m). Forecast: rain_probability=0.05, track_wetness_start=0.01, track_wetness_end=0.00, track_temp_c=31.0, forecast_confidence=0.94, sensor_missing=0.",
+        question: "Which car build should be selected for this match?",
+        options: ["dry_low_drag", "dry_balanced", "damp_mid_downforce", "wet_high_downforce", "Abstain / Unresolved"],
+        option_descriptions: CAR_BUILD_DESCS,
+        gold: "dry_low_drag"
+      },
+      abstain: {
+        state: "Build Selection Policy: Abstain if forecast_confidence < 0.45, sensor_missing=1, or telemetry is contradictory.\nTrack: Highland (6999.4 m). Forecast: rain_probability=0.02, track_wetness_start=0.83, track_wetness_end=0.19, forecast_confidence=0.144, sensor_missing=1. Recent telemetry: off_track_rate=0.385.",
+        question: "Which car build should be selected for this match?",
+        options: ["dry_low_drag", "dry_balanced", "damp_mid_downforce", "wet_high_downforce", "Abstain / Unresolved"],
+        option_descriptions: CAR_BUILD_DESCS,
+        gold: "Abstain / Unresolved"
+      },
+      unseen: {
+        state: "Track: Crossover (5803.2 m). Forecast: rain_probability=0.05, track_wetness_start=0.03, track_wetness_end=0.01, track_temp_c=29.5, forecast_confidence=0.96, sensor_missing=0. Event Bulletin: Stewards rule update: soft starting tyres are prohibited for this session; select only a medium-compound starting build (dry_low_drag or damp_mid_downforce).",
+        question: "Which car build should be selected for this match?",
+        options: ["dry_low_drag", "dry_balanced", "damp_mid_downforce", "wet_high_downforce", "Abstain / Unresolved"],
+        option_descriptions: CAR_BUILD_DESCS,
+        gold: "dry_low_drag"
+      }
+    };
+
+    function switchTab(tabName) {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tabName));
+      document.querySelectorAll(".panel").forEach(p => p.classList.toggle("active", p.id === "tab-" + tabName));
+    }
+    document.querySelectorAll(".tab-btn").forEach(btn => btn.addEventListener("click", () => switchTab(btn.dataset.tab)));
+
+    async function init() {
+      loadPreset("software_ops");
+      await refreshHealth();
+      await loadAvailableDatasets();
+      await loadSavedReportFromDisk(false);
+    }
+
+    async function refreshHealth() {
+      const bar = document.getElementById("statusBar");
+      try {
+        const res = await fetch("/health");
+        healthInfo = await res.json();
+        const models = healthInfo.models || {};
+        const pills = [];
+        for (const [name, info] of Object.entries(models)) {
+          const isMlx = String(info.backend || "").includes("mlx");
+          const cls = name === "kev-0.8b" ? (isMlx ? "ok" : "warn") : "ok";
+          pills.push(`<span class="pill ${cls}"><span class="dot"></span>${name} (${info.backend})</span>`);
+        }
+        try {
+          const nnRes = await fetch("/v1/nn_status");
+          const nnInfo = await nnRes.json();
+          if (nnInfo.available) {
+            pills.push(`<span class="pill ok"><span class="dot"></span>car-build-nn (Tier 4 ready)</span>`);
+            document.getElementById("mNN").disabled = false;
+          }
+        } catch (_) {}
+        if (!pills.length) pills.push(`<span class="pill warn"><span class="dot"></span>No local models loaded</span>`);
+        bar.innerHTML = pills.join("");
+        document.getElementById("mKev").checked = Boolean(models["kev-0.8b"]);
+        document.getElementById("mKev").disabled = !models["kev-0.8b"];
+        document.getElementById("mQwenLL").checked = Boolean(models["qwen-0.8b-ll"]);
+        document.getElementById("mQwenLL").disabled = !models["qwen-0.8b-ll"];
+        document.getElementById("mQwenJSON").checked = Boolean(models["qwen-0.8b-json"]);
+        document.getElementById("mQwenJSON").disabled = !models["qwen-0.8b-json"];
+      } catch (e) {
+        bar.innerHTML = `<span class="pill err"><span class="dot"></span>Server unreachable</span>`;
+      }
+    }
+
+    async function loadAvailableDatasets() {
+      try {
+        const res = await fetch("/v1/datasets");
+        const data = await res.json();
+        availableDatasets = data.datasets || [];
+        const selDemo = document.getElementById("repoDatasetSelect");
+        const selBatch = document.getElementById("batchRepoSelect");
+        for (const ds of availableDatasets) {
+          for (const sel of [selDemo, selBatch]) {
+            const opt = document.createElement("option");
+            opt.value = ds.id;
+            opt.textContent = `${ds.label} (${ds.count} rows)`;
+            sel.appendChild(opt);
+          }
+        }
+        if (availableDatasets.some(d => d.id === "all_test")) {
+          selBatch.value = "all_test";
+          await loadBatchFromRepo();
+        }
+      } catch (_) {}
+    }
+
+    function loadPreset(key) {
+      const p = PRESETS[key];
+      document.getElementById("demoState").value = p.state;
+      document.getElementById("demoQuestion").value = p.question;
+      document.getElementById("demoOptions").value = p.options.join("\n");
+      document.getElementById("demoGold").value = p.gold || "";
+      demoOptionDescriptions = p.option_descriptions || null;
+    }
+
+    async function loadRepoDatasetForDemo() {
+      const id = document.getElementById("repoDatasetSelect").value;
+      const rowSel = document.getElementById("repoRowSelect");
+      if (!id) { rowSel.classList.add("hidden"); return; }
+      const res = await fetch(`/v1/datasets/${encodeURIComponent(id)}`);
+      const data = await res.json();
+      demoRepoRows = data.rows || [];
+      rowSel.innerHTML = "";
+      demoRepoRows.forEach((r, idx) => {
+        const o = document.createElement("option");
+        o.value = idx;
+        o.textContent = `#${idx + 1} [${r.suite || ""}/${r.bucket || "item"}] ${r.id || ""}`;
+        rowSel.appendChild(o);
+      });
+      rowSel.classList.remove("hidden");
+      if (demoRepoRows.length) applySelectedRepoRow();
+    }
+
+    function applySelectedRepoRow() {
+      const idx = Number(document.getElementById("repoRowSelect").value || 0);
+      const r = demoRepoRows[idx];
+      if (!r) return;
+      document.getElementById("demoState").value = r.context || r.state || "";
+      document.getElementById("demoQuestion").value = r.question || "";
+      const opts = r.options || [];
+      document.getElementById("demoOptions").value = opts.join("\n");
+      demoOptionDescriptions = r.option_descriptions || null;
+      document.getElementById("demoGold").value = (typeof r.gold_index === "number" && opts[r.gold_index]) ? opts[r.gold_index] : "";
+    }
+
+    async function openItemInDemo(itemId) {
+      let target = batchRows.find(r => r.id === itemId);
+      if (!target) {
+        try {
+          const res = await fetch("/v1/datasets/all_test");
+          const data = await res.json();
+          target = (data.rows || []).find(r => r.id === itemId);
+        } catch (_) {}
+      }
+      if (!target) return;
+      document.getElementById("demoState").value = target.context || target.state || "";
+      document.getElementById("demoQuestion").value = target.question || "";
+      const opts = target.options || [];
+      document.getElementById("demoOptions").value = opts.join("\n");
+      demoOptionDescriptions = target.option_descriptions || null;
+      document.getElementById("demoGold").value = target.gold_label || (opts[target.gold_index] ?? "");
+      switchTab("demo");
+      await runSingleCompare();
+    }
+
+    function getFrontierConfig() {
+      return {
+        base_url: document.getElementById("frontierBaseUrl").value.trim(),
+        model: document.getElementById("frontierModel").value.trim(),
+        api_key: document.getElementById("frontierApiKey").value.trim(),
+        in_price: parseFloat(document.getElementById("frontierInPrice").value) || 0,
+        out_price: parseFloat(document.getElementById("frontierOutPrice").value) || 0
+      };
+    }
+
+    async function scoreOneModel(modelName, state, question, options, optionDescriptions = null, features = null) {
+      const descs = (optionDescriptions && optionDescriptions.length === options.length) ? optionDescriptions : null;
+      if (modelName === "car-build-nn") {
+        if (!Array.isArray(features)) return null;
+        const res = await fetch("/v1/score_nn", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ features, options })
+        });
+        if (!res.ok) throw new Error(await res.text());
+        return await res.json();
+      }
+      if (modelName === "frontier-llm") {
+        const cfg = getFrontierConfig();
+        if (!cfg.api_key) throw new Error("Enter Frontier API Key in Tab 4 first.");
+        const res = await fetch("/v1/frontier", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ base_url: cfg.base_url, model: cfg.model, api_key: cfg.api_key, state, question, options, option_descriptions: descs })
+        });
+        if (!res.ok) throw new Error(await res.text());
+        return await res.json();
+      }
+      const res = await fetch("/v1/score", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ model: modelName, state, question, options, option_descriptions: descs })
+      });
+      if (!res.ok) throw new Error(await res.text());
+      return await res.json();
+    }
+
+    async function runSingleCompare() {
+      const state = document.getElementById("demoState").value.trim();
+      const question = document.getElementById("demoQuestion").value.trim();
+      const options = document.getElementById("demoOptions").value.split("\n").map(s => s.trim()).filter(Boolean);
+      const gold = document.getElementById("demoGold").value.trim();
+      const includeFrontier = document.getElementById("demoIncludeFrontier").checked;
+      const statusEl = document.getElementById("demoStatus");
+      const container = document.getElementById("demoResults");
+      const descs = (demoOptionDescriptions && demoOptionDescriptions.length === options.length) ? demoOptionDescriptions : null;
+
+      if (!state || !question || options.length < 2) {
+        statusEl.textContent = "Please provide state, question, and at least 2 options.";
+        return;
+      }
+      const btn = document.getElementById("runCompareBtn");
+      btn.disabled = true;
+      statusEl.textContent = "Running models...";
+      container.innerHTML = "";
+
+      try {
+        const res = await fetch("/v1/compare", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ state, question, options, option_descriptions: descs })
+        });
+        if (!res.ok) throw new Error(await res.text());
+        const data = await res.json();
+        const results = data.results || {};
+        if (includeFrontier) {
+          statusEl.textContent = "Calling Frontier LLM...";
+          results["frontier-llm"] = await scoreOneModel("frontier-llm", state, question, options, descs);
+        }
+        lastSingleResult = { timestamp: new Date().toISOString(), state, question, options, gold: gold || null, results };
+        document.getElementById("downloadSingleBtn").disabled = false;
+        renderSingleCards(results, options, gold);
+        statusEl.textContent = "Done.";
+      } catch (err) {
+        statusEl.textContent = "Error: " + err.message;
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    function renderSingleCards(results, options, gold) {
+      const container = document.getElementById("demoResults");
+      container.innerHTML = "";
+      for (const [key, r] of Object.entries(results)) {
+        const isCorrect = gold ? (r.choice === gold) : null;
+        const cardCls = isCorrect === true ? "winner-ok" : (isCorrect === false ? "winner-bad" : "");
+        const badge = isCorrect === true ? `<span class="pill ok">Correct</span>`
+          : (isCorrect === false ? `<span class="pill err">Wrong</span>`
+            : (r.parse_ok ? `<span class="pill ok">Valid</span>` : `<span class="pill err">Parse Fail</span>`));
+        const probs = r.probabilities || [];
+        const barsHtml = options.map((opt, idx) => {
+          const p = Number(probs[idx] || 0);
+          return `
+            <div class="bar-row">
+              <div class="bar-meta"><span>${escapeHtml(opt)}</span><strong>${(p * 100).toFixed(1)}%</strong></div>
+              <div class="bar-track"><div class="bar-fill ${idx === r.choice_index ? "top" : ""}" style="width:${Math.min(100, Math.max(0, p * 100))}%"></div></div>
+            </div>`;
+        }).join("");
+        const rawBlock = r.raw_output ? `<details><summary>Raw Model Output</summary><pre>${escapeHtml(r.raw_output)}</pre></details>` : "";
+        const card = document.createElement("div");
+        card.className = `result-card ${cardCls}`;
+        card.innerHTML = `
+          <div class="model-header">
+            <div><div class="model-name">${escapeHtml(key)}</div><div class="model-sub">${escapeHtml(r.model_id || "")} · ${escapeHtml(r.backend || "")}</div></div>
+            ${badge}
+          </div>
+          <div class="choice-box"><div class="choice-label">Selected Decision</div><div class="choice-value">${escapeHtml(r.choice ?? "(Parse Failed)")}</div></div>
+          <div>${barsHtml}</div>
+          <div class="meta-grid">
+            <div>Confidence: <strong>${((r.confidence || 0) * 100).toFixed(1)}%</strong></div>
+            <div>Latency: <strong>${Number(r.latency_ms || 0).toFixed(1)} ms</strong></div>
+            <div>Tokens: <strong>${r.input_tokens ?? "-"}</strong></div>
+            <div>Truncated: <strong>${r.state_truncated ? "YES" : "No"}</strong></div>
+          </div>
+          ${rawBlock}`;
+        container.appendChild(card);
+      }
+    }
+
+    function downloadSingleResult() {
+      if (lastSingleResult) triggerDownload(JSON.stringify(lastSingleResult, null, 2), "single_comparison.json", "application/json");
+    }
+
+    // ---------- Tab 2: Comprehensive Multi-Suite Benchmark ----------
+    async function loadBatchFromRepo() {
+      const id = document.getElementById("batchRepoSelect").value;
+      if (!id) return;
+      const res = await fetch(`/v1/datasets/${encodeURIComponent(id)}`);
+      const data = await res.json();
+      batchRows = data.rows || [];
+      const suites = Array.from(new Set(batchRows.map(r => r.suite).filter(Boolean)));
+      document.getElementById("batchDatasetInfo").textContent =
+        `Loaded ${batchRows.length} items from ${id}${suites.length ? " (" + suites.join(", ") + ")" : ""}.`;
+    }
+
+    function loadBatchFromUpload(ev) {
+      const file = ev.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const lines = String(reader.result || "").split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+        batchRows = lines.map(l => JSON.parse(l));
+        document.getElementById("batchDatasetInfo").textContent = `Uploaded ${batchRows.length} items from ${file.name}.`;
+      };
+      reader.readAsText(file);
+    }
+
+    function stopBatchBenchmark() { stopRequested = true; }
+
+    async function runBatchBenchmark() {
+      if (!batchRows.length) {
+        document.getElementById("batchProgressText").textContent = "Please select or upload a JSONL dataset first.";
+        return;
+      }
+      const models = [];
+      if (document.getElementById("mKev").checked) models.push("kev-0.8b");
+      if (document.getElementById("mQwenLL").checked) models.push("qwen-0.8b-ll");
+      if (document.getElementById("mQwenJSON").checked) models.push("qwen-0.8b-json");
+      if (document.getElementById("mFrontier").checked) models.push("frontier-llm");
+      if (document.getElementById("mNN").checked) models.push("car-build-nn");
+      if (!models.length) {
+        document.getElementById("batchProgressText").textContent = "Select at least one model.";
+        return;
+      }
+
+      const swapOrder = document.getElementById("batchSwapOrder").checked;
+      const limit = parseInt(document.getElementById("batchLimit").value, 10) || 0;
+      const items = limit > 0 ? batchRows.slice(0, limit) : batchRows;
+      const frontierCfg = getFrontierConfig();
+
+      stopRequested = false;
+      document.getElementById("startBatchBtn").disabled = true;
+      document.getElementById("stopBatchBtn").classList.remove("hidden");
+      document.getElementById("downloadJsonBtn").disabled = true;
+      document.getElementById("downloadCsvBtn").disabled = true;
+
+      const orders = swapOrder ? ["orig", "swapped"] : ["orig"];
+      const totalCalls = items.length * models.length * orders.length;
+      let doneCalls = 0;
+      let consecNetErrors = 0;
+      let serverDisconnected = false;
+      const flatRecords = [];
+      document.getElementById("retryAnalyzeBtn").classList.add("hidden");
+
+      const updateProgress = (msg) => {
+        const pct = totalCalls ? (doneCalls / totalCalls) * 100 : 0;
+        document.getElementById("batchProgressBar").style.width = pct.toFixed(1) + "%";
+        document.getElementById("batchProgressText").textContent = `${doneCalls} / ${totalCalls} calls — ${msg}`;
+      };
+
+      for (let i = 0; i < items.length; i++) {
+        if (stopRequested || serverDisconnected) break;
+        const item = items[i];
+        const state = item.context || item.state || "";
+        const question = item.question || "";
+        const optsOrig = item.options || [];
+        const descsOrig = Array.isArray(item.option_descriptions) ? item.option_descriptions : null;
+        const nOpts = optsOrig.length;
+        const goldIdx = typeof item.gold_index === "number" ? item.gold_index : 0;
+        const goldLabel = item.gold_label || optsOrig[goldIdx] || "";
+
+        for (const order of orders) {
+          if (stopRequested || serverDisconnected) break;
+          const opts = order === "swapped" ? [...optsOrig].reverse() : optsOrig;
+          const descs = descsOrig ? (order === "swapped" ? [...descsOrig].reverse() : descsOrig) : null;
+
+          for (const m of models) {
+            if (stopRequested || serverDisconnected) break;
+            if (m === "car-build-nn" && (!Array.isArray(item.features) || order !== "orig")) {
+              doneCalls++;
+              continue;
+            }
+            updateProgress(`Item ${i + 1}/${items.length} [${item.suite || "eval"}] · ${m} (${order})`);
+            let res = null;
+            try {
+              res = await scoreOneModel(m, state, question, opts, descs, item.features || null);
+              consecNetErrors = 0;
+            } catch (e) {
+              const msg = String(e.message || e);
+              if (msg.includes("Failed to fetch") || msg.includes("NetworkError")) {
+                consecNetErrors++;
+                if (consecNetErrors >= 3) {
+                  serverDisconnected = true;
+                  updateProgress("Stopped: local server disconnected (check terminal running serve.py). Partial raw records preserved.");
+                  break;
+                }
+              }
+              res = { choice_index: -1, probabilities: Array(nOpts).fill(0), confidence: 0, parse_ok: false, latency_ms: 0, raw_output: msg.slice(0, 200) };
+            }
+            doneCalls++;
+            if (!res) continue;
+
+            let predIdx = typeof res.choice_index === "number" ? res.choice_index : -1;
+            let probs = Array.isArray(res.probabilities) ? [...res.probabilities] : Array(nOpts).fill(0);
+            if (order === "swapped") {
+              if (predIdx >= 0 && predIdx < nOpts) predIdx = nOpts - 1 - predIdx;
+              probs = probs.reverse();
+            }
+            const predLabel = (predIdx >= 0 && predIdx < nOpts) ? optsOrig[predIdx] : null;
+            flatRecords.push({
+              id: item.id || `item_${i + 1}`,
+              split: "test",
+              suite: item.suite || "custom",
+              bucket: item.bucket || "default",
+              context_band: item.context_band || "short",
+              est_tokens: item.est_tokens || 0,
+              base_id: item.base_id || null,
+              order,
+              model: m,
+              gold_index: goldIdx,
+              gold_label: goldLabel,
+              abstain_index: item.abstain_index ?? null,
+              is_abstain_gold: Boolean(item.is_abstain_gold),
+              hidden_oracle_abstain: Boolean(item.hidden_oracle_abstain),
+              oracle_scores: item.oracle_scores || null,
+              pred_index: predIdx,
+              pred_label: predLabel,
+              correct: predIdx === goldIdx,
+              parse_ok: Boolean(res.parse_ok),
+              confidence: Number(res.confidence || 0),
+              probabilities: probs,
+              latency_ms: Number(res.latency_ms || 0),
+              input_tokens: Number(res.input_tokens || 0),
+              output_tokens: Number(res.output_tokens || 0),
+              raw_output: res.raw_output ? String(res.raw_output).slice(0, 200) : null
+            });
+          }
+        }
+      }
+
+      lastFlatRecords = flatRecords;
+      lastAnalyzeMeta = {
+        models,
+        config: { source: document.getElementById("batchRepoSelect").value || "upload", swap_order: swapOrder, item_count: items.length },
+        frontier_in_price: frontierCfg.in_price,
+        frontier_out_price: frontierCfg.out_price
+      };
+      if (lastFlatRecords.length > 0) {
+        document.getElementById("downloadRawBtn").disabled = false;
+      }
+      if (serverDisconnected) {
+        document.getElementById("retryAnalyzeBtn").classList.remove("hidden");
+        document.getElementById("startBatchBtn").disabled = false;
+        document.getElementById("stopBatchBtn").classList.add("hidden");
+        return;
+      }
+      await runAnalyzeStep(stopRequested);
+    }
+
+    async function loadSavedReportFromDisk(showNotice = true) {
+      try {
+        const res = await fetch("/v1/reports/latest");
+        const data = await res.json();
+        if (!data.available || !data.summary) {
+          if (showNotice) document.getElementById("batchProgressText").textContent = "No saved report found in reports/full_benchmark/ yet.";
+          return;
+        }
+        lastSummary = data.summary;
+        renderFullSummary(lastSummary);
+        renderChartsGallery(data.charts || []);
+        document.getElementById("downloadJsonBtn").disabled = false;
+        document.getElementById("downloadCsvBtn").disabled = false;
+        if (showNotice) document.getElementById("batchProgressText").textContent = "Loaded latest saved report & charts from reports/full_benchmark/.";
+      } catch (_) {}
+    }
+
+    const fmtPct = v => (v === null || v === undefined) ? "—" : (v * 100).toFixed(1) + "%";
+    const fmtNum = (v, d = 3) => (v === null || v === undefined) ? "—" : Number(v).toFixed(d);
+
+    function renderFullSummary(summary) {
+      const models = Object.keys(summary.models || {});
+      if (!models.length) return;
+
+      // 1. Overall table
+      const tbody = document.querySelector("#batchSummaryTable tbody");
+      tbody.innerHTML = "";
+      for (const m of models) {
+        const ov = (summary.models[m] || {}).overall || {};
+        const ci = ov.acc_ci_95 || [null, null];
+        const ciTxt = (ci[0] !== null) ? `[${(ci[0]*100).toFixed(1)}, ${(ci[1]*100).toFixed(1)}]` : "";
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><strong>${escapeHtml(m)}</strong></td>
+          <td>${ov.n ?? 0}</td>
+          <td><strong>${fmtPct(ov.accuracy)}</strong> <span class="muted">${ciTxt}</span></td>
+          <td>${fmtNum(ov.macro_f1, 3)}</td>
+          <td>${fmtPct(ov.parse_ok_rate)}</td>
+          <td>${fmtNum(ov.ece, 3)}</td>
+          <td>${fmtNum(ov.brier, 3)}</td>
+          <td>${fmtNum(ov.error_auroc, 3)}</td>
+          <td>${fmtNum(ov.aurc, 3)}</td>
+          <td>${fmtPct(ov.false_accept_rate)}</td>
+          <td>${fmtNum(ov.asymmetric_error_cost, 3)}</td>
+          <td>${fmtPct(ov.order_flip_rate)}</td>
+          <td>${fmtPct(ov.paraphrase_flip_rate)}</td>
+          <td>${fmtNum(ov.latency_p50_ms, 1)} / ${fmtNum(ov.latency_p95_ms, 1)}</td>
+          <td>$${fmtNum(ov.cost_per_1k_usd, 4)}</td>`;
+        tbody.appendChild(tr);
+      }
+      document.getElementById("batchSummaryCard").classList.remove("hidden");
+
+      // 2. Suite matrix
+      renderMatrix("batchSuiteCard", "batchSuiteTable", models, m => (summary.models[m] || {}).by_suite || {});
+      // 3. Context-length matrix
+      renderMatrix("batchContextCard", "batchContextTable", models, m => (summary.models[m] || {}).by_context_band || {}, ["short", "medium", "long"]);
+      // 4. Bucket matrix
+      renderMatrix("batchBucketCard", "batchBucketTable", models, m => (summary.models[m] || {}).by_bucket || {});
+
+      // 5. McNemar
+      const mcEntries = Object.entries(summary.mcnemar_pairwise || {});
+      const mcCard = document.getElementById("batchMcNemarCard");
+      if (mcEntries.length) {
+        const mcBody = document.querySelector("#batchMcNemarTable tbody");
+        mcBody.innerHTML = "";
+        for (const [pair, res] of mcEntries) {
+          const tr = document.createElement("tr");
+          const sigBadge = res.significant_0_05 ? `<span class="pill ok">Yes</span>` : `<span class="pill">No</span>`;
+          tr.innerHTML = `
+            <td><strong>${escapeHtml(pair.replace("__vs__", " vs "))}</strong></td>
+            <td>${res.shared_n}</td>
+            <td>${res.a_only_correct}</td>
+            <td>${res.b_only_correct}</td>
+            <td>${fmtNum(res.p_value, 5)}</td>
+            <td>${sigBadge}</td>`;
+          mcBody.appendChild(tr);
+        }
+        mcCard.classList.remove("hidden");
+      } else {
+        mcCard.classList.add("hidden");
+      }
+
+      // 6. Cascades
+      const cascEntries = Object.entries(summary.cascades || {});
+      const cascCard = document.getElementById("batchCascadeCard");
+      if (cascEntries.length) {
+        const cBody = document.querySelector("#batchCascadeTable tbody");
+        cBody.innerHTML = "";
+        for (const [cname, pts] of cascEntries) {
+          for (const p of pts) {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td><strong>${escapeHtml(cname)}</strong></td>
+              <td>${fmtPct(p.target_escalation)}</td>
+              <td>${fmtPct(p.actual_escalation_rate)}</td>
+              <td>${fmtNum(p.threshold_tau, 3)}</td>
+              <td><strong>${fmtPct(p.accuracy)}</strong></td>
+              <td>$${fmtNum(p.cost_per_1k_usd, 4)}</td>
+              <td>${fmtNum(p.latency_p50_ms, 1)} ms</td>
+              <td>${fmtNum(p.latency_p95_ms, 1)} ms</td>`;
+            cBody.appendChild(tr);
+          }
+        }
+        cascCard.classList.remove("hidden");
+      } else {
+        cascCard.classList.add("hidden");
+      }
+
+      // 7. Contrast Cases
+      const contrasts = summary.contrast_cases || [];
+      const ctCard = document.getElementById("batchContrastCard");
+      if (contrasts.length) {
+        const ctBody = document.querySelector("#batchContrastTable tbody");
+        ctBody.innerHTML = "";
+        for (const c of contrasts) {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td><strong>${escapeHtml(c.id)}</strong></td>
+            <td>${escapeHtml(c.suite)} / ${escapeHtml(c.bucket)}</td>
+            <td>${escapeHtml(c.gold_label)}</td>
+            <td><span class="pill ok">${escapeHtml(c.kev_pred)} (${fmtPct(c.kev_conf)})</span></td>
+            <td><span class="pill err">${escapeHtml(c.qwen_json_pred ?? "PARSE FAIL")} (${fmtPct(c.qwen_json_conf)})</span></td>
+            <td><button class="btn btn-sm" onclick="openItemInDemo('${escapeHtml(c.id)}')">Open in Demo Tab</button></td>`;
+          ctBody.appendChild(tr);
+        }
+        ctCard.classList.remove("hidden");
+      } else {
+        ctCard.classList.add("hidden");
+      }
+    }
+
+    function renderMatrix(cardId, tableId, models, getter, forcedCols = null) {
+      const cols = forcedCols
+        ? forcedCols.filter(c => models.some(m => getter(m)[c]))
+        : Array.from(new Set(models.flatMap(m => Object.keys(getter(m)))));
+      const card = document.getElementById(cardId);
+      if (!cols.length) { card.classList.add("hidden"); return; }
+      const thead = document.querySelector(`#${tableId} thead`);
+      const tbody = document.querySelector(`#${tableId} tbody`);
+      thead.innerHTML = `<tr><th>Model</th>${cols.map(c => `<th>${escapeHtml(c)}</th>`).join("")}</tr>`;
+      tbody.innerHTML = "";
+      for (const m of models) {
+        const map = getter(m);
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td><strong>${escapeHtml(m)}</strong></td>` + cols.map(c => {
+          const cell = map[c];
+          if (!cell || !cell.n) return `<td>—</td>`;
+          return `<td><strong>${fmtPct(cell.accuracy)}</strong> <span class="muted">(n=${cell.n})</span></td>`;
+        }).join("");
+        tbody.appendChild(tr);
+      }
+      card.classList.remove("hidden");
+    }
+
+    function renderChartsGallery(charts) {
+      const gallery = document.getElementById("chartsGallery");
+      const status = document.getElementById("chartsStatusText");
+      gallery.innerHTML = "";
+      if (!charts.length) {
+        status.textContent = "No charts generated yet. Run a benchmark in Tab 2 or run scripts/generate_charts.py.";
+        return;
+      }
+      status.textContent = `Showing ${charts.length} publication-ready SVG charts from reports/full_benchmark/charts/.`;
+      const bust = Date.now();
+      for (const ch of charts) {
+        const url = `/v1/charts/${encodeURIComponent(ch.filename)}?t=${bust}`;
+        const div = document.createElement("div");
+        div.className = "chart-card";
+        div.innerHTML = `
+          <div class="row" style="justify-content:space-between;">
+            <strong style="font-size:13px;">${escapeHtml(ch.title || ch.filename)}</strong>
+            <a class="btn btn-sm" href="${url}" download="${escapeHtml(ch.filename)}" style="text-decoration:none;">Download SVG</a>
+          </div>
+          <img src="${url}" alt="${escapeHtml(ch.title || ch.filename)}" />`;
+        gallery.appendChild(div);
+      }
+    }
+
+    async function runAnalyzeStep(wasStopped = false) {
+      if (!lastFlatRecords.length || !lastAnalyzeMeta) return;
+      const prog = document.getElementById("batchProgressText");
+      prog.textContent = `Analyzing ${lastFlatRecords.length} records & generating 6 SVG charts...`;
+      try {
+        const anRes = await fetch("/v1/analyze", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ records: lastFlatRecords, ...lastAnalyzeMeta })
+        });
+        if (!anRes.ok) throw new Error(await anRes.text());
+        const anData = await anRes.json();
+        lastSummary = anData.summary;
+        renderFullSummary(lastSummary);
+        renderChartsGallery(anData.charts || []);
+        document.getElementById("downloadJsonBtn").disabled = false;
+        document.getElementById("downloadCsvBtn").disabled = false;
+        document.getElementById("retryAnalyzeBtn").classList.add("hidden");
+        prog.textContent = wasStopped ? "Stopped early — partial analysis & charts ready." : "Complete! All tables and 6 SVG charts updated (see Tab 3).";
+      } catch (e) {
+        document.getElementById("retryAnalyzeBtn").classList.remove("hidden");
+        prog.textContent = "Analysis error: " + e.message + " — click 'Download Raw (.jsonl)' to save your data, restart serve.py if needed, then click 'Retry Analysis'.";
+      } finally {
+        document.getElementById("startBatchBtn").disabled = false;
+        document.getElementById("stopBatchBtn").classList.add("hidden");
+      }
+    }
+
+    async function retryAnalyze() { await runAnalyzeStep(false); }
+
+    function downloadBatchRaw() {
+      if (!lastFlatRecords.length) return;
+      const jsonl = lastFlatRecords.map(r => JSON.stringify(r)).join("\n") + "\n";
+      triggerDownload(jsonl, "benchmark_raw.jsonl", "application/x-ndjson");
+    }
+
+    function downloadBatchJSON() {
+      if (lastSummary) triggerDownload(JSON.stringify(lastSummary, null, 2), "benchmark_summary.json", "application/json");
+    }
+
+    function downloadBatchCSV() {
+      window.location.href = "/v1/reports/csv";
+    }
+
+    async function testFrontierConnection() {
+      const el = document.getElementById("frontierTestStatus");
+      el.textContent = "Testing...";
+      try {
+        const r = await scoreOneModel("frontier-llm", PRESETS.software_ops.state, PRESETS.software_ops.question, PRESETS.software_ops.options, PRESETS.software_ops.option_descriptions);
+        el.textContent = `Connected! Picked "${r.choice}" (${(r.confidence * 100).toFixed(0)}%) in ${r.latency_ms} ms.`;
+      } catch (e) {
+        el.textContent = "Failed: " + e.message;
+      }
+    }
+
+    function triggerDownload(content, filename, mime) {
+      const blob = new Blob([content], { type: mime });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = filename; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function escapeHtml(s) {
+      return String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    }
+
+    init();
+  </script>
+</body>
+</html>

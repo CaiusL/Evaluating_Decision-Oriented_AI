@@ -1,0 +1,101 @@
+{
+  "protocol": "Q2_bounded_frontier_teacher_reference_holdout_600_orig_only",
+  "role": "Frontier teacher reference on independent gold (not an upper bound)",
+  "generated_at_utc": "2026-11-26T01:13:57.026752+00:00",
+  "teacher_model_requested": "deepseek-v4.1-flash-1017",
+  "teacher_models_returned": [
+    "deepseek-v4.1-flash-1017"
+  ],
+  "request_settings": {
+    "temperature": 0.0,
+    "max_tokens": 200,
+    "response_format": "json_object",
+    "max_retries": 3,
+    "order": "orig_only"
+  },
+  "holdout_file": "holdout_600.jsonl",
+  "holdout_sha256": "3782d9f6ba4a4164aa7d9c3b238ed8e31d1a5e8f20e0ede35ac0634f76d46bb8",
+  "n_total": 600,
+  "n_correct": 600,
+  "acc_orig": 1.0,
+  "acc_swapped": null,
+  "order_flip_rate": null,
+  "n_parse_ok": 600,
+  "n_invalid_outputs": 0,
+  "abstention": {
+    "gold_abstain_n": 128,
+    "gold_non_abstain_n": 472,
+    "recall": 1.0,
+    "recall_counts": "128/128",
+    "precision": 1.0,
+    "precision_counts": "128/128",
+    "false_abstention_rate": 0.0,
+    "false_abstention_counts": "0/472"
+  },
+  "by_bucket": {
+    "api_routing": {
+      "n": 150,
+      "correct": 150,
+      "accuracy": 1.0
+    },
+    "engineering_tradeoff": {
+      "n": 150,
+      "correct": 150,
+      "accuracy": 1.0
+    },
+    "incident_triage": {
+      "n": 150,
+      "correct": 150,
+      "accuracy": 1.0
+    },
+    "release_gate": {
+      "n": 150,
+      "correct": 150,
+      "accuracy": 1.0
+    }
+  },
+  "by_band": {
+    "clean": {
+      "n": 448,
+      "correct": 448,
+      "accuracy": 1.0
+    },
+    "wrapped": {
+      "n": 152,
+      "correct": 152,
+      "accuracy": 1.0
+    }
+  },
+  "latency_p50_ms": 793.6,
+  "latency_p95_ms": 1075.6,
+  "total_input_tokens": 257563,
+  "total_output_tokens": 34336,
+  "wall_s": 61.85,
+  "mcnemar_vs_students": {
+    "teacher_ref__vs__qwen_trained_deploy": {
+      "n": 600,
+      "teacher_only_correct": 54,
+      "other_only_correct": 0,
+      "exact_p_value": 0.0
+    },
+    "teacher_ref__vs__kev_0.8b_frozen": {
+      "n": 600,
+      "teacher_only_correct": 225,
+      "other_only_correct": 0,
+      "exact_p_value": 0.0
+    },
+    "teacher_ref__vs__qwen_zeroshot": {
+      "n": 600,
+      "teacher_only_correct": 430,
+      "other_only_correct": 0,
+      "exact_p_value": 0.0
+    },
+    "teacher_ref__vs__bge_trained_deploy": {
+      "n": 600,
+      "teacher_only_correct": 467,
+      "other_only_correct": 0,
+      "exact_p_value": 0.0
+    }
+  },
+  "note_on_calibration_metrics": "NLL/ECE/AURC intentionally omitted because API returns textual self-confidence rather than option probability distributions."
+}

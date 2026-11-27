@@ -1,0 +1,3041 @@
+{
+  "rng_construction": {
+    "source": "decision_eval/src/decision_eval/racing_contract.py:make_scenario",
+    "formula": "np.random.default_rng(seed * 100 + cell_idx)",
+    "independent_cell_seed_streams": true,
+    "primary_bootstrap": "cell_stratified_paired_bootstrap (4000 resamples)",
+    "sensitivity_bootstrap": "seed_block_paired_bootstrap (4000 resamples)"
+  },
+  "transfer_diagnostic_27": {
+    "seeds": [
+      3101,
+      3102,
+      3103
+    ],
+    "n_races": 27,
+    "arms": {
+      "driver_only": {
+        "n": 27,
+        "finishes": 25,
+        "completion_rate_pct": 92.59,
+        "mean_time_finishers_s": 613.11,
+        "pits_total": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 27
+        },
+        "mode_counts": {
+          "balanced": 104
+        },
+        "paired_outcomes_vs_driver_only": null,
+        "vs_driver_only": null
+      },
+      "track_rule": {
+        "n": 27,
+        "finishes": 24,
+        "completion_rate_pct": 88.89,
+        "mean_time_finishers_s": 602.93,
+        "pits_total": 0,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 27
+        },
+        "mode_counts": {
+          "balanced": 32,
+          "push_max": 71
+        },
+        "paired_outcomes_vs_driver_only": {
+          "both_finish": 24,
+          "rescue": 0,
+          "regression": 1,
+          "both_fail": 2
+        },
+        "vs_driver_only": {
+          "n": 27,
+          "base_finishes": 25,
+          "cand_finishes": 24,
+          "rescued": 0,
+          "regressed": 1,
+          "common_finishers_n": 24,
+          "mean_paired_delta_s": -8.066,
+          "median_paired_delta_s": -7.798,
+          "wtl": {
+            "wins": 17,
+            "ties_finished": 7,
+            "ties_both_failed": 2,
+            "losses": 1
+          }
+        }
+      },
+      "m2_current_prompt": {
+        "n": 27,
+        "finishes": 17,
+        "completion_rate_pct": 62.96,
+        "mean_time_finishers_s": 632.18,
+        "pits_total": 12,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_balanced": 8,
+          "damp_mid_downforce": 10,
+          "wet_high_downforce": 9
+        },
+        "mode_counts": {
+          "balanced": 53,
+          "push_max": 1,
+          "wet_caution": 35,
+          "conserve_tyres": 13
+        },
+        "paired_outcomes_vs_driver_only": {
+          "both_finish": 17,
+          "rescue": 0,
+          "regression": 8,
+          "both_fail": 2
+        },
+        "vs_driver_only": {
+          "n": 27,
+          "base_finishes": 25,
+          "cand_finishes": 17,
+          "rescued": 0,
+          "regressed": 8,
+          "common_finishers_n": 17,
+          "mean_paired_delta_s": 17.206,
+          "median_paired_delta_s": 13.43,
+          "wtl": {
+            "wins": 0,
+            "ties_finished": 6,
+            "ties_both_failed": 2,
+            "losses": 19
+          }
+        }
+      },
+      "m2_verified_runbook": {
+        "n": 27,
+        "finishes": 15,
+        "completion_rate_pct": 55.56,
+        "mean_time_finishers_s": 634.35,
+        "pits_total": 45,
+        "illegal_proposed": 0,
+        "build_counts": {
+          "dry_low_drag": 27
+        },
+        "mode_counts": {
+          "conserve_tyres": 83,
+          "wet_caution": 20,
+          "balanced": 3
+        },
+        "paired_outcomes_vs_driver_only": {
+          "both_finish": 14,
+          "rescue": 1,
+          "regression": 11,
+          "both_fail": 1
+        },
+        "vs_driver_only": {
+          "n": 27,
+          "base_finishes": 25,
+          "cand_finishes": 15,
+          "rescued": 1,
+          "regressed": 11,
+          "common_finishers_n": 14,
+          "mean_paired_delta_s": 68.671,
+          "median_paired_delta_s": 71.166,
+          "wtl": {
+            "wins": 1,
+            "ties_finished": 0,
+            "ties_both_failed": 1,
+            "losses": 25
+          }
+        }
+      }
+    },
+    "paired_verified_vs_current_prompt": {
+      "n": 27,
+      "base_finishes": 17,
+      "cand_finishes": 15,
+      "rescued": 3,
+      "regressed": 5,
+      "common_finishers_n": 12,
+      "mean_paired_delta_s": 53.148,
+      "median_paired_delta_s": 51.537,
+      "wtl": {
+        "wins": 3,
+        "ties_finished": 0,
+        "ties_both_failed": 7,
+        "losses": 17
+      }
+    }
+  },
+  "historical_45_all_models": {
+    "n_races": 45,
+    "all_model_common_finishers_n": 33,
+    "models": {
+      "driver_only": {
+        "summary": {
+          "n": 45,
+          "finishes": 38,
+          "completion_rate_pct": 84.44,
+          "mean_time_finishers_s": 624.31,
+          "median_time_finishers_s": 644.2,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 38,
+            "5": 7
+          },
+          "failures_by_track": {
+            "parkland": 7
+          },
+          "failures_by_cell": {
+            "parkland_dry": 4,
+            "parkland_wetting": 3
+          },
+          "build_counts": {
+            "dry_balanced": 45
+          },
+          "mode_counts": {
+            "balanced": 166
+          }
+        },
+        "mean_time_all_model_common_s": 636.65,
+        "vs_driver_only": null,
+        "vs_track_rule": {
+          "n": 45,
+          "base_finishes": 37,
+          "cand_finishes": 38,
+          "completion_diff_races": 1,
+          "completion_diff_pp": 2.22,
+          "paired_outcomes": {
+            "both_finish": 37,
+            "rescue": 1,
+            "regression": 0,
+            "both_fail": 7
+          },
+          "common_finishers_n": 37,
+          "mean_paired_delta_s": 10.778,
+          "median_paired_delta_s": 10.531,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 1,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 29
+            },
+            "0.5s": {
+              "wins": 1,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 29
+            },
+            "1.0s": {
+              "wins": 1,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 29
+            },
+            "2.0s": {
+              "wins": 1,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 29
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              6.67
+            ],
+            "comp_ci95_1sided_lower_pp": 0.0,
+            "time_ci95_2sided_s": [
+              9.733,
+              11.856
+            ],
+            "time_ci95_1sided_upper_s": 11.685
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              6.67
+            ],
+            "comp_ci95_1sided_lower_pp": 0.0,
+            "time_ci95_2sided_s": [
+              10.1,
+              11.532
+            ],
+            "time_ci95_1sided_upper_s": 11.37
+          }
+        }
+      },
+      "track_rule": {
+        "summary": {
+          "n": 45,
+          "finishes": 37,
+          "completion_rate_pct": 82.22,
+          "mean_time_finishers_s": 612.44,
+          "median_time_finishers_s": 625.97,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 37,
+            "5": 8
+          },
+          "failures_by_track": {
+            "highland": 1,
+            "parkland": 7
+          },
+          "failures_by_cell": {
+            "highland_dry": 1,
+            "parkland_dry": 4,
+            "parkland_wetting": 3
+          },
+          "build_counts": {
+            "dry_balanced": 45
+          },
+          "mode_counts": {
+            "push_max": 118,
+            "balanced": 46
+          }
+        },
+        "mean_time_all_model_common_s": 624.57,
+        "vs_driver_only": {
+          "n": 45,
+          "base_finishes": 38,
+          "cand_finishes": 37,
+          "completion_diff_races": -1,
+          "completion_diff_pp": -2.22,
+          "paired_outcomes": {
+            "both_finish": 37,
+            "rescue": 0,
+            "regression": 1,
+            "both_fail": 7
+          },
+          "common_finishers_n": 37,
+          "mean_paired_delta_s": -10.778,
+          "median_paired_delta_s": -10.531,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 29,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 1
+            },
+            "0.5s": {
+              "wins": 29,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 1
+            },
+            "1.0s": {
+              "wins": 29,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 1
+            },
+            "2.0s": {
+              "wins": 29,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 1
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -6.67,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -6.67,
+            "time_ci95_2sided_s": [
+              -11.856,
+              -9.733
+            ],
+            "time_ci95_1sided_upper_s": -9.913
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -6.67,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -6.67,
+            "time_ci95_2sided_s": [
+              -11.532,
+              -10.1
+            ],
+            "time_ci95_1sided_upper_s": -10.206
+          }
+        },
+        "vs_track_rule": null
+      },
+      "lookup_9cell": {
+        "summary": {
+          "n": 45,
+          "finishes": 37,
+          "completion_rate_pct": 82.22,
+          "mean_time_finishers_s": 612.46,
+          "median_time_finishers_s": 625.97,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 37,
+            "5": 8
+          },
+          "failures_by_track": {
+            "highland": 1,
+            "parkland": 7
+          },
+          "failures_by_cell": {
+            "highland_dry": 1,
+            "parkland_dry": 4,
+            "parkland_wetting": 3
+          },
+          "build_counts": {
+            "dry_balanced": 40,
+            "wet_high_downforce": 5
+          },
+          "mode_counts": {
+            "push_max": 118,
+            "balanced": 46
+          }
+        },
+        "mean_time_all_model_common_s": 624.59,
+        "vs_driver_only": {
+          "n": 45,
+          "base_finishes": 38,
+          "cand_finishes": 37,
+          "completion_diff_races": -1,
+          "completion_diff_pp": -2.22,
+          "paired_outcomes": {
+            "both_finish": 37,
+            "rescue": 0,
+            "regression": 1,
+            "both_fail": 7
+          },
+          "common_finishers_n": 37,
+          "mean_paired_delta_s": -10.76,
+          "median_paired_delta_s": -10.531,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 29,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 1
+            },
+            "0.5s": {
+              "wins": 29,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 1
+            },
+            "1.0s": {
+              "wins": 29,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 1
+            },
+            "2.0s": {
+              "wins": 29,
+              "ties_finished": 8,
+              "ties_both_failed": 7,
+              "losses": 1
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -6.67,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -6.67,
+            "time_ci95_2sided_s": [
+              -11.83,
+              -9.72
+            ],
+            "time_ci95_1sided_upper_s": -9.892
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -6.67,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -6.67,
+            "time_ci95_2sided_s": [
+              -11.483,
+              -10.11
+            ],
+            "time_ci95_1sided_upper_s": -10.223
+          }
+        },
+        "vs_track_rule": {
+          "n": 45,
+          "base_finishes": 37,
+          "cand_finishes": 37,
+          "completion_diff_races": 0,
+          "completion_diff_pp": 0.0,
+          "paired_outcomes": {
+            "both_finish": 37,
+            "rescue": 0,
+            "regression": 0,
+            "both_fail": 8
+          },
+          "common_finishers_n": 37,
+          "mean_paired_delta_s": 0.018,
+          "median_paired_delta_s": 0.0,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 3,
+              "ties_finished": 29,
+              "ties_both_failed": 8,
+              "losses": 5
+            },
+            "0.5s": {
+              "wins": 0,
+              "ties_finished": 37,
+              "ties_both_failed": 8,
+              "losses": 0
+            },
+            "1.0s": {
+              "wins": 0,
+              "ties_finished": 37,
+              "ties_both_failed": 8,
+              "losses": 0
+            },
+            "2.0s": {
+              "wins": 0,
+              "ties_finished": 37,
+              "ties_both_failed": 8,
+              "losses": 0
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": 0.0,
+            "time_ci95_2sided_s": [
+              -0.006,
+              0.042
+            ],
+            "time_ci95_1sided_upper_s": 0.039
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": 0.0,
+            "time_ci95_2sided_s": [
+              -0.013,
+              0.05
+            ],
+            "time_ci95_1sided_upper_s": 0.044
+          }
+        }
+      },
+      "nn3_racing_v1": {
+        "summary": {
+          "n": 45,
+          "finishes": 35,
+          "completion_rate_pct": 77.78,
+          "mean_time_finishers_s": 617.02,
+          "median_time_finishers_s": 626.8,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 35,
+            "5": 10
+          },
+          "failures_by_track": {
+            "highland": 1,
+            "parkland": 9
+          },
+          "failures_by_cell": {
+            "highland_dry": 1,
+            "parkland_dry": 4,
+            "parkland_saturated": 1,
+            "parkland_wetting": 4
+          },
+          "build_counts": {
+            "dry_balanced": 45
+          },
+          "mode_counts": {
+            "push_max": 142,
+            "balanced": 17,
+            "conserve_tyres": 7
+          }
+        },
+        "mean_time_all_model_common_s": 624.18,
+        "vs_driver_only": {
+          "n": 45,
+          "base_finishes": 38,
+          "cand_finishes": 35,
+          "completion_diff_races": -3,
+          "completion_diff_pp": -6.67,
+          "paired_outcomes": {
+            "both_finish": 35,
+            "rescue": 0,
+            "regression": 3,
+            "both_fail": 7
+          },
+          "common_finishers_n": 35,
+          "mean_paired_delta_s": -11.766,
+          "median_paired_delta_s": -11.964,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 33,
+              "ties_finished": 1,
+              "ties_both_failed": 7,
+              "losses": 4
+            },
+            "0.5s": {
+              "wins": 32,
+              "ties_finished": 2,
+              "ties_both_failed": 7,
+              "losses": 4
+            },
+            "1.0s": {
+              "wins": 32,
+              "ties_finished": 2,
+              "ties_both_failed": 7,
+              "losses": 4
+            },
+            "2.0s": {
+              "wins": 32,
+              "ties_finished": 3,
+              "ties_both_failed": 7,
+              "losses": 3
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -13.33,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -13.33,
+            "time_ci95_2sided_s": [
+              -13.042,
+              -10.577
+            ],
+            "time_ci95_1sided_upper_s": -10.769
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -11.11,
+              -2.22
+            ],
+            "comp_ci95_1sided_lower_pp": -11.11,
+            "time_ci95_2sided_s": [
+              -12.896,
+              -10.95
+            ],
+            "time_ci95_1sided_upper_s": -10.978
+          }
+        },
+        "vs_track_rule": {
+          "n": 45,
+          "base_finishes": 37,
+          "cand_finishes": 35,
+          "completion_diff_races": -2,
+          "completion_diff_pp": -4.44,
+          "paired_outcomes": {
+            "both_finish": 35,
+            "rescue": 0,
+            "regression": 2,
+            "both_fail": 8
+          },
+          "common_finishers_n": 35,
+          "mean_paired_delta_s": -0.372,
+          "median_paired_delta_s": 0.0,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 4,
+              "ties_finished": 30,
+              "ties_both_failed": 8,
+              "losses": 3
+            },
+            "0.5s": {
+              "wins": 3,
+              "ties_finished": 31,
+              "ties_both_failed": 8,
+              "losses": 3
+            },
+            "1.0s": {
+              "wins": 3,
+              "ties_finished": 31,
+              "ties_both_failed": 8,
+              "losses": 3
+            },
+            "2.0s": {
+              "wins": 3,
+              "ties_finished": 32,
+              "ties_both_failed": 8,
+              "losses": 2
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -11.11,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -8.89,
+            "time_ci95_2sided_s": [
+              -0.721,
+              -0.002
+            ],
+            "time_ci95_1sided_upper_s": -0.074
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -8.89,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -8.89,
+            "time_ci95_2sided_s": [
+              -0.7,
+              0.004
+            ],
+            "time_ci95_1sided_upper_s": -0.043
+          }
+        }
+      },
+      "qwen_lora_racing_v1": {
+        "summary": {
+          "n": 45,
+          "finishes": 34,
+          "completion_rate_pct": 75.56,
+          "mean_time_finishers_s": 621.64,
+          "median_time_finishers_s": 626.85,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 34,
+            "5": 11
+          },
+          "failures_by_track": {
+            "highland": 1,
+            "parkland": 10
+          },
+          "failures_by_cell": {
+            "highland_dry": 1,
+            "parkland_dry": 5,
+            "parkland_wetting": 5
+          },
+          "build_counts": {
+            "dry_balanced": 45
+          },
+          "mode_counts": {
+            "push_max": 150
+          }
+        },
+        "mean_time_all_model_common_s": 624.14,
+        "vs_driver_only": {
+          "n": 45,
+          "base_finishes": 38,
+          "cand_finishes": 34,
+          "completion_diff_races": -4,
+          "completion_diff_pp": -8.89,
+          "paired_outcomes": {
+            "both_finish": 34,
+            "rescue": 0,
+            "regression": 4,
+            "both_fail": 7
+          },
+          "common_finishers_n": 34,
+          "mean_paired_delta_s": -12.162,
+          "median_paired_delta_s": -12.814,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 33,
+              "ties_finished": 0,
+              "ties_both_failed": 7,
+              "losses": 5
+            },
+            "0.5s": {
+              "wins": 32,
+              "ties_finished": 2,
+              "ties_both_failed": 7,
+              "losses": 4
+            },
+            "1.0s": {
+              "wins": 32,
+              "ties_finished": 2,
+              "ties_both_failed": 7,
+              "losses": 4
+            },
+            "2.0s": {
+              "wins": 32,
+              "ties_finished": 2,
+              "ties_both_failed": 7,
+              "losses": 4
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -15.56,
+              -2.22
+            ],
+            "comp_ci95_1sided_lower_pp": -15.56,
+            "time_ci95_2sided_s": [
+              -13.021,
+              -11.319
+            ],
+            "time_ci95_1sided_upper_s": -11.457
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -22.22,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -20.0,
+            "time_ci95_2sided_s": [
+              -13.005,
+              -11.531
+            ],
+            "time_ci95_1sided_upper_s": -11.604
+          }
+        },
+        "vs_track_rule": {
+          "n": 45,
+          "base_finishes": 37,
+          "cand_finishes": 34,
+          "completion_diff_races": -3,
+          "completion_diff_pp": -6.67,
+          "paired_outcomes": {
+            "both_finish": 34,
+            "rescue": 0,
+            "regression": 3,
+            "both_fail": 8
+          },
+          "common_finishers_n": 34,
+          "mean_paired_delta_s": -0.433,
+          "median_paired_delta_s": 0.0,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 4,
+              "ties_finished": 29,
+              "ties_both_failed": 8,
+              "losses": 4
+            },
+            "0.5s": {
+              "wins": 3,
+              "ties_finished": 31,
+              "ties_both_failed": 8,
+              "losses": 3
+            },
+            "1.0s": {
+              "wins": 3,
+              "ties_finished": 31,
+              "ties_both_failed": 8,
+              "losses": 3
+            },
+            "2.0s": {
+              "wins": 3,
+              "ties_finished": 31,
+              "ties_both_failed": 8,
+              "losses": 3
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -13.33,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -11.11,
+            "time_ci95_2sided_s": [
+              -0.756,
+              -0.117
+            ],
+            "time_ci95_1sided_upper_s": -0.169
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -15.56,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -13.33,
+            "time_ci95_2sided_s": [
+              -0.788,
+              -0.099
+            ],
+            "time_ci95_1sided_upper_s": -0.16
+          }
+        }
+      }
+    },
+    "completion_by_time_checkpoints": {
+      "driver_only": {
+        "560s": 0.1778,
+        "580s": 0.2889,
+        "600s": 0.2889,
+        "620s": 0.4,
+        "640s": 0.4,
+        "660s": 0.6,
+        "680s": 0.6222,
+        "700s": 0.6889,
+        "750s": 0.8444,
+        "800s": 0.8444
+      },
+      "track_rule": {
+        "560s": 0.2444,
+        "580s": 0.2889,
+        "600s": 0.3778,
+        "620s": 0.4,
+        "640s": 0.5333,
+        "660s": 0.6,
+        "680s": 0.6444,
+        "700s": 0.7111,
+        "750s": 0.8222,
+        "800s": 0.8222
+      },
+      "lookup_9cell": {
+        "560s": 0.2444,
+        "580s": 0.2889,
+        "600s": 0.3778,
+        "620s": 0.4,
+        "640s": 0.5333,
+        "660s": 0.6,
+        "680s": 0.6444,
+        "700s": 0.7111,
+        "750s": 0.8222,
+        "800s": 0.8222
+      },
+      "nn3_racing_v1": {
+        "560s": 0.2,
+        "580s": 0.2444,
+        "600s": 0.3333,
+        "620s": 0.3556,
+        "640s": 0.4889,
+        "660s": 0.5556,
+        "680s": 0.6,
+        "700s": 0.6667,
+        "750s": 0.7778,
+        "800s": 0.7778
+      },
+      "qwen_lora_racing_v1": {
+        "560s": 0.1778,
+        "580s": 0.2222,
+        "600s": 0.3111,
+        "620s": 0.3333,
+        "640s": 0.4667,
+        "660s": 0.5333,
+        "680s": 0.5778,
+        "700s": 0.6444,
+        "750s": 0.7556,
+        "800s": 0.7556
+      }
+    }
+  },
+  "fresh_180_light_models": {
+    "n_races": 180,
+    "all_model_common_finishers_n": 152,
+    "models": {
+      "driver_only": {
+        "summary": {
+          "n": 180,
+          "finishes": 167,
+          "completion_rate_pct": 92.78,
+          "mean_time_finishers_s": 614.07,
+          "median_time_finishers_s": 614.24,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 167,
+            "5": 13
+          },
+          "failures_by_track": {
+            "parkland": 13
+          },
+          "failures_by_cell": {
+            "parkland_dry": 12,
+            "parkland_wetting": 1
+          },
+          "build_counts": {
+            "dry_balanced": 180
+          },
+          "mode_counts": {
+            "balanced": 697
+          }
+        },
+        "mean_time_all_model_common_s": 614.75,
+        "vs_driver_only": null,
+        "vs_track_rule": {
+          "n": 180,
+          "base_finishes": 158,
+          "cand_finishes": 167,
+          "completion_diff_races": 9,
+          "completion_diff_pp": 5.0,
+          "paired_outcomes": {
+            "both_finish": 158,
+            "rescue": 9,
+            "regression": 0,
+            "both_fail": 13
+          },
+          "common_finishers_n": 158,
+          "mean_paired_delta_s": 8.825,
+          "median_paired_delta_s": 7.865,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 9,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 111
+            },
+            "0.5s": {
+              "wins": 9,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 111
+            },
+            "1.0s": {
+              "wins": 9,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 111
+            },
+            "2.0s": {
+              "wins": 9,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 111
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              2.78,
+              7.22
+            ],
+            "comp_ci95_1sided_lower_pp": 2.78,
+            "time_ci95_2sided_s": [
+              8.255,
+              9.412
+            ],
+            "time_ci95_1sided_upper_s": 9.329
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 20,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              2.78,
+              7.22
+            ],
+            "comp_ci95_1sided_lower_pp": 3.33,
+            "time_ci95_2sided_s": [
+              8.15,
+              9.51
+            ],
+            "time_ci95_1sided_upper_s": 9.397
+          }
+        }
+      },
+      "track_rule": {
+        "summary": {
+          "n": 180,
+          "finishes": 158,
+          "completion_rate_pct": 87.78,
+          "mean_time_finishers_s": 602.56,
+          "median_time_finishers_s": 593.79,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 158,
+            "5": 22
+          },
+          "failures_by_track": {
+            "highland": 9,
+            "parkland": 13
+          },
+          "failures_by_cell": {
+            "highland_dry": 9,
+            "parkland_dry": 12,
+            "parkland_wetting": 1
+          },
+          "build_counts": {
+            "dry_balanced": 180
+          },
+          "mode_counts": {
+            "push_max": 471,
+            "balanced": 217
+          }
+        },
+        "mean_time_all_model_common_s": 605.58,
+        "vs_driver_only": {
+          "n": 180,
+          "base_finishes": 167,
+          "cand_finishes": 158,
+          "completion_diff_races": -9,
+          "completion_diff_pp": -5.0,
+          "paired_outcomes": {
+            "both_finish": 158,
+            "rescue": 0,
+            "regression": 9,
+            "both_fail": 13
+          },
+          "common_finishers_n": 158,
+          "mean_paired_delta_s": -8.825,
+          "median_paired_delta_s": -7.865,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 111,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 9
+            },
+            "0.5s": {
+              "wins": 111,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 9
+            },
+            "1.0s": {
+              "wins": 111,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 9
+            },
+            "2.0s": {
+              "wins": 111,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 9
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -7.22,
+              -2.78
+            ],
+            "comp_ci95_1sided_lower_pp": -7.22,
+            "time_ci95_2sided_s": [
+              -9.412,
+              -8.255
+            ],
+            "time_ci95_1sided_upper_s": -8.352
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 20,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -7.22,
+              -2.78
+            ],
+            "comp_ci95_1sided_lower_pp": -7.22,
+            "time_ci95_2sided_s": [
+              -9.51,
+              -8.15
+            ],
+            "time_ci95_1sided_upper_s": -8.238
+          }
+        },
+        "vs_track_rule": null
+      },
+      "lookup_9cell": {
+        "summary": {
+          "n": 180,
+          "finishes": 161,
+          "completion_rate_pct": 89.44,
+          "mean_time_finishers_s": 603.48,
+          "median_time_finishers_s": 594.64,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 161,
+            "5": 19
+          },
+          "failures_by_track": {
+            "highland": 6,
+            "parkland": 13
+          },
+          "failures_by_cell": {
+            "highland_dry": 6,
+            "parkland_dry": 12,
+            "parkland_wetting": 1
+          },
+          "build_counts": {
+            "dry_balanced": 160,
+            "wet_high_downforce": 20
+          },
+          "mode_counts": {
+            "push_max": 475,
+            "balanced": 217
+          }
+        },
+        "mean_time_all_model_common_s": 605.59,
+        "vs_driver_only": {
+          "n": 180,
+          "base_finishes": 167,
+          "cand_finishes": 161,
+          "completion_diff_races": -6,
+          "completion_diff_pp": -3.33,
+          "paired_outcomes": {
+            "both_finish": 161,
+            "rescue": 0,
+            "regression": 6,
+            "both_fail": 13
+          },
+          "common_finishers_n": 161,
+          "mean_paired_delta_s": -8.791,
+          "median_paired_delta_s": -7.765,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 114,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 6
+            },
+            "0.5s": {
+              "wins": 114,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 6
+            },
+            "1.0s": {
+              "wins": 114,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 6
+            },
+            "2.0s": {
+              "wins": 114,
+              "ties_finished": 47,
+              "ties_both_failed": 13,
+              "losses": 6
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -5.56,
+              -1.11
+            ],
+            "comp_ci95_1sided_lower_pp": -5.0,
+            "time_ci95_2sided_s": [
+              -9.374,
+              -8.225
+            ],
+            "time_ci95_1sided_upper_s": -8.326
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 20,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -5.56,
+              -1.11
+            ],
+            "comp_ci95_1sided_lower_pp": -5.0,
+            "time_ci95_2sided_s": [
+              -9.462,
+              -8.12
+            ],
+            "time_ci95_1sided_upper_s": -8.214
+          }
+        },
+        "vs_track_rule": {
+          "n": 180,
+          "base_finishes": 158,
+          "cand_finishes": 161,
+          "completion_diff_races": 3,
+          "completion_diff_pp": 1.67,
+          "paired_outcomes": {
+            "both_finish": 158,
+            "rescue": 3,
+            "regression": 0,
+            "both_fail": 19
+          },
+          "common_finishers_n": 158,
+          "mean_paired_delta_s": 0.012,
+          "median_paired_delta_s": 0.0,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 10,
+              "ties_finished": 143,
+              "ties_both_failed": 19,
+              "losses": 8
+            },
+            "0.5s": {
+              "wins": 3,
+              "ties_finished": 156,
+              "ties_both_failed": 19,
+              "losses": 2
+            },
+            "1.0s": {
+              "wins": 3,
+              "ties_finished": 158,
+              "ties_both_failed": 19,
+              "losses": 0
+            },
+            "2.0s": {
+              "wins": 3,
+              "ties_finished": 158,
+              "ties_both_failed": 19,
+              "losses": 0
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              3.33
+            ],
+            "comp_ci95_1sided_lower_pp": 0.56,
+            "time_ci95_2sided_s": [
+              -0.001,
+              0.027
+            ],
+            "time_ci95_1sided_upper_s": 0.024
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 20,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              3.33
+            ],
+            "comp_ci95_1sided_lower_pp": 0.56,
+            "time_ci95_2sided_s": [
+              -0.002,
+              0.027
+            ],
+            "time_ci95_1sided_upper_s": 0.024
+          }
+        }
+      },
+      "nn3_racing_v1": {
+        "summary": {
+          "n": 180,
+          "finishes": 152,
+          "completion_rate_pct": 84.44,
+          "mean_time_finishers_s": 605.3,
+          "median_time_finishers_s": 595.76,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 152,
+            "5": 28
+          },
+          "failures_by_track": {
+            "highland": 9,
+            "parkland": 19
+          },
+          "failures_by_cell": {
+            "highland_dry": 9,
+            "parkland_dry": 12,
+            "parkland_saturated": 2,
+            "parkland_wetting": 5
+          },
+          "build_counts": {
+            "dry_balanced": 180
+          },
+          "mode_counts": {
+            "push_max": 573,
+            "balanced": 79,
+            "conserve_tyres": 29
+          }
+        },
+        "mean_time_all_model_common_s": 605.3,
+        "vs_driver_only": {
+          "n": 180,
+          "base_finishes": 167,
+          "cand_finishes": 152,
+          "completion_diff_races": -15,
+          "completion_diff_pp": -8.33,
+          "paired_outcomes": {
+            "both_finish": 152,
+            "rescue": 0,
+            "regression": 15,
+            "both_fail": 13
+          },
+          "common_finishers_n": 152,
+          "mean_paired_delta_s": -9.452,
+          "median_paired_delta_s": -8.265,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 129,
+              "ties_finished": 10,
+              "ties_both_failed": 13,
+              "losses": 28
+            },
+            "0.5s": {
+              "wins": 124,
+              "ties_finished": 17,
+              "ties_both_failed": 13,
+              "losses": 26
+            },
+            "1.0s": {
+              "wins": 121,
+              "ties_finished": 24,
+              "ties_both_failed": 13,
+              "losses": 22
+            },
+            "2.0s": {
+              "wins": 120,
+              "ties_finished": 29,
+              "ties_both_failed": 13,
+              "losses": 18
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -11.67,
+              -5.0
+            ],
+            "comp_ci95_1sided_lower_pp": -11.11,
+            "time_ci95_2sided_s": [
+              -10.168,
+              -8.773
+            ],
+            "time_ci95_1sided_upper_s": -8.871
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 20,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -11.67,
+              -5.0
+            ],
+            "comp_ci95_1sided_lower_pp": -11.11,
+            "time_ci95_2sided_s": [
+              -10.212,
+              -8.71
+            ],
+            "time_ci95_1sided_upper_s": -8.807
+          }
+        },
+        "vs_track_rule": {
+          "n": 180,
+          "base_finishes": 158,
+          "cand_finishes": 152,
+          "completion_diff_races": -6,
+          "completion_diff_pp": -3.33,
+          "paired_outcomes": {
+            "both_finish": 152,
+            "rescue": 0,
+            "regression": 6,
+            "both_fail": 22
+          },
+          "common_finishers_n": 152,
+          "mean_paired_delta_s": -0.278,
+          "median_paired_delta_s": 0.0,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 18,
+              "ties_finished": 121,
+              "ties_both_failed": 22,
+              "losses": 19
+            },
+            "0.5s": {
+              "wins": 13,
+              "ties_finished": 128,
+              "ties_both_failed": 22,
+              "losses": 17
+            },
+            "1.0s": {
+              "wins": 10,
+              "ties_finished": 135,
+              "ties_both_failed": 22,
+              "losses": 13
+            },
+            "2.0s": {
+              "wins": 9,
+              "ties_finished": 140,
+              "ties_both_failed": 22,
+              "losses": 9
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -6.11,
+              -1.11
+            ],
+            "comp_ci95_1sided_lower_pp": -5.56,
+            "time_ci95_2sided_s": [
+              -0.518,
+              -0.049
+            ],
+            "time_ci95_1sided_upper_s": -0.087
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 20,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -5.56,
+              -1.11
+            ],
+            "comp_ci95_1sided_lower_pp": -5.0,
+            "time_ci95_2sided_s": [
+              -0.515,
+              -0.058
+            ],
+            "time_ci95_1sided_upper_s": -0.089
+          }
+        }
+      }
+    },
+    "completion_by_time_checkpoints": {
+      "driver_only": {
+        "560s": 0.2611,
+        "580s": 0.3722,
+        "600s": 0.3889,
+        "620s": 0.4722,
+        "640s": 0.4833,
+        "660s": 0.6722,
+        "680s": 0.7056,
+        "700s": 0.75,
+        "750s": 0.9222,
+        "800s": 0.9278
+      },
+      "track_rule": {
+        "560s": 0.3611,
+        "580s": 0.3722,
+        "600s": 0.4611,
+        "620s": 0.4833,
+        "640s": 0.6056,
+        "660s": 0.6556,
+        "680s": 0.6667,
+        "700s": 0.7444,
+        "750s": 0.8778,
+        "800s": 0.8778
+      },
+      "lookup_9cell": {
+        "560s": 0.3611,
+        "580s": 0.3722,
+        "600s": 0.4611,
+        "620s": 0.4833,
+        "640s": 0.6056,
+        "660s": 0.6722,
+        "680s": 0.6833,
+        "700s": 0.7611,
+        "750s": 0.8944,
+        "800s": 0.8944
+      },
+      "nn3_racing_v1": {
+        "560s": 0.3278,
+        "580s": 0.3389,
+        "600s": 0.4278,
+        "620s": 0.45,
+        "640s": 0.5722,
+        "660s": 0.6222,
+        "680s": 0.6333,
+        "700s": 0.7111,
+        "750s": 0.8444,
+        "800s": 0.8444
+      }
+    }
+  },
+  "fresh_45_matched_all_models": {
+    "n_races": 45,
+    "all_model_common_finishers_n": 35,
+    "models": {
+      "driver_only": {
+        "summary": {
+          "n": 45,
+          "finishes": 41,
+          "completion_rate_pct": 91.11,
+          "mean_time_finishers_s": 617.06,
+          "median_time_finishers_s": 614.24,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 41,
+            "5": 4
+          },
+          "failures_by_track": {
+            "parkland": 4
+          },
+          "failures_by_cell": {
+            "parkland_dry": 4
+          },
+          "build_counts": {
+            "dry_balanced": 45
+          },
+          "mode_counts": {
+            "balanced": 172
+          }
+        },
+        "mean_time_all_model_common_s": 631.14,
+        "vs_driver_only": null,
+        "vs_track_rule": {
+          "n": 45,
+          "base_finishes": 40,
+          "cand_finishes": 41,
+          "completion_diff_races": 1,
+          "completion_diff_pp": 2.22,
+          "paired_outcomes": {
+            "both_finish": 40,
+            "rescue": 1,
+            "regression": 0,
+            "both_fail": 4
+          },
+          "common_finishers_n": 40,
+          "mean_paired_delta_s": 8.573,
+          "median_paired_delta_s": 7.415,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 1,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 29
+            },
+            "0.5s": {
+              "wins": 1,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 29
+            },
+            "1.0s": {
+              "wins": 1,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 29
+            },
+            "2.0s": {
+              "wins": 1,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 29
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              6.67
+            ],
+            "comp_ci95_1sided_lower_pp": 0.0,
+            "time_ci95_2sided_s": [
+              7.507,
+              9.636
+            ],
+            "time_ci95_1sided_upper_s": 9.472
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              6.67
+            ],
+            "comp_ci95_1sided_lower_pp": 0.0,
+            "time_ci95_2sided_s": [
+              7.457,
+              9.78
+            ],
+            "time_ci95_1sided_upper_s": 9.632
+          }
+        }
+      },
+      "track_rule": {
+        "summary": {
+          "n": 45,
+          "finishes": 40,
+          "completion_rate_pct": 88.89,
+          "mean_time_finishers_s": 607.33,
+          "median_time_finishers_s": 597.11,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 40,
+            "5": 5
+          },
+          "failures_by_track": {
+            "highland": 1,
+            "parkland": 4
+          },
+          "failures_by_cell": {
+            "highland_dry": 1,
+            "parkland_dry": 4
+          },
+          "build_counts": {
+            "dry_balanced": 45
+          },
+          "mode_counts": {
+            "push_max": 118,
+            "balanced": 52
+          }
+        },
+        "mean_time_all_model_common_s": 621.34,
+        "vs_driver_only": {
+          "n": 45,
+          "base_finishes": 41,
+          "cand_finishes": 40,
+          "completion_diff_races": -1,
+          "completion_diff_pp": -2.22,
+          "paired_outcomes": {
+            "both_finish": 40,
+            "rescue": 0,
+            "regression": 1,
+            "both_fail": 4
+          },
+          "common_finishers_n": 40,
+          "mean_paired_delta_s": -8.573,
+          "median_paired_delta_s": -7.415,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 29,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 1
+            },
+            "0.5s": {
+              "wins": 29,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 1
+            },
+            "1.0s": {
+              "wins": 29,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 1
+            },
+            "2.0s": {
+              "wins": 29,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 1
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -6.67,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -6.67,
+            "time_ci95_2sided_s": [
+              -9.636,
+              -7.507
+            ],
+            "time_ci95_1sided_upper_s": -7.663
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -6.67,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -6.67,
+            "time_ci95_2sided_s": [
+              -9.78,
+              -7.457
+            ],
+            "time_ci95_1sided_upper_s": -7.554
+          }
+        },
+        "vs_track_rule": null
+      },
+      "lookup_9cell": {
+        "summary": {
+          "n": 45,
+          "finishes": 40,
+          "completion_rate_pct": 88.89,
+          "mean_time_finishers_s": 607.34,
+          "median_time_finishers_s": 597.11,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 40,
+            "5": 5
+          },
+          "failures_by_track": {
+            "highland": 1,
+            "parkland": 4
+          },
+          "failures_by_cell": {
+            "highland_dry": 1,
+            "parkland_dry": 4
+          },
+          "build_counts": {
+            "dry_balanced": 40,
+            "wet_high_downforce": 5
+          },
+          "mode_counts": {
+            "push_max": 118,
+            "balanced": 52
+          }
+        },
+        "mean_time_all_model_common_s": 621.35,
+        "vs_driver_only": {
+          "n": 45,
+          "base_finishes": 41,
+          "cand_finishes": 40,
+          "completion_diff_races": -1,
+          "completion_diff_pp": -2.22,
+          "paired_outcomes": {
+            "both_finish": 40,
+            "rescue": 0,
+            "regression": 1,
+            "both_fail": 4
+          },
+          "common_finishers_n": 40,
+          "mean_paired_delta_s": -8.562,
+          "median_paired_delta_s": -7.298,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 29,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 1
+            },
+            "0.5s": {
+              "wins": 29,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 1
+            },
+            "1.0s": {
+              "wins": 29,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 1
+            },
+            "2.0s": {
+              "wins": 29,
+              "ties_finished": 11,
+              "ties_both_failed": 4,
+              "losses": 1
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -6.67,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -6.67,
+            "time_ci95_2sided_s": [
+              -9.619,
+              -7.497
+            ],
+            "time_ci95_1sided_upper_s": -7.653
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -6.67,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -6.67,
+            "time_ci95_2sided_s": [
+              -9.783,
+              -7.45
+            ],
+            "time_ci95_1sided_upper_s": -7.544
+          }
+        },
+        "vs_track_rule": {
+          "n": 45,
+          "base_finishes": 40,
+          "cand_finishes": 40,
+          "completion_diff_races": 0,
+          "completion_diff_pp": 0.0,
+          "paired_outcomes": {
+            "both_finish": 40,
+            "rescue": 0,
+            "regression": 0,
+            "both_fail": 5
+          },
+          "common_finishers_n": 40,
+          "mean_paired_delta_s": 0.011,
+          "median_paired_delta_s": 0.0,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 1,
+              "ties_finished": 36,
+              "ties_both_failed": 5,
+              "losses": 3
+            },
+            "0.5s": {
+              "wins": 0,
+              "ties_finished": 40,
+              "ties_both_failed": 5,
+              "losses": 0
+            },
+            "1.0s": {
+              "wins": 0,
+              "ties_finished": 40,
+              "ties_both_failed": 5,
+              "losses": 0
+            },
+            "2.0s": {
+              "wins": 0,
+              "ties_finished": 40,
+              "ties_both_failed": 5,
+              "losses": 0
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": 0.0,
+            "time_ci95_2sided_s": [
+              -0.008,
+              0.032
+            ],
+            "time_ci95_1sided_upper_s": 0.028
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              0.0,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": 0.0,
+            "time_ci95_2sided_s": [
+              -0.009,
+              0.029
+            ],
+            "time_ci95_1sided_upper_s": 0.028
+          }
+        }
+      },
+      "nn3_racing_v1": {
+        "summary": {
+          "n": 45,
+          "finishes": 38,
+          "completion_rate_pct": 84.44,
+          "mean_time_finishers_s": 612.07,
+          "median_time_finishers_s": 614.1,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 38,
+            "5": 7
+          },
+          "failures_by_track": {
+            "highland": 1,
+            "parkland": 6
+          },
+          "failures_by_cell": {
+            "highland_dry": 1,
+            "parkland_dry": 4,
+            "parkland_wetting": 2
+          },
+          "build_counts": {
+            "dry_balanced": 45
+          },
+          "mode_counts": {
+            "push_max": 142,
+            "balanced": 17,
+            "conserve_tyres": 9
+          }
+        },
+        "mean_time_all_model_common_s": 621.37,
+        "vs_driver_only": {
+          "n": 45,
+          "base_finishes": 41,
+          "cand_finishes": 38,
+          "completion_diff_races": -3,
+          "completion_diff_pp": -6.67,
+          "paired_outcomes": {
+            "both_finish": 38,
+            "rescue": 0,
+            "regression": 3,
+            "both_fail": 4
+          },
+          "common_finishers_n": 38,
+          "mean_paired_delta_s": -8.957,
+          "median_paired_delta_s": -8.198,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 30,
+              "ties_finished": 1,
+              "ties_both_failed": 4,
+              "losses": 10
+            },
+            "0.5s": {
+              "wins": 30,
+              "ties_finished": 2,
+              "ties_both_failed": 4,
+              "losses": 9
+            },
+            "1.0s": {
+              "wins": 30,
+              "ties_finished": 4,
+              "ties_both_failed": 4,
+              "losses": 7
+            },
+            "2.0s": {
+              "wins": 30,
+              "ties_finished": 6,
+              "ties_both_failed": 4,
+              "losses": 5
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -13.33,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -11.22,
+            "time_ci95_2sided_s": [
+              -10.364,
+              -7.643
+            ],
+            "time_ci95_1sided_upper_s": -7.832
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -11.11,
+              -2.22
+            ],
+            "comp_ci95_1sided_lower_pp": -11.11,
+            "time_ci95_2sided_s": [
+              -10.075,
+              -7.639
+            ],
+            "time_ci95_1sided_upper_s": -7.871
+          }
+        },
+        "vs_track_rule": {
+          "n": 45,
+          "base_finishes": 40,
+          "cand_finishes": 38,
+          "completion_diff_races": -2,
+          "completion_diff_pp": -4.44,
+          "paired_outcomes": {
+            "both_finish": 38,
+            "rescue": 0,
+            "regression": 2,
+            "both_fail": 5
+          },
+          "common_finishers_n": 38,
+          "mean_paired_delta_s": 0.068,
+          "median_paired_delta_s": 0.0,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 1,
+              "ties_finished": 30,
+              "ties_both_failed": 5,
+              "losses": 9
+            },
+            "0.5s": {
+              "wins": 1,
+              "ties_finished": 31,
+              "ties_both_failed": 5,
+              "losses": 8
+            },
+            "1.0s": {
+              "wins": 1,
+              "ties_finished": 33,
+              "ties_both_failed": 5,
+              "losses": 6
+            },
+            "2.0s": {
+              "wins": 1,
+              "ties_finished": 35,
+              "ties_both_failed": 5,
+              "losses": 4
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -8.89,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -8.89,
+            "time_ci95_2sided_s": [
+              -0.483,
+              0.453
+            ],
+            "time_ci95_1sided_upper_s": 0.424
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -8.89,
+              0.0
+            ],
+            "comp_ci95_1sided_lower_pp": -8.89,
+            "time_ci95_2sided_s": [
+              -0.47,
+              0.468
+            ],
+            "time_ci95_1sided_upper_s": 0.438
+          }
+        }
+      },
+      "qwen_lora_racing_v1": {
+        "summary": {
+          "n": 45,
+          "finishes": 35,
+          "completion_rate_pct": 77.78,
+          "mean_time_finishers_s": 621.18,
+          "median_time_finishers_s": 633.37,
+          "pits_total": 0,
+          "illegal_proposed": 0,
+          "delegated_calls": 0,
+          "status_counts": {
+            "2": 35,
+            "5": 10
+          },
+          "failures_by_track": {
+            "highland": 1,
+            "parkland": 9
+          },
+          "failures_by_cell": {
+            "highland_dry": 1,
+            "parkland_dry": 5,
+            "parkland_wetting": 4
+          },
+          "build_counts": {
+            "dry_balanced": 45
+          },
+          "mode_counts": {
+            "push_max": 154
+          }
+        },
+        "mean_time_all_model_common_s": 621.18,
+        "vs_driver_only": {
+          "n": 45,
+          "base_finishes": 41,
+          "cand_finishes": 35,
+          "completion_diff_races": -6,
+          "completion_diff_pp": -13.33,
+          "paired_outcomes": {
+            "both_finish": 35,
+            "rescue": 0,
+            "regression": 6,
+            "both_fail": 4
+          },
+          "common_finishers_n": 35,
+          "mean_paired_delta_s": -9.952,
+          "median_paired_delta_s": -9.064,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 32,
+              "ties_finished": 0,
+              "ties_both_failed": 4,
+              "losses": 9
+            },
+            "0.5s": {
+              "wins": 31,
+              "ties_finished": 1,
+              "ties_both_failed": 4,
+              "losses": 9
+            },
+            "1.0s": {
+              "wins": 31,
+              "ties_finished": 2,
+              "ties_both_failed": 4,
+              "losses": 8
+            },
+            "2.0s": {
+              "wins": 31,
+              "ties_finished": 4,
+              "ties_both_failed": 4,
+              "losses": 6
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -20.0,
+              -6.67
+            ],
+            "comp_ci95_1sided_lower_pp": -20.0,
+            "time_ci95_2sided_s": [
+              -11.341,
+              -8.603
+            ],
+            "time_ci95_1sided_upper_s": -8.819
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -17.78,
+              -11.11
+            ],
+            "comp_ci95_1sided_lower_pp": -17.78,
+            "time_ci95_2sided_s": [
+              -11.374,
+              -8.364
+            ],
+            "time_ci95_1sided_upper_s": -8.54
+          }
+        },
+        "vs_track_rule": {
+          "n": 45,
+          "base_finishes": 40,
+          "cand_finishes": 35,
+          "completion_diff_races": -5,
+          "completion_diff_pp": -11.11,
+          "paired_outcomes": {
+            "both_finish": 35,
+            "rescue": 0,
+            "regression": 5,
+            "both_fail": 5
+          },
+          "common_finishers_n": 35,
+          "mean_paired_delta_s": -0.154,
+          "median_paired_delta_s": 0.0,
+          "wtl_by_tolerance": {
+            "0.0s": {
+              "wins": 9,
+              "ties_finished": 15,
+              "ties_both_failed": 5,
+              "losses": 16
+            },
+            "0.5s": {
+              "wins": 2,
+              "ties_finished": 30,
+              "ties_both_failed": 5,
+              "losses": 8
+            },
+            "1.0s": {
+              "wins": 2,
+              "ties_finished": 31,
+              "ties_both_failed": 5,
+              "losses": 7
+            },
+            "2.0s": {
+              "wins": 2,
+              "ties_finished": 33,
+              "ties_both_failed": 5,
+              "losses": 5
+            }
+          },
+          "bootstrap_cell_stratified": {
+            "method": "cell_stratified_paired_bootstrap",
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -17.78,
+              -6.67
+            ],
+            "comp_ci95_1sided_lower_pp": -15.56,
+            "time_ci95_2sided_s": [
+              -0.68,
+              0.262
+            ],
+            "time_ci95_1sided_upper_s": 0.231
+          },
+          "bootstrap_seed_block": {
+            "method": "seed_block_paired_bootstrap",
+            "n_blocks": 5,
+            "n_boot": 4000,
+            "comp_ci95_2sided_pp": [
+              -17.78,
+              -4.44
+            ],
+            "comp_ci95_1sided_lower_pp": -15.56,
+            "time_ci95_2sided_s": [
+              -0.715,
+              0.29
+            ],
+            "time_ci95_1sided_upper_s": 0.261
+          }
+        }
+      }
+    },
+    "completion_by_time_checkpoints": {
+      "driver_only": {
+        "560s": 0.2444,
+        "580s": 0.3556,
+        "600s": 0.3556,
+        "620s": 0.4667,
+        "640s": 0.4667,
+        "660s": 0.6444,
+        "680s": 0.6889,
+        "700s": 0.7333,
+        "750s": 0.9111,
+        "800s": 0.9111
+      },
+      "track_rule": {
+        "560s": 0.3333,
+        "580s": 0.3556,
+        "600s": 0.4444,
+        "620s": 0.4667,
+        "640s": 0.5778,
+        "660s": 0.6667,
+        "680s": 0.6667,
+        "700s": 0.7556,
+        "750s": 0.8889,
+        "800s": 0.8889
+      },
+      "lookup_9cell": {
+        "560s": 0.3333,
+        "580s": 0.3556,
+        "600s": 0.4444,
+        "620s": 0.4667,
+        "640s": 0.5778,
+        "660s": 0.6667,
+        "680s": 0.6667,
+        "700s": 0.7556,
+        "750s": 0.8889,
+        "800s": 0.8889
+      },
+      "nn3_racing_v1": {
+        "560s": 0.2889,
+        "580s": 0.3111,
+        "600s": 0.4,
+        "620s": 0.4222,
+        "640s": 0.5333,
+        "660s": 0.6222,
+        "680s": 0.6222,
+        "700s": 0.7111,
+        "750s": 0.8444,
+        "800s": 0.8444
+      },
+      "qwen_lora_racing_v1": {
+        "560s": 0.2222,
+        "580s": 0.2444,
+        "600s": 0.3333,
+        "620s": 0.3556,
+        "640s": 0.4667,
+        "660s": 0.5556,
+        "680s": 0.5556,
+        "700s": 0.6444,
+        "750s": 0.7778,
+        "800s": 0.7778
+      }
+    }
+  },
+  "dataset_and_constant_baselines": {
+    "train": {
+      "total_rows": 853,
+      "build": {
+        "total": 180,
+        "eligible": 154,
+        "all_failed_excluded": 26,
+        "resolved_singleton": 79,
+        "tie_acceptable_set": 75,
+        "all_rows_gold_histogram_incl_all_failed": {
+          "dry_balanced": 148,
+          "wet_high_downforce": 32
+        },
+        "eligible_gold_counts": {
+          "dry_low_drag": 0,
+          "dry_balanced": 129,
+          "damp_mid_downforce": 0,
+          "wet_high_downforce": 25
+        },
+        "eligible_gold_pct": {
+          "dry_low_drag": 0.0,
+          "dry_balanced": 83.77,
+          "damp_mid_downforce": 0.0,
+          "wet_high_downforce": 16.23
+        },
+        "resolved_singleton_counts": {
+          "dry_low_drag": 0,
+          "dry_balanced": 73,
+          "damp_mid_downforce": 0,
+          "wet_high_downforce": 6
+        },
+        "acceptable_set_membership_counts": {
+          "dry_low_drag": 0,
+          "dry_balanced": 148,
+          "damp_mid_downforce": 0,
+          "wet_high_downforce": 81
+        },
+        "acceptable_set_membership_pct": {
+          "dry_low_drag": 0.0,
+          "dry_balanced": 96.1,
+          "damp_mid_downforce": 0.0,
+          "wet_high_downforce": 52.6
+        },
+        "constant_and_rule_baselines": {
+          "const_dry_balanced_acc_pct": 96.1,
+          "lookup_9cell_acc_pct": 94.81
+        },
+        "by_track": {
+          "parkland": {
+            "eligible_n": 41,
+            "gold_counts": {
+              "dry_balanced": 40,
+              "wet_high_downforce": 1
+            },
+            "acceptable_membership_counts": {
+              "dry_low_drag": 0,
+              "dry_balanced": 41,
+              "damp_mid_downforce": 0,
+              "wet_high_downforce": 8
+            },
+            "acceptable_membership_pct": {
+              "dry_low_drag": 0.0,
+              "dry_balanced": 100.0,
+              "damp_mid_downforce": 0.0,
+              "wet_high_downforce": 19.51
+            }
+          },
+          "highland": {
+            "eligible_n": 53,
+            "gold_counts": {
+              "dry_balanced": 39,
+              "wet_high_downforce": 14
+            },
+            "acceptable_membership_counts": {
+              "dry_low_drag": 0,
+              "dry_balanced": 50,
+              "damp_mid_downforce": 0,
+              "wet_high_downforce": 37
+            },
+            "acceptable_membership_pct": {
+              "dry_low_drag": 0.0,
+              "dry_balanced": 94.34,
+              "damp_mid_downforce": 0.0,
+              "wet_high_downforce": 69.81
+            }
+          },
+          "crossover": {
+            "eligible_n": 60,
+            "gold_counts": {
+              "dry_balanced": 50,
+              "wet_high_downforce": 10
+            },
+            "acceptable_membership_counts": {
+              "dry_low_drag": 0,
+              "dry_balanced": 57,
+              "damp_mid_downforce": 0,
+              "wet_high_downforce": 36
+            },
+            "acceptable_membership_pct": {
+              "dry_low_drag": 0.0,
+              "dry_balanced": 95.0,
+              "damp_mid_downforce": 0.0,
+              "wet_high_downforce": 60.0
+            }
+          }
+        }
+      },
+      "pace": {
+        "total": 673,
+        "eligible": 621,
+        "all_failed_excluded": 52,
+        "resolved_singleton": 536,
+        "tie_acceptable_set": 85,
+        "all_rows_gold_histogram_incl_all_failed": {
+          "balanced": 105,
+          "push_max": 518,
+          "conserve_tyres": 42,
+          "wet_caution": 8
+        },
+        "eligible_gold_counts": {
+          "push_max": 508,
+          "balanced": 85,
+          "conserve_tyres": 28,
+          "wet_caution": 0
+        },
+        "eligible_gold_pct": {
+          "push_max": 81.8,
+          "balanced": 13.69,
+          "conserve_tyres": 4.51,
+          "wet_caution": 0.0
+        },
+        "resolved_singleton_counts": {
+          "push_max": 482,
+          "balanced": 42,
+          "conserve_tyres": 12,
+          "wet_caution": 0
+        },
+        "acceptable_set_membership_counts": {
+          "push_max": 532,
+          "balanced": 116,
+          "conserve_tyres": 66,
+          "wet_caution": 0
+        },
+        "acceptable_set_membership_pct": {
+          "push_max": 85.67,
+          "balanced": 18.68,
+          "conserve_tyres": 10.63,
+          "wet_caution": 0.0
+        },
+        "constant_and_rule_baselines": {
+          "const_push_max_acc_pct": 85.67,
+          "const_balanced_acc_pct": 18.68,
+          "track_rule_pace_acc_pct": 88.24
+        },
+        "by_track": {
+          "parkland": {
+            "eligible_n": 168,
+            "gold_counts": {
+              "balanced": 75,
+              "push_max": 65,
+              "conserve_tyres": 28
+            },
+            "acceptable_membership_counts": {
+              "push_max": 89,
+              "balanced": 105,
+              "conserve_tyres": 63,
+              "wet_caution": 0
+            },
+            "acceptable_membership_pct": {
+              "push_max": 52.98,
+              "balanced": 62.5,
+              "conserve_tyres": 37.5,
+              "wet_caution": 0.0
+            }
+          },
+          "highland": {
+            "eligible_n": 213,
+            "gold_counts": {
+              "push_max": 203,
+              "balanced": 10
+            },
+            "acceptable_membership_counts": {
+              "push_max": 203,
+              "balanced": 11,
+              "conserve_tyres": 3,
+              "wet_caution": 0
+            },
+            "acceptable_membership_pct": {
+              "push_max": 95.31,
+              "balanced": 5.16,
+              "conserve_tyres": 1.41,
+              "wet_caution": 0.0
+            }
+          },
+          "crossover": {
+            "eligible_n": 240,
+            "gold_counts": {
+              "push_max": 240
+            },
+            "acceptable_membership_counts": {
+              "push_max": 240,
+              "balanced": 0,
+              "conserve_tyres": 0,
+              "wet_caution": 0
+            },
+            "acceptable_membership_pct": {
+              "push_max": 100.0,
+              "balanced": 0.0,
+              "conserve_tyres": 0.0,
+              "wet_caution": 0.0
+            }
+          }
+        }
+      },
+      "combined_eligible_n": 775,
+      "combined_excluded_all_failed_n": 78,
+      "qwen_build_loss_weight": 4.0325,
+      "const_dry_balanced_plus_push_max_combined_acc_pct": 87.74,
+      "track_rule_combined_acc_pct": 89.81
+    },
+    "dev": {
+      "total_rows": 428,
+      "build": {
+        "total": 90,
+        "eligible": 81,
+        "all_failed_excluded": 9,
+        "resolved_singleton": 41,
+        "tie_acceptable_set": 40,
+        "all_rows_gold_histogram_incl_all_failed": {
+          "dry_balanced": 74,
+          "wet_high_downforce": 16
+        },
+        "eligible_gold_counts": {
+          "dry_low_drag": 0,
+          "dry_balanced": 67,
+          "damp_mid_downforce": 0,
+          "wet_high_downforce": 14
+        },
+        "eligible_gold_pct": {
+          "dry_low_drag": 0.0,
+          "dry_balanced": 82.72,
+          "damp_mid_downforce": 0.0,
+          "wet_high_downforce": 17.28
+        },
+        "resolved_singleton_counts": {
+          "dry_low_drag": 0,
+          "dry_balanced": 34,
+          "damp_mid_downforce": 0,
+          "wet_high_downforce": 7
+        },
+        "acceptable_set_membership_counts": {
+          "dry_low_drag": 0,
+          "dry_balanced": 74,
+          "damp_mid_downforce": 0,
+          "wet_high_downforce": 47
+        },
+        "acceptable_set_membership_pct": {
+          "dry_low_drag": 0.0,
+          "dry_balanced": 91.36,
+          "damp_mid_downforce": 0.0,
+          "wet_high_downforce": 58.02
+        },
+        "constant_and_rule_baselines": {
+          "const_dry_balanced_acc_pct": 91.36,
+          "lookup_9cell_acc_pct": 90.12
+        },
+        "by_track": {
+          "parkland": {
+            "eligible_n": 22,
+            "gold_counts": {
+              "dry_balanced": 20,
+              "wet_high_downforce": 2
+            },
+            "acceptable_membership_counts": {
+              "dry_low_drag": 0,
+              "dry_balanced": 20,
+              "damp_mid_downforce": 0,
+              "wet_high_downforce": 6
+            },
+            "acceptable_membership_pct": {
+              "dry_low_drag": 0.0,
+              "dry_balanced": 90.91,
+              "damp_mid_downforce": 0.0,
+              "wet_high_downforce": 27.27
+            }
+          },
+          "highland": {
+            "eligible_n": 29,
+            "gold_counts": {
+              "dry_balanced": 24,
+              "wet_high_downforce": 5
+            },
+            "acceptable_membership_counts": {
+              "dry_low_drag": 0,
+              "dry_balanced": 26,
+              "damp_mid_downforce": 0,
+              "wet_high_downforce": 17
+            },
+            "acceptable_membership_pct": {
+              "dry_low_drag": 0.0,
+              "dry_balanced": 89.66,
+              "damp_mid_downforce": 0.0,
+              "wet_high_downforce": 58.62
+            }
+          },
+          "crossover": {
+            "eligible_n": 30,
+            "gold_counts": {
+              "dry_balanced": 23,
+              "wet_high_downforce": 7
+            },
+            "acceptable_membership_counts": {
+              "dry_low_drag": 0,
+              "dry_balanced": 28,
+              "damp_mid_downforce": 0,
+              "wet_high_downforce": 24
+            },
+            "acceptable_membership_pct": {
+              "dry_low_drag": 0.0,
+              "dry_balanced": 93.33,
+              "damp_mid_downforce": 0.0,
+              "wet_high_downforce": 80.0
+            }
+          }
+        }
+      },
+      "pace": {
+        "total": 338,
+        "eligible": 321,
+        "all_failed_excluded": 17,
+        "resolved_singleton": 272,
+        "tie_acceptable_set": 49,
+        "all_rows_gold_histogram_incl_all_failed": {
+          "balanced": 42,
+          "conserve_tyres": 28,
+          "push_max": 267,
+          "wet_caution": 1
+        },
+        "eligible_gold_counts": {
+          "push_max": 264,
+          "balanced": 35,
+          "conserve_tyres": 22,
+          "wet_caution": 0
+        },
+        "eligible_gold_pct": {
+          "push_max": 82.24,
+          "balanced": 10.9,
+          "conserve_tyres": 6.85,
+          "wet_caution": 0.0
+        },
+        "resolved_singleton_counts": {
+          "push_max": 246,
+          "balanced": 19,
+          "conserve_tyres": 7,
+          "wet_caution": 0
+        },
+        "acceptable_set_membership_counts": {
+          "push_max": 273,
+          "balanced": 58,
+          "conserve_tyres": 41,
+          "wet_caution": 0
+        },
+        "acceptable_set_membership_pct": {
+          "push_max": 85.05,
+          "balanced": 18.07,
+          "conserve_tyres": 12.77,
+          "wet_caution": 0.0
+        },
+        "constant_and_rule_baselines": {
+          "const_push_max_acc_pct": 85.05,
+          "const_balanced_acc_pct": 18.07,
+          "track_rule_pace_acc_pct": 86.6
+        },
+        "by_track": {
+          "parkland": {
+            "eligible_n": 88,
+            "gold_counts": {
+              "balanced": 29,
+              "conserve_tyres": 22,
+              "push_max": 37
+            },
+            "acceptable_membership_counts": {
+              "push_max": 46,
+              "balanced": 51,
+              "conserve_tyres": 39,
+              "wet_caution": 0
+            },
+            "acceptable_membership_pct": {
+              "push_max": 52.27,
+              "balanced": 57.95,
+              "conserve_tyres": 44.32,
+              "wet_caution": 0.0
+            }
+          },
+          "highland": {
+            "eligible_n": 113,
+            "gold_counts": {
+              "push_max": 107,
+              "balanced": 6
+            },
+            "acceptable_membership_counts": {
+              "push_max": 107,
+              "balanced": 7,
+              "conserve_tyres": 2,
+              "wet_caution": 0
+            },
+            "acceptable_membership_pct": {
+              "push_max": 94.69,
+              "balanced": 6.19,
+              "conserve_tyres": 1.77,
+              "wet_caution": 0.0
+            }
+          },
+          "crossover": {
+            "eligible_n": 120,
+            "gold_counts": {
+              "push_max": 120
+            },
+            "acceptable_membership_counts": {
+              "push_max": 120,
+              "balanced": 0,
+              "conserve_tyres": 0,
+              "wet_caution": 0
+            },
+            "acceptable_membership_pct": {
+              "push_max": 100.0,
+              "balanced": 0.0,
+              "conserve_tyres": 0.0,
+              "wet_caution": 0.0
+            }
+          }
+        }
+      },
+      "combined_eligible_n": 402,
+      "combined_excluded_all_failed_n": 26,
+      "qwen_build_loss_weight": 3.963,
+      "const_dry_balanced_plus_push_max_combined_acc_pct": 86.32,
+      "track_rule_combined_acc_pct": 87.56
+    },
+    "cal": {
+      "total_rows": 433,
+      "build": {
+        "total": 90,
+        "eligible": 80,
+        "all_failed_excluded": 10,
+        "resolved_singleton": 43,
+        "tie_acceptable_set": 37,
+        "all_rows_gold_histogram_incl_all_failed": {
+          "dry_balanced": 79,
+          "wet_high_downforce": 11
+        },
+        "eligible_gold_counts": {
+          "dry_low_drag": 0,
+          "dry_balanced": 72,
+          "damp_mid_downforce": 0,
+          "wet_high_downforce": 8
+        },
+        "eligible_gold_pct": {
+          "dry_low_drag": 0.0,
+          "dry_balanced": 90.0,
+          "damp_mid_downforce": 0.0,
+          "wet_high_downforce": 10.0
+        },
+        "resolved_singleton_counts": {
+          "dry_low_drag": 0,
+          "dry_balanced": 40,
+          "damp_mid_downforce": 0,
+          "wet_high_downforce": 3
+        },
+        "acceptable_set_membership_counts": {
+          "dry_low_drag": 0,
+          "dry_balanced": 77,
+          "damp_mid_downforce": 0,
+          "wet_high_downforce": 40
+        },
+        "acceptable_set_membership_pct": {
+          "dry_low_drag": 0.0,
+          "dry_balanced": 96.25,
+          "damp_mid_downforce": 0.0,
+          "wet_high_downforce": 50.0
+        },
+        "constant_and_rule_baselines": {
+          "const_dry_balanced_acc_pct": 96.25,
+          "lookup_9cell_acc_pct": 100.0
+        },
+        "by_track": {
+          "parkland": {
+            "eligible_n": 24,
+            "gold_counts": {
+              "dry_balanced": 24
+            },
+            "acceptable_membership_counts": {
+              "dry_low_drag": 0,
+              "dry_balanced": 24,
+              "damp_mid_downforce": 0,
+              "wet_high_downforce": 4
+            },
+            "acceptable_membership_pct": {
+              "dry_low_drag": 0.0,
+              "dry_balanced": 100.0,
+              "damp_mid_downforce": 0.0,
+              "wet_high_downforce": 16.67
+            }
+          },
+          "highland": {
+            "eligible_n": 26,
+            "gold_counts": {
+              "dry_balanced": 20,
+              "wet_high_downforce": 6
+            },
+            "acceptable_membership_counts": {
+              "dry_low_drag": 0,
+              "dry_balanced": 23,
+              "damp_mid_downforce": 0,
+              "wet_high_downforce": 17
+            },
+            "acceptable_membership_pct": {
+              "dry_low_drag": 0.0,
+              "dry_balanced": 88.46,
+              "damp_mid_downforce": 0.0,
+              "wet_high_downforce": 65.38
+            }
+          },
+          "crossover": {
+            "eligible_n": 30,
+            "gold_counts": {
+              "dry_balanced": 28,
+              "wet_high_downforce": 2
+            },
+            "acceptable_membership_counts": {
+              "dry_low_drag": 0,
+              "dry_balanced": 30,
+              "damp_mid_downforce": 0,
+              "wet_high_downforce": 19
+            },
+            "acceptable_membership_pct": {
+              "dry_low_drag": 0.0,
+              "dry_balanced": 100.0,
+              "damp_mid_downforce": 0.0,
+              "wet_high_downforce": 63.33
+            }
+          }
+        }
+      },
+      "pace": {
+        "total": 343,
+        "eligible": 318,
+        "all_failed_excluded": 25,
+        "resolved_singleton": 259,
+        "tie_acceptable_set": 59,
+        "all_rows_gold_histogram_incl_all_failed": {
+          "balanced": 60,
+          "push_max": 263,
+          "conserve_tyres": 19,
+          "wet_caution": 1
+        },
+        "eligible_gold_counts": {
+          "push_max": 255,
+          "balanced": 49,
+          "conserve_tyres": 14,
+          "wet_caution": 0
+        },
+        "eligible_gold_pct": {
+          "push_max": 80.19,
+          "balanced": 15.41,
+          "conserve_tyres": 4.4,
+          "wet_caution": 0.0
+        },
+        "resolved_singleton_counts": {
+          "push_max": 234,
+          "balanced": 22,
+          "conserve_tyres": 3,
+          "wet_caution": 0
+        },
+        "acceptable_set_membership_counts": {
+          "push_max": 267,
+          "balanced": 74,
+          "conserve_tyres": 41,
+          "wet_caution": 3
+        },
+        "acceptable_set_membership_pct": {
+          "push_max": 83.96,
+          "balanced": 23.27,
+          "conserve_tyres": 12.89,
+          "wet_caution": 0.94
+        },
+        "constant_and_rule_baselines": {
+          "const_push_max_acc_pct": 83.96,
+          "const_balanced_acc_pct": 23.27,
+          "track_rule_pace_acc_pct": 89.62
+        },
+        "by_track": {
+          "parkland": {
+            "eligible_n": 97,
+            "gold_counts": {
+              "push_max": 39,
+              "balanced": 44,
+              "conserve_tyres": 14
+            },
+            "acceptable_membership_counts": {
+              "push_max": 51,
+              "balanced": 69,
+              "conserve_tyres": 38,
+              "wet_caution": 3
+            },
+            "acceptable_membership_pct": {
+              "push_max": 52.58,
+              "balanced": 71.13,
+              "conserve_tyres": 39.18,
+              "wet_caution": 3.09
+            }
+          },
+          "highland": {
+            "eligible_n": 101,
+            "gold_counts": {
+              "push_max": 96,
+              "balanced": 5
+            },
+            "acceptable_membership_counts": {
+              "push_max": 96,
+              "balanced": 5,
+              "conserve_tyres": 3,
+              "wet_caution": 0
+            },
+            "acceptable_membership_pct": {
+              "push_max": 95.05,
+              "balanced": 4.95,
+              "conserve_tyres": 2.97,
+              "wet_caution": 0.0
+            }
+          },
+          "crossover": {
+            "eligible_n": 120,
+            "gold_counts": {
+              "push_max": 120
+            },
+            "acceptable_membership_counts": {
+              "push_max": 120,
+              "balanced": 0,
+              "conserve_tyres": 0,
+              "wet_caution": 0
+            },
+            "acceptable_membership_pct": {
+              "push_max": 100.0,
+              "balanced": 0.0,
+              "conserve_tyres": 0.0,
+              "wet_caution": 0.0
+            }
+          }
+        }
+      },
+      "combined_eligible_n": 398,
+      "combined_excluded_all_failed_n": 35,
+      "qwen_build_loss_weight": 3.975,
+      "const_dry_balanced_plus_push_max_combined_acc_pct": 86.43,
+      "track_rule_combined_acc_pct": 90.95
+    }
+  }
+}

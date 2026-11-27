@@ -1,0 +1,732 @@
+{
+  "protocol": "M2_V5_two_student_verified_teacher_hard_labels",
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "smoke_test": false,
+  "seeds": [
+    42,
+    1024,
+    2026
+  ],
+  "splits": {
+    "train": {
+      "file": "deepseek_v41_flash_verified_train.jsonl",
+      "n": 833,
+      "sha256_prefix": "2146a5b460e1da11"
+    },
+    "dev": {
+      "file": "dev_180.jsonl",
+      "n": 180,
+      "sha256_prefix": "832a24c856ed194b"
+    },
+    "cal": {
+      "file": "calibrate_180.jsonl",
+      "n": 180,
+      "sha256_prefix": "8c8f19e4dcbcb59a"
+    }
+  },
+  "holdout_touched": false,
+  "bge": {
+    "model_id": "BAAI/bge-reranker-base",
+    "total_params": 278044417,
+    "trainable_params": 278044417,
+    "fine_tune_method": "full_ft_fp32",
+    "frozen_baseline": {
+      "temperature": 6.15,
+      "dev_uncalibrated": {
+        "n": 180,
+        "temperature": 1.0,
+        "acc_orig": 0.21666666666666667,
+        "acc_swapped": 0.2111111111111111,
+        "order_flip_rate": 0.005555555555555556,
+        "order_flips": 1,
+        "nll": 2.5280720998192754,
+        "ece": 0.3368938726683458,
+        "aurc": 0.786122458874378,
+        "error_auroc": 0.5159119839970904,
+        "abstain_acc": 0.10526315789473684,
+        "non_abstain_acc": 0.24647887323943662,
+        "by_bucket": {
+          "api_routing": 0.25,
+          "engineering_tradeoff": 0.2222222222222222,
+          "incident_triage": 0.1956521739130435,
+          "release_gate": 0.2
+        },
+        "by_band": {
+          "clean": 0.21641791044776118,
+          "wrapped": 0.21739130434782608
+        },
+        "latency_p50_ms": 24.189087000195286,
+        "latency_p95_ms": 32.31636439986687
+      },
+      "dev_calibrated": {
+        "n": 180,
+        "temperature": 6.15,
+        "acc_orig": 0.21666666666666667,
+        "acc_swapped": 0.2111111111111111,
+        "order_flip_rate": 0.005555555555555556,
+        "order_flips": 1,
+        "nll": 1.6316095102207726,
+        "ece": 0.053772355864445356,
+        "aurc": 0.7760950371655484,
+        "error_auroc": 0.5270049099836334,
+        "abstain_acc": 0.10526315789473684,
+        "non_abstain_acc": 0.24647887323943662,
+        "by_bucket": {
+          "api_routing": 0.25,
+          "engineering_tradeoff": 0.2222222222222222,
+          "incident_triage": 0.1956521739130435,
+          "release_gate": 0.2
+        },
+        "by_band": {
+          "clean": 0.21641791044776118,
+          "wrapped": 0.21739130434782608
+        },
+        "latency_p50_ms": 24.189087000195286,
+        "latency_p95_ms": 32.31636439986687
+      },
+      "cal_calibrated": {
+        "n": 180,
+        "temperature": 6.15,
+        "acc_orig": 0.17222222222222222,
+        "acc_swapped": 0.17222222222222222,
+        "order_flip_rate": 0.0,
+        "order_flips": 0,
+        "nll": 1.6584399427040208,
+        "ece": 0.11201928307612738,
+        "aurc": 0.833983636347734,
+        "error_auroc": 0.4992422602294869,
+        "abstain_acc": 0.15789473684210525,
+        "non_abstain_acc": 0.176056338028169,
+        "by_bucket": {
+          "api_routing": 0.1590909090909091,
+          "engineering_tradeoff": 0.10869565217391304,
+          "incident_triage": 0.24444444444444444,
+          "release_gate": 0.17777777777777778
+        },
+        "by_band": {
+          "clean": 0.19402985074626866,
+          "wrapped": 0.10869565217391304
+        },
+        "latency_p50_ms": 24.0081089996238,
+        "latency_p95_ms": 33.67231225047362
+      },
+      "max_tokens_seen": 413
+    },
+    "seeds": [
+      {
+        "seed": 42,
+        "best_epoch": 4,
+        "train_seconds": 948.6,
+        "peak_vram_gb": 5.62,
+        "temperature": 6.15,
+        "dev_calibrated": {
+          "n": 180,
+          "temperature": 6.15,
+          "acc_orig": 0.2111111111111111,
+          "acc_swapped": 0.21666666666666667,
+          "order_flip_rate": 0.9944444444444445,
+          "order_flips": 179,
+          "nll": 1.5933419685326584,
+          "ece": 0.007436789406670473,
+          "aurc": 0.7394081673946756,
+          "error_auroc": 0.5583765752409192,
+          "abstain_acc": 0.0,
+          "non_abstain_acc": 0.2676056338028169,
+          "by_bucket": {
+            "api_routing": 0.13636363636363635,
+            "engineering_tradeoff": 0.17777777777777778,
+            "incident_triage": 0.2391304347826087,
+            "release_gate": 0.28888888888888886
+          },
+          "by_band": {
+            "clean": 0.19402985074626866,
+            "wrapped": 0.2608695652173913
+          },
+          "latency_p50_ms": 27.662534000228334,
+          "latency_p95_ms": 51.65382299965131
+        },
+        "cal_calibrated": {
+          "n": 180,
+          "temperature": 6.15,
+          "acc_orig": 0.19444444444444445,
+          "acc_swapped": 0.2111111111111111,
+          "order_flip_rate": 0.9944444444444445,
+          "order_flips": 179,
+          "nll": 1.5933233879371294,
+          "ece": 0.009167799105246871,
+          "aurc": 0.8198609319410972,
+          "error_auroc": 0.5052216748768473,
+          "abstain_acc": 0.0,
+          "non_abstain_acc": 0.24647887323943662,
+          "by_bucket": {
+            "api_routing": 0.18181818181818182,
+            "engineering_tradeoff": 0.21739130434782608,
+            "incident_triage": 0.2,
+            "release_gate": 0.17777777777777778
+          },
+          "by_band": {
+            "clean": 0.20149253731343283,
+            "wrapped": 0.17391304347826086
+          },
+          "latency_p50_ms": 24.907275000259688,
+          "latency_p95_ms": 44.267976949686265
+        },
+        "checkpoint": "/content/drive/MyDrive/self_jev_m2_v5/bge/bge_seed42"
+      },
+      {
+        "seed": 1024,
+        "best_epoch": 3,
+        "train_seconds": 948.8,
+        "peak_vram_gb": 5.62,
+        "temperature": 0.65,
+        "dev_calibrated": {
+          "n": 180,
+          "temperature": 0.65,
+          "acc_orig": 0.24444444444444444,
+          "acc_swapped": 0.23333333333333334,
+          "order_flip_rate": 0.06111111111111111,
+          "order_flips": 11,
+          "nll": 1.5309839298385188,
+          "ece": 0.030339879045883804,
+          "aurc": 0.63128200022295,
+          "error_auroc": 0.6104612299465241,
+          "abstain_acc": 0.21052631578947367,
+          "non_abstain_acc": 0.2535211267605634,
+          "by_bucket": {
+            "api_routing": 0.36363636363636365,
+            "engineering_tradeoff": 0.15555555555555556,
+            "incident_triage": 0.2608695652173913,
+            "release_gate": 0.2
+          },
+          "by_band": {
+            "clean": 0.26119402985074625,
+            "wrapped": 0.1956521739130435
+          },
+          "latency_p50_ms": 28.464174998589442,
+          "latency_p95_ms": 55.615330398995866
+        },
+        "cal_calibrated": {
+          "n": 180,
+          "temperature": 0.65,
+          "acc_orig": 0.21666666666666667,
+          "acc_swapped": 0.2111111111111111,
+          "order_flip_rate": 0.10555555555555556,
+          "order_flips": 19,
+          "nll": 1.568040582188184,
+          "ece": 0.07253324165940285,
+          "aurc": 0.6872033045304364,
+          "error_auroc": 0.6255682851427532,
+          "abstain_acc": 0.21052631578947367,
+          "non_abstain_acc": 0.21830985915492956,
+          "by_bucket": {
+            "api_routing": 0.38636363636363635,
+            "engineering_tradeoff": 0.10869565217391304,
+            "incident_triage": 0.13333333333333333,
+            "release_gate": 0.24444444444444444
+          },
+          "by_band": {
+            "clean": 0.2537313432835821,
+            "wrapped": 0.10869565217391304
+          },
+          "latency_p50_ms": 24.049955499322095,
+          "latency_p95_ms": 34.29805304986075
+        },
+        "checkpoint": "/content/drive/MyDrive/self_jev_m2_v5/bge/bge_seed1024"
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 3,
+        "train_seconds": 948.1,
+        "peak_vram_gb": 5.62,
+        "temperature": 0.29,
+        "dev_calibrated": {
+          "n": 180,
+          "temperature": 0.29,
+          "acc_orig": 0.23333333333333334,
+          "acc_swapped": 0.24444444444444444,
+          "order_flip_rate": 0.8944444444444445,
+          "order_flips": 161,
+          "nll": 1.5546335790991128,
+          "ece": 0.017810518129004384,
+          "aurc": 0.699555448704831,
+          "error_auroc": 0.5738440303657695,
+          "abstain_acc": 0.10526315789473684,
+          "non_abstain_acc": 0.2676056338028169,
+          "by_bucket": {
+            "api_routing": 0.20454545454545456,
+            "engineering_tradeoff": 0.2,
+            "incident_triage": 0.2391304347826087,
+            "release_gate": 0.28888888888888886
+          },
+          "by_band": {
+            "clean": 0.22388059701492538,
+            "wrapped": 0.2608695652173913
+          },
+          "latency_p50_ms": 28.568253999765147,
+          "latency_p95_ms": 55.99958749899087
+        },
+        "cal_calibrated": {
+          "n": 180,
+          "temperature": 0.29,
+          "acc_orig": 0.16666666666666666,
+          "acc_swapped": 0.19444444444444445,
+          "order_flip_rate": 0.8777777777777778,
+          "order_flips": 158,
+          "nll": 1.5888301852551867,
+          "ece": 0.045193567540910494,
+          "aurc": 0.8486761343177094,
+          "error_auroc": 0.45866666666666667,
+          "abstain_acc": 0.02631578947368421,
+          "non_abstain_acc": 0.20422535211267606,
+          "by_bucket": {
+            "api_routing": 0.11363636363636363,
+            "engineering_tradeoff": 0.17391304347826086,
+            "incident_triage": 0.2,
+            "release_gate": 0.17777777777777778
+          },
+          "by_band": {
+            "clean": 0.1791044776119403,
+            "wrapped": 0.13043478260869565
+          },
+          "latency_p50_ms": 25.254625500565453,
+          "latency_p95_ms": 64.5570836997649
+        },
+        "checkpoint": "/content/drive/MyDrive/self_jev_m2_v5/bge/bge_seed2026"
+      }
+    ],
+    "deployment_seed_selected_on_dev": 1024,
+    "deployment_selection_criterion": "lowest_calibrated_dev_nll",
+    "aggregate_dev": {
+      "acc_orig": {
+        "mean": 0.2296,
+        "sd": 0.0139
+      },
+      "acc_swapped": {
+        "mean": 0.2315,
+        "sd": 0.0114
+      },
+      "order_flip_rate": {
+        "mean": 0.65,
+        "sd": 0.4184
+      },
+      "nll": {
+        "mean": 1.5597,
+        "sd": 0.0257
+      },
+      "ece": {
+        "mean": 0.0185,
+        "sd": 0.0094
+      },
+      "aurc": {
+        "mean": 0.6901,
+        "sd": 0.0446
+      },
+      "error_auroc": {
+        "mean": 0.5809,
+        "sd": 0.0218
+      },
+      "latency_p50_ms": {
+        "mean": 28.2317,
+        "sd": 0.4047
+      },
+      "latency_p95_ms": {
+        "mean": 54.4229,
+        "sd": 1.9643
+      }
+    },
+    "aggregate_cal": {
+      "acc_orig": {
+        "mean": 0.1926,
+        "sd": 0.0205
+      },
+      "acc_swapped": {
+        "mean": 0.2056,
+        "sd": 0.0079
+      },
+      "order_flip_rate": {
+        "mean": 0.6593,
+        "sd": 0.3944
+      },
+      "nll": {
+        "mean": 1.5834,
+        "sd": 0.011
+      },
+      "ece": {
+        "mean": 0.0423,
+        "sd": 0.0259
+      },
+      "aurc": {
+        "mean": 0.7852,
+        "sd": 0.0703
+      },
+      "error_auroc": {
+        "mean": 0.5298,
+        "sd": 0.0703
+      },
+      "latency_p50_ms": {
+        "mean": 24.7373,
+        "sd": 0.5063
+      },
+      "latency_p95_ms": {
+        "mean": 47.7077,
+        "sd": 12.5904
+      }
+    }
+  },
+  "qwen": {
+    "model_id": "Qwen/Qwen3.5-0.8B-Base",
+    "total_params": 752393024,
+    "trainable_params": 6389760,
+    "fine_tune_method": "native_fp32_lora_r16_fp16_base",
+    "letter_ids": [
+      357,
+      417,
+      351,
+      414,
+      458
+    ],
+    "frozen_baseline": {
+      "temperature": 6.15,
+      "dev_uncalibrated": {
+        "n": 180,
+        "temperature": 1.0,
+        "acc_orig": 0.2222222222222222,
+        "acc_swapped": 0.2611111111111111,
+        "order_flip_rate": 0.9833333333333333,
+        "order_flips": 177,
+        "nll": 1.7985518021297247,
+        "ece": 0.27219931383927665,
+        "aurc": 0.760779606205856,
+        "error_auroc": 0.5226785714285714,
+        "abstain_acc": 0.0,
+        "non_abstain_acc": 0.28169014084507044,
+        "by_bucket": {
+          "api_routing": 0.18181818181818182,
+          "engineering_tradeoff": 0.17777777777777778,
+          "incident_triage": 0.2391304347826087,
+          "release_gate": 0.28888888888888886
+        },
+        "by_band": {
+          "clean": 0.20149253731343283,
+          "wrapped": 0.2826086956521739
+        },
+        "latency_p50_ms": 141.8866505000551,
+        "latency_p95_ms": 200.8667662999528
+      },
+      "dev_calibrated": {
+        "n": 180,
+        "temperature": 6.15,
+        "acc_orig": 0.2222222222222222,
+        "acc_swapped": 0.2611111111111111,
+        "order_flip_rate": 0.9833333333333333,
+        "order_flips": 177,
+        "nll": 1.576483754036856,
+        "ece": 0.04410632914967007,
+        "aurc": 0.7176633225697603,
+        "error_auroc": 0.5489285714285714,
+        "abstain_acc": 0.0,
+        "non_abstain_acc": 0.28169014084507044,
+        "by_bucket": {
+          "api_routing": 0.18181818181818182,
+          "engineering_tradeoff": 0.17777777777777778,
+          "incident_triage": 0.2391304347826087,
+          "release_gate": 0.28888888888888886
+        },
+        "by_band": {
+          "clean": 0.20149253731343283,
+          "wrapped": 0.2826086956521739
+        },
+        "latency_p50_ms": 141.8866505000551,
+        "latency_p95_ms": 200.8667662999528
+      },
+      "cal_calibrated": {
+        "n": 180,
+        "temperature": 6.15,
+        "acc_orig": 0.2,
+        "acc_swapped": 0.2222222222222222,
+        "order_flip_rate": 0.9833333333333333,
+        "order_flips": 177,
+        "nll": 1.5966372064410546,
+        "ece": 0.04837344818645052,
+        "aurc": 0.7623724374679747,
+        "error_auroc": 0.5746527777777778,
+        "abstain_acc": 0.02631578947368421,
+        "non_abstain_acc": 0.24647887323943662,
+        "by_bucket": {
+          "api_routing": 0.18181818181818182,
+          "engineering_tradeoff": 0.21739130434782608,
+          "incident_triage": 0.2222222222222222,
+          "release_gate": 0.17777777777777778
+        },
+        "by_band": {
+          "clean": 0.208955223880597,
+          "wrapped": 0.17391304347826086
+        },
+        "latency_p50_ms": 141.69367599993166,
+        "latency_p95_ms": 202.59616945000963
+      },
+      "max_tokens_seen": 500
+    },
+    "seeds": [
+      {
+        "seed": 42,
+        "best_epoch": 4,
+        "train_seconds": 3137.0,
+        "peak_vram_gb": 1.81,
+        "temperature": 2.02,
+        "dev_calibrated": {
+          "n": 180,
+          "temperature": 2.02,
+          "acc_orig": 0.9944444444444445,
+          "acc_swapped": 0.9888888888888889,
+          "order_flip_rate": 0.016666666666666666,
+          "order_flips": 3,
+          "nll": 0.028878432719231906,
+          "ece": 0.020008722278806897,
+          "aurc": 6.190082074625836e-05,
+          "error_auroc": 0.994413407821229,
+          "abstain_acc": 1.0,
+          "non_abstain_acc": 0.9929577464788732,
+          "by_bucket": {
+            "api_routing": 1.0,
+            "engineering_tradeoff": 1.0,
+            "incident_triage": 0.9782608695652174,
+            "release_gate": 1.0
+          },
+          "by_band": {
+            "clean": 1.0,
+            "wrapped": 0.9782608695652174
+          },
+          "latency_p50_ms": 160.30082399993262,
+          "latency_p95_ms": 215.39463159961085
+        },
+        "cal_calibrated": {
+          "n": 180,
+          "temperature": 2.02,
+          "acc_orig": 0.9722222222222222,
+          "acc_swapped": 0.9777777777777777,
+          "order_flip_rate": 0.011111111111111112,
+          "order_flips": 2,
+          "nll": 0.10362893151063281,
+          "ece": 0.01134364969200564,
+          "aurc": 0.0017590785478776066,
+          "error_auroc": 0.9554285714285714,
+          "abstain_acc": 0.9473684210526315,
+          "non_abstain_acc": 0.9788732394366197,
+          "by_bucket": {
+            "api_routing": 1.0,
+            "engineering_tradeoff": 0.8913043478260869,
+            "incident_triage": 1.0,
+            "release_gate": 1.0
+          },
+          "by_band": {
+            "clean": 0.9701492537313433,
+            "wrapped": 0.9782608695652174
+          },
+          "latency_p50_ms": 162.4786120000863,
+          "latency_p95_ms": 231.42899170024964
+        },
+        "checkpoint": "/content/drive/MyDrive/self_jev_m2_v5/qwen/qwen_seed42"
+      },
+      {
+        "seed": 1024,
+        "best_epoch": 4,
+        "train_seconds": 3120.8,
+        "peak_vram_gb": 1.81,
+        "temperature": 1.89,
+        "dev_calibrated": {
+          "n": 180,
+          "temperature": 1.89,
+          "acc_orig": 0.9611111111111111,
+          "acc_swapped": 0.95,
+          "order_flip_rate": 0.03333333333333333,
+          "order_flips": 6,
+          "nll": 0.09692111099822796,
+          "ece": 0.04011938720941548,
+          "aurc": 0.0012620182853616665,
+          "error_auroc": 0.9900908340214699,
+          "abstain_acc": 0.9736842105263158,
+          "non_abstain_acc": 0.9577464788732394,
+          "by_bucket": {
+            "api_routing": 1.0,
+            "engineering_tradeoff": 0.9111111111111111,
+            "incident_triage": 0.9347826086956522,
+            "release_gate": 1.0
+          },
+          "by_band": {
+            "clean": 0.9701492537313433,
+            "wrapped": 0.9347826086956522
+          },
+          "latency_p50_ms": 159.87780349951208,
+          "latency_p95_ms": 219.4918798507387
+        },
+        "cal_calibrated": {
+          "n": 180,
+          "temperature": 1.89,
+          "acc_orig": 0.9555555555555556,
+          "acc_swapped": 0.9555555555555556,
+          "order_flip_rate": 0.011111111111111112,
+          "order_flips": 2,
+          "nll": 0.1502680147922847,
+          "ece": 0.013797941141658313,
+          "aurc": 0.009890718564461888,
+          "error_auroc": 0.842296511627907,
+          "abstain_acc": 0.9473684210526315,
+          "non_abstain_acc": 0.9577464788732394,
+          "by_bucket": {
+            "api_routing": 1.0,
+            "engineering_tradeoff": 0.8913043478260869,
+            "incident_triage": 0.9333333333333333,
+            "release_gate": 1.0
+          },
+          "by_band": {
+            "clean": 0.9626865671641791,
+            "wrapped": 0.9347826086956522
+          },
+          "latency_p50_ms": 159.20075599933625,
+          "latency_p95_ms": 218.17565685005317
+        },
+        "checkpoint": "/content/drive/MyDrive/self_jev_m2_v5/qwen/qwen_seed1024"
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 4,
+        "train_seconds": 3096.8,
+        "peak_vram_gb": 1.81,
+        "temperature": 2.05,
+        "dev_calibrated": {
+          "n": 180,
+          "temperature": 2.05,
+          "acc_orig": 0.9777777777777777,
+          "acc_swapped": 0.9833333333333333,
+          "order_flip_rate": 0.016666666666666666,
+          "order_flips": 3,
+          "nll": 0.08661613095989758,
+          "ece": 0.016576574577225524,
+          "aurc": 0.0011677378717473473,
+          "error_auroc": 0.9630681818181818,
+          "abstain_acc": 1.0,
+          "non_abstain_acc": 0.971830985915493,
+          "by_bucket": {
+            "api_routing": 1.0,
+            "engineering_tradeoff": 0.9333333333333333,
+            "incident_triage": 1.0,
+            "release_gate": 0.9777777777777777
+          },
+          "by_band": {
+            "clean": 0.9850746268656716,
+            "wrapped": 0.9565217391304348
+          },
+          "latency_p50_ms": 161.98851250010193,
+          "latency_p95_ms": 212.0830406994173
+        },
+        "cal_calibrated": {
+          "n": 180,
+          "temperature": 2.05,
+          "acc_orig": 0.9722222222222222,
+          "acc_swapped": 0.9666666666666667,
+          "order_flip_rate": 0.022222222222222223,
+          "order_flips": 4,
+          "nll": 0.11699782842883709,
+          "ece": 0.013669972949557782,
+          "aurc": 0.0021153747264305743,
+          "error_auroc": 0.9428571428571428,
+          "abstain_acc": 0.9736842105263158,
+          "non_abstain_acc": 0.971830985915493,
+          "by_bucket": {
+            "api_routing": 1.0,
+            "engineering_tradeoff": 0.8913043478260869,
+            "incident_triage": 1.0,
+            "release_gate": 1.0
+          },
+          "by_band": {
+            "clean": 0.9776119402985075,
+            "wrapped": 0.9565217391304348
+          },
+          "latency_p50_ms": 161.15214900037245,
+          "latency_p95_ms": 229.35575620085726
+        },
+        "checkpoint": "/content/drive/MyDrive/self_jev_m2_v5/qwen/qwen_seed2026"
+      }
+    ],
+    "deployment_seed_selected_on_dev": 42,
+    "deployment_selection_criterion": "lowest_calibrated_dev_nll",
+    "aggregate_dev": {
+      "acc_orig": {
+        "mean": 0.9778,
+        "sd": 0.0136
+      },
+      "acc_swapped": {
+        "mean": 0.9741,
+        "sd": 0.0172
+      },
+      "order_flip_rate": {
+        "mean": 0.0222,
+        "sd": 0.0079
+      },
+      "nll": {
+        "mean": 0.0708,
+        "sd": 0.0299
+      },
+      "ece": {
+        "mean": 0.0256,
+        "sd": 0.0104
+      },
+      "aurc": {
+        "mean": 0.0008,
+        "sd": 0.0005
+      },
+      "error_auroc": {
+        "mean": 0.9825,
+        "sd": 0.0139
+      },
+      "latency_p50_ms": {
+        "mean": 160.7224,
+        "sd": 0.9118
+      },
+      "latency_p95_ms": {
+        "mean": 215.6565,
+        "sd": 3.0303
+      }
+    },
+    "aggregate_cal": {
+      "acc_orig": {
+        "mean": 0.9667,
+        "sd": 0.0079
+      },
+      "acc_swapped": {
+        "mean": 0.9667,
+        "sd": 0.0091
+      },
+      "order_flip_rate": {
+        "mean": 0.0148,
+        "sd": 0.0052
+      },
+      "nll": {
+        "mean": 0.1236,
+        "sd": 0.0196
+      },
+      "ece": {
+        "mean": 0.0129,
+        "sd": 0.0011
+      },
+      "aurc": {
+        "mean": 0.0046,
+        "sd": 0.0038
+      },
+      "error_auroc": {
+        "mean": 0.9135,
+        "sd": 0.0506
+      },
+      "latency_p50_ms": {
+        "mean": 160.9438,
+        "sd": 1.3463
+      },
+      "latency_p95_ms": {
+        "mean": 226.3201,
+        "sd": 5.8209
+      }
+    }
+  }
+}

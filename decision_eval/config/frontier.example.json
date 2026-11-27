@@ -1,0 +1,7 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "model": "openai/gpt-4o-mini",
+  "api_key": "PASTE_YOUR_FRONTIER_API_KEY_HERE",
+  "in_price_per_1m": 0.15,
+  "out_price_per_1m": 0.60
+}

@@ -1,0 +1,29 @@
+{
+  "seed": 20261125,
+  "count": 600,
+  "buckets": {
+    "incident_triage": 150,
+    "release_gate": 150,
+    "api_routing": 150,
+    "engineering_tradeoff": 150
+  },
+  "context_bands": {
+    "wrapped": 152,
+    "clean": 448
+  },
+  "abstain_count": 128,
+  "gold_indices": {
+    "0": 120,
+    "1": 120,
+    "2": 116,
+    "3": 116,
+    "4": 128
+  },
+  "word_stats": {
+    "min": 100,
+    "median": 131,
+    "max": 187
+  },
+  "overlap_hist_test": 0,
+  "overlap_nontest_1200": 0
+}

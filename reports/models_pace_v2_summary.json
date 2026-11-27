@@ -1,0 +1,848 @@
+{
+  "evaluator_version": "pace-eval-v2",
+  "reference_version": "agx-winner-times-v1",
+  "required_laps": 4,
+  "driver_weights": "jev_rl_v7.mapdata.npz",
+  "suite3_items": 34,
+  "sim_wall_s": 40.3,
+  "build_diagnostics": {
+    "dry_low_drag": {
+      "finished_4lap_n": 17,
+      "total_actionable_n": 24,
+      "median_finish_time_s": 653.0,
+      "min_finish_time_s": 563.75,
+      "status_counts": {
+        "2": 17,
+        "5": 7
+      }
+    },
+    "dry_balanced": {
+      "finished_4lap_n": 24,
+      "total_actionable_n": 24,
+      "median_finish_time_s": 562.95,
+      "min_finish_time_s": 484.94,
+      "status_counts": {
+        "2": 24
+      }
+    },
+    "damp_mid_downforce": {
+      "finished_4lap_n": 17,
+      "total_actionable_n": 24,
+      "median_finish_time_s": 655.1,
+      "min_finish_time_s": 564.58,
+      "status_counts": {
+        "2": 17,
+        "5": 7
+      }
+    },
+    "wet_high_downforce": {
+      "finished_4lap_n": 24,
+      "total_actionable_n": 24,
+      "median_finish_time_s": 563.65,
+      "min_finish_time_s": 486.6,
+      "status_counts": {
+        "2": 24
+      }
+    }
+  },
+  "models": {
+    "car-build-nn": {
+      "total_items_n": 34,
+      "suite3_exact_accuracy": 0.7941,
+      "actionable_n": 24,
+      "abstain_gold_n": 10,
+      "safe_hold_rate": 0.8,
+      "false_abstain_n": 0,
+      "rule_violation_n": 0,
+      "external_agx_reference": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 17,
+        "classified_rate_among_known": 0.7083,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 24,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 7,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 17,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 138.91,
+        "min_gap_s_among_comparable_finishes": 97.41,
+        "median_gap_pct_among_comparable_finishes": 30.09,
+        "min_gap_pct_among_comparable_finishes": 20.89,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 7
+        }
+      },
+      "same_scenario_sim_oracle": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 17,
+        "classified_rate_among_known": 0.7083,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 19,
+        "reference_coverage": 0.7917,
+        "known_outcome_failure_n": 2,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 17,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 8,
+          "le_1pct": 15,
+          "le_5pct": 17,
+          "le_10pct": 17,
+          "le_20pct": 17
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.4211,
+          "le_1pct": 0.7895,
+          "le_5pct": 0.8947,
+          "le_10pct": 0.8947,
+          "le_20pct": 0.8947
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.4211,
+            0.4211
+          ],
+          "le_1pct": [
+            0.7895,
+            0.7895
+          ],
+          "le_5pct": [
+            0.8947,
+            0.8947
+          ],
+          "le_10pct": [
+            0.8947,
+            0.8947
+          ],
+          "le_20pct": [
+            0.8947,
+            0.8947
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 0.47,
+        "min_gap_s_among_comparable_finishes": 0.0,
+        "median_gap_pct_among_comparable_finishes": 0.07,
+        "min_gap_pct_among_comparable_finishes": 0.0,
+        "reference_unavailable_by_reason": {
+          "no_legal_sim_finisher": 5
+        },
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 2
+        }
+      }
+    },
+    "kev-0.8b": {
+      "total_items_n": 34,
+      "suite3_exact_accuracy": 0.4118,
+      "actionable_n": 24,
+      "abstain_gold_n": 10,
+      "safe_hold_rate": 1.0,
+      "false_abstain_n": 9,
+      "rule_violation_n": 0,
+      "external_agx_reference": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 10,
+        "classified_rate_among_known": 0.4167,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 24,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 14,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 10,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 152.83,
+        "min_gap_s_among_comparable_finishes": 98.24,
+        "median_gap_pct_among_comparable_finishes": 33.61,
+        "min_gap_pct_among_comparable_finishes": 21.07,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 14
+        }
+      },
+      "same_scenario_sim_oracle": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 10,
+        "classified_rate_among_known": 0.4167,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 19,
+        "reference_coverage": 0.7917,
+        "known_outcome_failure_n": 9,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 10,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 10,
+          "le_5pct": 10,
+          "le_10pct": 10,
+          "le_20pct": 10
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.5263,
+          "le_5pct": 0.5263,
+          "le_10pct": 0.5263,
+          "le_20pct": 0.5263
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.5263,
+            0.5263
+          ],
+          "le_5pct": [
+            0.5263,
+            0.5263
+          ],
+          "le_10pct": [
+            0.5263,
+            0.5263
+          ],
+          "le_20pct": [
+            0.5263,
+            0.5263
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 1.0,
+        "min_gap_s_among_comparable_finishes": 0.8,
+        "median_gap_pct_among_comparable_finishes": 0.17,
+        "min_gap_pct_among_comparable_finishes": 0.12,
+        "reference_unavailable_by_reason": {
+          "no_legal_sim_finisher": 5
+        },
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 9
+        }
+      }
+    },
+    "qwen-0.8b-json": {
+      "total_items_n": 34,
+      "suite3_exact_accuracy": 0.3529,
+      "actionable_n": 24,
+      "abstain_gold_n": 10,
+      "safe_hold_rate": 0.0,
+      "false_abstain_n": 0,
+      "rule_violation_n": 0,
+      "external_agx_reference": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 17,
+        "classified_rate_among_known": 0.7083,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 24,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 7,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 17,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 140.71,
+        "min_gap_s_among_comparable_finishes": 97.41,
+        "median_gap_pct_among_comparable_finishes": 30.21,
+        "min_gap_pct_among_comparable_finishes": 20.89,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 7
+        }
+      },
+      "same_scenario_sim_oracle": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 17,
+        "classified_rate_among_known": 0.7083,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 19,
+        "reference_coverage": 0.7917,
+        "known_outcome_failure_n": 2,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 17,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 3,
+          "le_1pct": 16,
+          "le_5pct": 17,
+          "le_10pct": 17,
+          "le_20pct": 17
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.1579,
+          "le_1pct": 0.8421,
+          "le_5pct": 0.8947,
+          "le_10pct": 0.8947,
+          "le_20pct": 0.8947
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.1579,
+            0.1579
+          ],
+          "le_1pct": [
+            0.8421,
+            0.8421
+          ],
+          "le_5pct": [
+            0.8947,
+            0.8947
+          ],
+          "le_10pct": [
+            0.8947,
+            0.8947
+          ],
+          "le_20pct": [
+            0.8947,
+            0.8947
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 1.4,
+        "min_gap_s_among_comparable_finishes": 0.0,
+        "median_gap_pct_among_comparable_finishes": 0.21,
+        "min_gap_pct_among_comparable_finishes": 0.0,
+        "reference_unavailable_by_reason": {
+          "no_legal_sim_finisher": 5
+        },
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 2
+        }
+      }
+    },
+    "qwen-0.8b-ll": {
+      "total_items_n": 34,
+      "suite3_exact_accuracy": 0.2941,
+      "actionable_n": 24,
+      "abstain_gold_n": 10,
+      "safe_hold_rate": 1.0,
+      "false_abstain_n": 24,
+      "rule_violation_n": 0,
+      "external_agx_reference": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 0,
+        "classified_rate_among_known": 0.0,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 24,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 24,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 0,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": null,
+        "min_gap_s_among_comparable_finishes": null,
+        "median_gap_pct_among_comparable_finishes": null,
+        "min_gap_pct_among_comparable_finishes": null,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 24
+        }
+      },
+      "same_scenario_sim_oracle": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 0,
+        "classified_rate_among_known": 0.0,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 19,
+        "reference_coverage": 0.7917,
+        "known_outcome_failure_n": 19,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 0,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": null,
+        "min_gap_s_among_comparable_finishes": null,
+        "median_gap_pct_among_comparable_finishes": null,
+        "min_gap_pct_among_comparable_finishes": null,
+        "reference_unavailable_by_reason": {
+          "no_legal_sim_finisher": 5
+        },
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 19
+        }
+      }
+    },
+    "self-jev-minilm": {
+      "total_items_n": 34,
+      "suite3_exact_accuracy": 0.2647,
+      "actionable_n": 24,
+      "abstain_gold_n": 10,
+      "safe_hold_rate": 0.6,
+      "false_abstain_n": 6,
+      "rule_violation_n": 0,
+      "external_agx_reference": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 17,
+        "classified_rate_among_known": 0.7083,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 24,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 7,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 17,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 141.24,
+        "min_gap_s_among_comparable_finishes": 98.24,
+        "median_gap_pct_among_comparable_finishes": 30.47,
+        "min_gap_pct_among_comparable_finishes": 21.07,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 7
+        }
+      },
+      "same_scenario_sim_oracle": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 17,
+        "classified_rate_among_known": 0.7083,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 19,
+        "reference_coverage": 0.7917,
+        "known_outcome_failure_n": 2,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 17,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 15,
+          "le_5pct": 17,
+          "le_10pct": 17,
+          "le_20pct": 17
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.7895,
+          "le_5pct": 0.8947,
+          "le_10pct": 0.8947,
+          "le_20pct": 0.8947
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.7895,
+            0.7895
+          ],
+          "le_5pct": [
+            0.8947,
+            0.8947
+          ],
+          "le_10pct": [
+            0.8947,
+            0.8947
+          ],
+          "le_20pct": [
+            0.8947,
+            0.8947
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 1.4,
+        "min_gap_s_among_comparable_finishes": 0.8,
+        "median_gap_pct_among_comparable_finishes": 0.21,
+        "min_gap_pct_among_comparable_finishes": 0.12,
+        "reference_unavailable_by_reason": {
+          "no_legal_sim_finisher": 5
+        },
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 2
+        }
+      }
+    },
+    "oracle": {
+      "total_items_n": 34,
+      "suite3_exact_accuracy": 1.0,
+      "actionable_n": 24,
+      "abstain_gold_n": 10,
+      "safe_hold_rate": 1.0,
+      "false_abstain_n": 0,
+      "rule_violation_n": 0,
+      "external_agx_reference": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 17,
+        "classified_rate_among_known": 0.7083,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 24,
+        "reference_coverage": 1.0,
+        "known_outcome_failure_n": 7,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 17,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 0,
+          "le_1pct": 0,
+          "le_5pct": 0,
+          "le_10pct": 0,
+          "le_20pct": 0
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.0,
+          "le_1pct": 0.0,
+          "le_5pct": 0.0,
+          "le_10pct": 0.0,
+          "le_20pct": 0.0
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.0,
+            0.0
+          ],
+          "le_1pct": [
+            0.0,
+            0.0
+          ],
+          "le_5pct": [
+            0.0,
+            0.0
+          ],
+          "le_10pct": [
+            0.0,
+            0.0
+          ],
+          "le_20pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 138.91,
+        "min_gap_s_among_comparable_finishes": 97.41,
+        "median_gap_pct_among_comparable_finishes": 30.09,
+        "min_gap_pct_among_comparable_finishes": 20.89,
+        "reference_unavailable_by_reason": {},
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 7
+        }
+      },
+      "same_scenario_sim_oracle": {
+        "total_attempts": 24,
+        "classification_known_n": 24,
+        "classified_n": 17,
+        "classified_rate_among_known": 0.7083,
+        "classification_by_source": {
+          "official": 24
+        },
+        "weather_provenance_counts": {
+          "heuristic": 24
+        },
+        "reference_applicable_n": 19,
+        "reference_coverage": 0.7917,
+        "known_outcome_failure_n": 2,
+        "measurement_unknown_n": 0,
+        "valid_full_distance_gap_n": 17,
+        "competitive_success_n_by_threshold": {
+          "le_0pct": 10,
+          "le_1pct": 15,
+          "le_5pct": 17,
+          "le_10pct": 17,
+          "le_20pct": 17
+        },
+        "competitive_completion_rate_by_threshold": {
+          "le_0pct": 0.5263,
+          "le_1pct": 0.7895,
+          "le_5pct": 0.8947,
+          "le_10pct": 0.8947,
+          "le_20pct": 0.8947
+        },
+        "rate_uncertainty_bounds_by_threshold": {
+          "le_0pct": [
+            0.5263,
+            0.5263
+          ],
+          "le_1pct": [
+            0.7895,
+            0.7895
+          ],
+          "le_5pct": [
+            0.8947,
+            0.8947
+          ],
+          "le_10pct": [
+            0.8947,
+            0.8947
+          ],
+          "le_20pct": [
+            0.8947,
+            0.8947
+          ]
+        },
+        "median_gap_s_among_comparable_finishes": 0.0,
+        "min_gap_s_among_comparable_finishes": 0.0,
+        "median_gap_pct_among_comparable_finishes": 0.0,
+        "min_gap_pct_among_comparable_finishes": 0.0,
+        "reference_unavailable_by_reason": {
+          "no_legal_sim_finisher": 5
+        },
+        "continuous_gap_exclusions_by_reason": {
+          "terminal_failure+not_classified+incomplete_distance": 2
+        }
+      }
+    }
+  }
+}
